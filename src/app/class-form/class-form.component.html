@@ -1,0 +1,64 @@
+<section @fadeInAnimation>
+  <ol class="breadcrumb">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/class">Classes</a></li>
+    <li class="active">Manage Classes</li>
+</ol>
+
+<br/>
+
+<br><br><br>
+<a class="btn btn-primary" routerLink="/class">Return to Classes</a>
+
+<h1>Manage Classes</h1>
+
+<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+    {{errorMessage}} {{successMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form (ngSubmit)="saveClass(classForm)"  #classForm="ngForm" class="form-horizontal">
+
+  <input [(ngModel)]="classy.class_id" #class_id="ngModel" type="hidden" name="class_id">
+
+  <div class="form-group">
+    <label for="instructor_id" class="col-sm-2 control-label">Instructor</label>
+    <div class="col-sm-10">
+      <!--<input [(ngModel)]="classy.instructor.last_name + ', ' + classy.instructor.first_name" type="text" class="form-control" id="instructor_id" name="instructor_id" placeholder="Instructor ID" required>-->
+        <select [ngModel]="classy?.instructor?.instructor_id" ngModel #instructor_id="ngModel" class="form-control" name="instructor_id" id="instructor_id" required>
+          <option *ngFor="let instructor of instructors" [value]="instructor.instructor_id">{{instructor.last_name}}, {{instructor.first_name}}</option>
+        </select>
+         <span *ngIf="formErrors.instructor" class="text-danger">
+          {{ formErrors.instructor}}
+        </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="subject" class="col-sm-2 control-label">Subject</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="classy.subject" type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required maxLength="30">
+        <span *ngIf="formErrors.subject" class="text-danger">
+          {{ formErrors.subject}}
+        </span>
+        </div>
+  </div>
+
+  <div class="form-group">
+    <label for="course" class="col-sm-2 control-label">Course</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="classy.course" type="text" class="form-control" id="course" name="course" placeholder="Course" required pattern="\d+" maxLength="4">
+        <span *ngIf="formErrors.course" class="text-danger">
+          {{ formErrors.course}}
+        </span>
+    </div>
+  </div>
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button [disabled]="!classForm.form.valid"  type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+</section>

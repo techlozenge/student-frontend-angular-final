@@ -1,0 +1,42 @@
+<section @fadeInAnimation>
+  <ol class="breadcrumb">
+    <li><a routerLink="/home">Home</a></li>
+    <li class="active">Student_Class</li>
+</ol>
+
+<br/>
+
+<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+    {{errorMessage}} {{successMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<br><br><br>
+<h2>Student_Class</h2>
+
+<a class="btn btn-primary" routerLink="/student-class/add">Add Student_Class</a>
+
+<table class="table table-striped table-bordered" id="dataTable" style="width:100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Student</th>
+      <th>Class</th>
+      <th>Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student_class of studentclass">
+      <td>{{student_class.student_class_id}}</td>
+      <td>{{student_class.student?.last_name + ", " + student_class.student?.first_name}}</td>
+      <td>{{student_class.class?.subject + " " + student_class.class?.course}}</td>
+      <td class="text-center">
+        <a class="btn btn-primary" [routerLink]="['/student-class/edit/', student_class.student_class_id]">Edit</a>&nbsp;
+        <button (click)="deleteStudentClass(student_class.student_class_id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</section>

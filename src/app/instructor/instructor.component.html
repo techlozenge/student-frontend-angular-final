@@ -1,0 +1,48 @@
+<section @fadeInAnimation>
+<ol class="breadcrumb">
+    <li><a routerLink="/home">Home</a></li>
+    <li class="active">Instructors</li>
+</ol>
+
+<br/>
+
+<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+    {{errorMessage}} {{successMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<br><br><br>
+<h2>Instructors</h2>
+
+<a class="btn btn-primary" routerLink="/instructor/add">Add Instructor</a>
+
+<table class="table table-striped table-bordered" id="dataTable" style="width:100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Major</th>
+      <th>Years Experience</th>
+      <th>Tenured</th>
+      <th>Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let instructor of instructors">
+      <td>{{instructor?.instructor_id}}</td>
+      <td>{{instructor?.first_name}}</td>
+      <td>{{instructor?.last_name}}</td>
+      <td>{{instructor?.major?.major}}</td>
+      <td>{{instructor?.years_of_experience}}</td>
+      <td>{{instructor?.tenured}}</td>
+      <td class="text-center">
+        <a class="btn btn-primary" [routerLink]="['/instructor/edit/', instructor.instructor_id]">Edit</a>&nbsp;
+        <button (click)="deleteInstructor(instructor.instructor_id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</section>

@@ -1,0 +1,119 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+table {
+    margin-top: 10px;
+}
+
+#srchText {
+    width: 150px;
+}
+
+.wrapper{
+  position:relative;
+}
+.big-img{
+  width: 100%;
+  max-width: 100%;
+  border: 5px solid black;
+}
+  
+.small-img{
+  position:absolute;
+  right: 43%;
+  top: 63%;
+  width: 15%;
+  border: 5px solid black;
+}
+
+
+/* massages the top hero image */
+
+#styler {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.breadcrumb {
+    color: black;
+    float: left;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-style: bold;
+}
+
+hr {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 3px double #8c8b8b;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-style: bold;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.container {
+    margin-left: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.col-md-4 {
+    width: 350px;
+    margin-left: 85px;
+}
+
+
+/* Customize container
+
+    TODO: Need to rework these for different sized views
+*/
+
+@media (min-width: 600px) {
+    .container {
+        /*max-width: 768px;*/
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+
+/* Customize container */
+
+@media (min-width: 800px) {
+    .container-fluid {
+        max-width: 100%;
+    }
+}
+
+/* Validation formatting */
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+#deletemsg {
+    margin-top: 75px;
+}

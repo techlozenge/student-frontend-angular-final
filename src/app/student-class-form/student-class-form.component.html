@@ -1,0 +1,56 @@
+<section @fadeInAnimation>
+  <ol class="breadcrumb">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/student-class">Student_Class</a></li>
+    <li class="active">Manage Student_Class</li>
+</ol>
+
+<br/>
+
+<br><br><br>
+<a class="btn btn-primary" routerLink="/student-class">Return to Student_Classes</a>
+<br><br><br>
+<h1>Manage Student_Classes</h1>
+
+<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+    {{errorMessage}} {{successMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+
+<!-- BEGIN Form  -->
+<form (ngSubmit)="saveStudentClass(studentClassForm)"  #studentClassForm="ngForm" class="form-horizontal">
+
+  <!-- hidden student_class_id  -->
+  <input [ngModel]="studentclass?.student_class_id" ngModel #student_class_id="ngModel" type="hidden" name="student_class_id">
+
+  <!-- student_id  -->
+  <div class="form-group">
+    <label for="student_id" class="col-sm-2 control-label">Student</label>
+    <div class="col-sm-10">
+      <select [ngModel]="studentclass?.student?.student_id" ngModel #student_id="ngModel" class="form-control" name="student_id" id="student_id" required>
+         <option *ngFor="let student of students" [value]="student.student_id">{{student.last_name}}, {{student.first_name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- class_id  -->
+  <div class="form-group">
+    <label for="class_id" class="col-sm-2 control-label">Class</label>
+    <div class="col-sm-10">
+      <select [ngModel]="studentclass?.class?.class_id" ngModel #class_id="ngModel" class="form-control" name="class_id" id="class_id" required>
+        <option *ngFor="let class of classes" [value]="class.class_id">{{class.subject}} {{class.course}}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Submit Button  -->
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button [disabled]="!studentClassForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+</section>

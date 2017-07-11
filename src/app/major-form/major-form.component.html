@@ -1,0 +1,36 @@
+<section @fadeInAnimation>
+  <ol class="breadcrumb">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/major">Majors</a></li>
+    <li class="active">Manage Majors</li>
+</ol>
+
+<br/>
+
+<br><br><br>
+<a class="btn btn-primary" routerLink="/major">Return to Majors</a>
+
+<h1>Manage Majors</h1>
+
+<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+    {{errorMessage}} {{successMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form (ngSubmit)="saveMajor(major.major_id)"  #majorForm="ngForm" class="form-horizontal">
+  <input [(ngModel)]="major.major_id" #major_id="ngModel" type="hidden" name="major_id">
+  <div class="form-group">
+    <label for="major" class="col-sm-2 control-label">Major</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="major.major" type="text" class="form-control" id="major" name="major" placeholder="Major" required maxLength="30">
+    </div>
+  </div>
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button [disabled]="!majorForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+</section>
