@@ -14,6 +14,7 @@ export class DataService {
     constructor (private http: Http) {}
 
     getRecords(endpoint: string): Observable<any[]> {
+        console.log("endpoint: " + endpoint);
         let apiUrl = this.baseUrl+endpoint;
         return this.http.get(apiUrl)
             .map(this.extractData)
@@ -21,6 +22,7 @@ export class DataService {
     }
 
     getRecord(endpoint: string, id): Observable<object> {
+        console.log("endpoint: " + endpoint);        
         let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         return this.http.get(apiUrl)
             .map(this.extractData)

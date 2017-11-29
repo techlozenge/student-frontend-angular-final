@@ -1,7 +1,0 @@
-
-echo "# student-frontend-angular-final" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/techlozenge/student-frontend-angular-final.git
-git push -u origin master
