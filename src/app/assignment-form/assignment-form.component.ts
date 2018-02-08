@@ -83,7 +83,7 @@ export class AssignmentFormComponent implements OnInit {
           .subscribe(
             assignment => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);
-            this.assignment = {};
+      this.assignment = {};
     }
     
   }

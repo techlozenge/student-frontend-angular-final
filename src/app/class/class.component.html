@@ -21,8 +21,8 @@
 <table class="table table-striped table-bordered" id="dataTable" style="width:100%">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Instructor</th>
+      <th>Class ID</th>
+      <th>Instructor Name & Years of Experience</th>
       <th>Subject</th>
       <th>Course</th>
       <th>Admin</th>
@@ -31,7 +31,7 @@
   <tbody>
     <tr *ngFor="let classy of classes">
       <td>{{classy.class_id}}</td>
-      <td>{{classy.instructor?.last_name + ", " + classy.instructor?.first_name}}</td>
+      <td>{{classy.instructor?.first_name}} {{classy.instructor?.last_name}} {{classy.instructor?.years_of_experience}}</td>
       <td>{{classy.subject}}</td>
       <td>{{classy.course}}</td>
       <td class="text-center">

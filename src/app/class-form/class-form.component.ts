@@ -52,12 +52,15 @@ export class ClassFormComponent implements OnInit {
   }
 
   saveClass(classy: NgForm){
+    console.log("classy.value.class_id is " + classy.value.class_id);
     if(typeof classy.value.class_id === "number"){
+      console.log("edit record");
       this.dataService.editRecord("class", classy.value, classy.value.class_id)
           .subscribe(
             classy => this.successMessage = "Record updated succesfully",
             error =>  this.errorMessage = <any>error);
     }else{
+      console.log("add record");
       this.dataService.addRecord("class", classy.value)
           .subscribe(
             classy => this.successMessage = "Record added succesfully",

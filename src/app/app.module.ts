@@ -18,6 +18,7 @@ import { GradeComponent } from './grade/grade.component';
 import { GradeFormComponent } from './grade-form/grade-form.component';
 import { ClassFormComponent } from './class-form/class-form.component';
 import { AssignmentFormComponent } from './assignment-form/assignment-form.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 import { InstructorFormComponent } from './instructor-form/instructor-form.component';
 import { MajorFormComponent } from './major-form/major-form.component';
 import { MajorClassFormComponent } from './major-class-form/major-class-form.component';
@@ -26,12 +27,9 @@ import { StudentClassComponent } from './student-class/student-class.component';
 import { MajorClassComponent } from './major-class/major-class.component';
 import { MajorComponent } from './major/major.component';
 import { InstructorComponent } from './instructor/instructor.component';
-import { AssignmentComponent } from './assignment/assignment.component';
 import { ClassComponent } from './class/class.component';
 
-
-
-
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -63,7 +61,9 @@ import { ClassComponent } from './class/class.component';
     HttpModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    
+    DataTablesModule
   ],
   entryComponents: [DeleteConfirmComponent],
   providers: [DataService],

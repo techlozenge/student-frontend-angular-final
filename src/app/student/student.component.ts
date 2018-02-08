@@ -5,6 +5,8 @@ import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
 
+import { Subject } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-student',
@@ -15,6 +17,8 @@ import { fadeInAnimation } from '../animations/fade-in.animation';
 })
 export class StudentComponent implements OnInit {
 
+  dtOptions: any = {};
+  dtTrigger: Subject<any> = new Subject();
   errorMessage: string;
   successMessage: string;
   students: any[];
@@ -22,7 +26,19 @@ export class StudentComponent implements OnInit {
  
   constructor (private dataService: DataService, public dialog: MdDialog) {}
  
-  ngOnInit() { this.getStudents(); }
+  ngOnInit(): void {
+    this.dtOptions = {
+      paging: true,
+      searching: true,
+      dom: 'Bfrtlip',
+      buttons: [
+        'copy',
+        'print',
+        'excel'
+      ]
+    }
+    this.getStudents();
+  }
  
   getStudents() {
     this.dataService.getRecords("student")

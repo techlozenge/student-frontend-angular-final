@@ -18,11 +18,11 @@
 
 <a class="btn btn-primary" routerLink="/assignment/add">Add Assignment</a>
 
-<table class="table table-striped table-bordered" id="dataTable" style="width:100%">
+<table class="table table-fit table-hover table-bordered" id="dataTable">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Student ID</th>
+      <th>Assignment ID</th>
+      <th>Student Name</th>
       <th>Assignment Number</th>
       <th>Grade</th>
       <th>Class</th>
@@ -32,7 +32,7 @@
   <tbody>
     <tr *ngFor="let assignment of assignments">
       <td>{{assignment.assignment_id}}</td>
-      <td>{{assignment.student?.last_name + ", " + assignment.student?.first_name}}</td>
+      <td>{{assignment.student?.first_name}} {{assignment.student?.last_name}}</td>
       <td>{{assignment.assignment_nbr}}</td>
       <td>{{assignment.grade?.grade}}</td>
       <td>{{assignment.class?.subject}} {{assignment.class?.course}}</td>
