@@ -1,0 +1,14 @@
+
+node_modules/angular-datatables/src/angular-datatables.directive.d.ts:1:1 
+    Cannot find type definition file for 'datatables.net'. 
+
+node_modules/angular-datatables/src/angular-datatables.directive.d.ts:15:16 
+    Cannot find namespace 'DataTables'. 
+
+ node_modules/angular-datatables/src/angular-datatables.directive.d.ts:27:25 
+    Cannot find namespace 'DataTables'. 
+
+You need to add the jQuery and DataTables typings:
+
+npm install @types/jquery --save
+npm install @types/datatables.net --save

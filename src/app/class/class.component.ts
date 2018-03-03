@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { fadeInAnimation } from '../animations/fade-in.animation';
 
 import { DataService } from '../data.service'
@@ -18,7 +18,7 @@ export class ClassComponent implements OnInit {
   classes: any[];
   mode = 'Observable';
  
-  constructor (private dataService: DataService, public dialog: MdDialog) {}
+  constructor (private dataService: DataService, public dialog: MatDialog) {}
  
   ngOnInit() { this.getClasses(); }
  

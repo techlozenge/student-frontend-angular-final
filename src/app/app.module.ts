@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatDialogModule } from '@angular/material';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppRoutingModule } from './routing/routing.module';
@@ -52,17 +53,15 @@ import { DataTablesModule } from 'angular-datatables';
     MajorComponent,
     InstructorComponent,
     AssignmentComponent,
-    ClassComponent,
-
+    ClassComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    MaterialModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
-    
     DataTablesModule
   ],
   entryComponents: [DeleteConfirmComponent],

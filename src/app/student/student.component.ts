@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
@@ -24,7 +24,7 @@ export class StudentComponent implements OnInit {
   students: any[];
   mode = 'Observable';
  
-  constructor (private dataService: DataService, public dialog: MdDialog) {}
+  constructor (private dataService: DataService, public dialog: MatDialog) {}
  
   ngOnInit(): void {
     this.dtOptions = {
