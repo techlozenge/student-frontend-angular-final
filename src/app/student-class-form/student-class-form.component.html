@@ -5,12 +5,9 @@
     <li class="active">Manage Student_Class</li>
 </ol>
 
-<br/>
-
-<br><br><br>
+<br><br><br><br><br>
 <a class="btn btn-primary" routerLink="/student-class">Return to Student_Classes</a>
-<br><br><br>
-<h1>Manage Student_Classes</h1>
+<h2>New Student_Class</h2>
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}

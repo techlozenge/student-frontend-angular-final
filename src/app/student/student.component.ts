@@ -30,6 +30,7 @@ export class StudentComponent implements OnInit {
     this.dtOptions = {
       paging: true,
       searching: true,
+      info: true,
       dom: 'Bfrtlip',
       buttons: [
         'copy',

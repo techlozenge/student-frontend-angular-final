@@ -5,12 +5,9 @@
     <li class="active">Manage Majors</li>
 </ol>
 
-<br/>
-
-<br><br><br>
+<br><br><br><br><br>
 <a class="btn btn-primary" routerLink="/major">Return to Majors</a>
-
-<h1>Manage Majors</h1>
+<h2>New Major</h2>
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}

@@ -1,8 +1,17 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+table.table {
+    width: auto;
+    margin:0 auto;
+}
 
-table {
+/* table {
     margin-top: 10px;
+} */
+
+/** only for the body of the table. */
+table.table tbody td {
+    padding: 5px;
 }
 
 #srchText {
@@ -11,10 +20,10 @@ table {
 
 .wrapper{
   position:relative;
-}
-.big-img{
   width: 100%;
-  max-width: 100%;
+}
+
+.big-img{
   border: 5px solid black;
 }
   

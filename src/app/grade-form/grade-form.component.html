@@ -5,12 +5,9 @@
     <li class="active">Manage Grades</li>
 </ol>
 
-<br/>
-
-<br><br><br>
+<br><br><br><br><br>
 <a class="btn btn-primary" routerLink="/grade">Return to Grades</a>
-
-<h1>Manage Grades</h1>
+<h2>New Grade</h2>
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}

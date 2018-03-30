@@ -4,10 +4,10 @@
       <li><a routerLink="/student">Students</a></li>
       <li class="active">Manage Student</li>
   </ol>
-<br /><br /><br />
-  <a class="btn btn-primary" routerLink="/student">Return to Students</a>
 
-  <h1>Manage Student</h1>
+  <br><br><br><br><br>
+  <a class="btn btn-primary" routerLink="/student">Return to Students</a>
+  <h2>New Student</h2>
 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
     {{errorMessage}} {{successMessage}}
