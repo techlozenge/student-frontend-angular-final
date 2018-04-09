@@ -1,0 +1,10 @@
+[http] 
+proxy = http://www-proxy.lmig.com:80
+[https] 
+proxy = https://www-proxy.lmig.com:80
+[url "https://"] 
+insteadOf = git:// 
+[user] 
+name = Daniel Ford 
+email = daniel.ford@libertyMutual.com
+
