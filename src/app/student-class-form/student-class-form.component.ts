@@ -79,7 +79,8 @@ export class StudentClassFormComponent implements OnInit {
           .subscribe(
             studentclass => this.successMessage = "Record added successfully",
             error =>  this.errorMessage = <any>error);
-            this.studentclass = {};
     }
+    this.studentclass = {};
   }
+
 }

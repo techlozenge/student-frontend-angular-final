@@ -63,11 +63,11 @@ export class StudentFormComponent implements OnInit {
           .subscribe(
             student => this.successMessage = "Record added successfully",
             error =>  this.errorMessage = <any>error);
-            this.student = {};
     }
-
+    this.student = {};
   }
-ngAfterViewChecked() {
+
+  ngAfterViewChecked() {
     this.formChanged();
   }
 

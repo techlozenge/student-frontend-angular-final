@@ -63,8 +63,8 @@ export class InstructorFormComponent implements OnInit {
           .subscribe(
             instructor => this.successMessage = "Record added successfully",
             error =>  this.errorMessage = <any>error);
-            this.instructor = {};
     }
+    this.instructor = {};
   }
 
   ngAfterViewChecked() {

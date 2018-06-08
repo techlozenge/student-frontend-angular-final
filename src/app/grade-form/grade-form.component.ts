@@ -51,9 +51,7 @@ export class GradeFormComponent implements OnInit {
             grade => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);
     }
-
     this.grade = {};
-    
   }
 
 }

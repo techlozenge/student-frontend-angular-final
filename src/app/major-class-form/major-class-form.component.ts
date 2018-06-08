@@ -74,7 +74,8 @@ export class MajorClassFormComponent implements OnInit {
           .subscribe(
             majorclass => this.successMessage = "Record added successfully",
             error =>  this.errorMessage = <any>error);
-            this.majorclass = {};
     }
+    this.majorclass = {};
   }
+
 }

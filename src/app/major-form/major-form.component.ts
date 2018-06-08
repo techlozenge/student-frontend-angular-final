@@ -50,9 +50,7 @@ export class MajorFormComponent implements OnInit {
             major => this.successMessage = "Record added succesfully",
             error =>  this.errorMessage = <any>error);
     }
-
     this.major = {};
-    
   }
 
 }
