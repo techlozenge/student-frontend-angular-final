@@ -1,0 +1,55 @@
+
+.ui-dialog {
+    margin: auto;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid gray;
+    padding: 30px;
+}
+
+.ui-dialog-content {
+    color: red;
+    font-size: 1.5em;
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn-group {
+    padding-top: 55px;
+    padding-left: 150px;
+}
+
+.btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    /* This makes the button with rounded corners
+    -webkit-border-radius: 25;
+    -moz-border-radius: 25;
+    border-radius: 25px;
+    */
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 14px;
+    /* Could not override left justify so the padding of 40px
+       forces the text into the middle of the button
+     */
+    padding: 4px 50px 4px 40px;
+    margin: 8px;
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
