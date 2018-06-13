@@ -11,9 +11,8 @@
 <a class="btn btn-primary" routerLink="/class">Return to Classes</a>
 <h2>New Class</h2>
 
-
-<div style="width: 250px;">
-  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
+<div>
+  <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
       {{errorMessage}} {{successMessage}}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>

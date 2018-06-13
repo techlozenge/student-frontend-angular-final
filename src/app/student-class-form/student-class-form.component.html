@@ -9,13 +9,23 @@
 <a class="btn btn-primary" routerLink="/student-class">Return to Student_Classes</a>
 <h2>New Student_Class</h2>
 
+<div>
+  <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+      {{errorMessage}} {{successMessage}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+</div>
+
+<!-- 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-
+-->
 
 <!-- BEGIN Form  -->
 <form (ngSubmit)="saveStudentClass(studentClassForm)"  #studentClassForm="ngForm" class="form-horizontal">

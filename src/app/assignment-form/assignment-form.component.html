@@ -11,13 +11,23 @@
 
 <!--<app-status-message [successMessage]="successMessage" [errorMessage]="errorMessage"></app-status-message>-->
 
+<div>
+  <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+      {{errorMessage}} {{successMessage}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+</div>
+
+<!-- 
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-
+-->
 
 <form (ngSubmit)="saveAssignment(assignmentForm)"  #assignmentForm="ngForm" class="form-horizontal">
   <input [ngModel]="assignment?.assignment_id" ngModel #assignment_id="ngModel" type="hidden" name="assignment_id">

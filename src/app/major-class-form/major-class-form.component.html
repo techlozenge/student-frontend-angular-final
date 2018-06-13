@@ -9,12 +9,23 @@
 <a class="btn btn-primary" routerLink="/major-class">Return to Major_Classes</a>
 <h2>New Major_Class</h2>
 
+<div>
+  <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+      {{errorMessage}} {{successMessage}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+</div>
+
+<!--
 <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
     {{errorMessage}} {{successMessage}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+ -->
 
 <!-- BEGIN Form  -->
 <form (ngSubmit)="saveMajorClass(majorClassForm)"  #majorClassForm="ngForm" class="form-horizontal">

@@ -91,6 +91,12 @@ footer {
     margin-left: 85px;
 }
 
+.messages {
+    width: 250px;
+    margin-top: 0;
+    border: 2px solid black;
+}
+
 
 /* Customize container
 

@@ -6,18 +6,19 @@
   </ol>
 
   <br><br><br><br><br>
+
   <a class="btn btn-primary" routerLink="/student">Return to Students</a>
   <h2>New Student</h2>
 
-<div style="width: 250px;">
-  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
-      {{errorMessage}} {{successMessage}}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
+  <div>
+    <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+        {{errorMessage}} {{successMessage}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
   </div>
-</div>
-
+  
 <form novalidate (ngSubmit)="saveStudent(studentForm)"  #studentForm="ngForm" class="form-horizontal">
     <input [ngModel]="student?.student_id" ngModel #student_id="ngModel" type="hidden" name="student_id">
     <div class="form-group">
@@ -71,7 +72,6 @@
         <select [ngModel]="student?.major?.major_id" ngModel #major_id="ngModel" class="form-control" name="major_id" id="major_id" required>
           <option *ngFor="let major of majors" [value]="major.major_id">{{major.major}}</option>
         </select>
-        <!--<input [ngModel]="student?.major.major_id" ngModel #major_id="ngModel" type="text" class="form-control" id="major_id" name="major_id"> -->
       </div>
     </div>
      <div class="form-group">
