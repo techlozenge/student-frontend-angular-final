@@ -13,7 +13,7 @@
   <div>
     <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
         {{errorMessage}} {{successMessage}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button [ngStyle]="{background: 'red'}" type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
