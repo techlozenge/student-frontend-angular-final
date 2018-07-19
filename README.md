@@ -4,4 +4,6 @@
 
 # 2018-6-8: Styled Delete Confirm Component
 
+# 2018-7-19: Injected ID number into the Delete Confirm Component
+
 The .subscribe() function is similar to the .then() function in jQuery, but instead of dealing with promises it deals with Observables.

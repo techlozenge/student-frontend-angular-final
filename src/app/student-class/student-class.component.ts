@@ -31,7 +31,11 @@ export class StudentClassComponent implements OnInit {
 
   deleteStudentClass(id:number) {
 
-    let dialogRef = this.dialog.open(DeleteConfirmComponent);
+    let dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if(result){

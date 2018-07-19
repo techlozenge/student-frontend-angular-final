@@ -31,6 +31,7 @@ import { MajorClassFormComponent }   from '../major-class-form/major-class-form.
 
 
 import { HomeComponent }   from '../home/home.component';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -65,7 +66,9 @@ const routes: Routes = [
 
   { path: 'major-class',  component: MajorClassComponent },
   { path: 'major-class/edit/:id', component: MajorClassFormComponent },
-  { path: 'major-class/add', component: MajorClassFormComponent }
+  { path: 'major-class/add', component: MajorClassFormComponent },
+
+  { path: 'delete-confirm', component: DeleteConfirmComponent}
 
 ];
  
