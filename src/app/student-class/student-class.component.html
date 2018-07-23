@@ -34,7 +34,7 @@
       <td>{{student_class.class?.subject + " " + student_class.class?.course}}</td>
       <td class="text-center">
         <a class="btn btn-primary" [routerLink]="['/student-class/edit/', student_class.student_class_id]">Edit</a>&nbsp;
-        <button (click)="deleteStudentClass(student_class.student_class_id)" class="btn btn-danger">Delete</button>
+        <button (click)="deleteStudentClass(student_class.student_class_id, student_class.student.first_name + ' ' + student_class.student.last_name + ' in ' + student_class.class.subject + ' ' + student_class.class.course)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

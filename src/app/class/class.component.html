@@ -36,7 +36,7 @@
       <td>{{classy.course}}</td>
       <td class="text-center">
         <a class="btn btn-primary" [routerLink]="['/class/edit/', classy.class_id]">Edit</a>&nbsp;
-        <button (click)="deleteClass(classy.class_id)" class="btn btn-danger">Delete</button>
+        <button (click)="deleteClass(classy.class_id, classy.instructor.first_name + ' ' + classy.instructor.last_name)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

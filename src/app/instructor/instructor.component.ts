@@ -29,11 +29,12 @@ export class InstructorComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-  deleteInstructor(id:number) {
+  deleteInstructor(id:number, str:string) {
 
     let dialogRef = this.dialog.open(DeleteConfirmComponent, {
       data: {
-        dataKey: id
+        dataKey: id,
+        value: str
       }
     });
 

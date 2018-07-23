@@ -29,11 +29,12 @@ export class AssignmentComponent implements OnInit {
         error =>  this.errorMessage = <any>error);  
   }
 
-  deleteAssignment(id:number) {
+  deleteAssignment(id:number, str:string) {
 
     let dialogRef = this.dialog.open(DeleteConfirmComponent, {
       data: {
-        dataKey: id
+        dataKey: id,
+        value: str
       }
     });
 

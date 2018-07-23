@@ -33,7 +33,7 @@
       <td>{{grade.grade}}</td>
       <td class="text-center">
         <a class="btn btn-primary" [routerLink]="['/grade/edit/', grade.grade_id]">Edit</a>&nbsp;
-        <button (click)="deleteGrade(grade.grade_id)" class="btn btn-danger">Delete</button>
+        <button (click)="deleteGrade(grade.grade_id, grade.grade)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

@@ -40,7 +40,7 @@
       <td>{{instructor?.tenured}}</td>
       <td class="text-center">
         <a class="btn btn-primary" [routerLink]="['/instructor/edit/', instructor.instructor_id]">Edit</a>&nbsp;
-        <button (click)="deleteInstructor(instructor.instructor_id)" class="btn btn-danger">Delete</button>
+        <button (click)="deleteInstructor(instructor.instructor_id, instructor.first_name + ' ' + instructor.last_name)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>

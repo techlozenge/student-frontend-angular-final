@@ -2,10 +2,10 @@
 
 <body>
   <div class="ui-dialog">
-    <mat-dialog-content class="ui-dialog-content">Are you sure you want to delete record {{data.dataKey}}?</mat-dialog-content>
-    <mat-dialog-actions class="btn-group">
-      <button class="btn" mat-button mat-dialog-close>No</button>
-      <button class="btn" mat-button [mat-dialog-close]="true">Yes</button>
+    <mat-dialog-content class="ui-dialog-content">Are you sure you want to delete record #{{data.dataKey}} / {{data.value}}?</mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="btn" mat-button mat-dialog-close>CANCEL</button>
+      <button class="btn" mat-button [mat-dialog-close]="true">SUBMIT</button>
     </mat-dialog-actions>
   </div>
 </body>

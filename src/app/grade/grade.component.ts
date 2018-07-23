@@ -29,11 +29,11 @@ export class GradeComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-  deleteGrade(id:number) {
-
+  deleteGrade(id:number, str:string) {
     let dialogRef = this.dialog.open(DeleteConfirmComponent, {
       data: {
-        dataKey: id
+        dataKey: id,
+        value: str
       }
     });
 

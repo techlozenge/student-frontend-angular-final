@@ -29,11 +29,12 @@ export class MajorComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-  deleteMajor(id:number) {
+  deleteMajor(id:number, str:string) {
 
     let dialogRef = this.dialog.open(DeleteConfirmComponent, {
       data: {
-        dataKey: id
+        dataKey: id,
+        value: str
       }
     });
 

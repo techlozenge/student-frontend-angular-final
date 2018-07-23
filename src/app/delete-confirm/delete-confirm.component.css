@@ -6,18 +6,12 @@
     font-weight: bold;
     border: 2px solid gray;
     padding: 30px;
+    text-align: center;
 }
 
 .ui-dialog-content {
     color: red;
     font-size: 1.5em;
-    margin: 0px;
-    padding: 0px;
-}
-
-.btn-group {
-    padding-top: 55px;
-    padding-left: 150px;
 }
 
 .btn {

@@ -37,7 +37,7 @@
 
       <td class="text-center">
         <a class="btn btn-primary" [routerLink]="['/major-class/edit/', major_class.major_class_id]">Edit</a>&nbsp;
-        <button (click)="deleteMajorClass(major_class.major_class_id)" class="btn btn-danger">Delete</button>
+        <button (click)="deleteMajorClass(major_class.major_class_id, major_class.class?.subject + ' ' + major_class.class?.course)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
   </tbody>
