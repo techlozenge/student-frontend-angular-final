@@ -1,4 +1,6 @@
 
+
+
 npm install bootstrap@4.0.0-beta.2 --save --save-exact
 
 
@@ -36,3 +38,13 @@ You need to add the jQuery and DataTables typings:
 
 npm install @types/jquery --save
 npm install @types/datatables.net --save
+
+_____________________________________________________
+USING LOCAL STORAGE
+
+localStorage.setItem('email', student.value.email);
+console.log("saveStudent() - Email is: " + student.value.email);
+this.email = localStorage.getItem('email') || null;
+
+localStorage.setItem("currentUser", JSON.stringify(recruiter))
+var recruiterInfo = localStorage.getItem('currentUser');
