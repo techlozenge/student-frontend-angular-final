@@ -58,15 +58,15 @@ table.table tbody td {
 
 h1 {
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 35px;
     margin-bottom: 5px;
     font-size: 40px;
     font-style: bold;
 }
 
 hr {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 10px;
+    margin-right: 50px;
     margin-top: 0px;
     margin-bottom: 0px;
     border-top: 3px double #8c8b8b;
@@ -81,7 +81,7 @@ footer {
 }
 
 .container {
-    margin-left: 10px;
+    margin-left: 15px;
     margin-top: 0px;
     padding-top: 0px;
 }
@@ -90,6 +90,11 @@ footer {
     width: 350px;
     margin-left: 85px;
 }
+
+/* .col-lg-4 {
+    width: 350px;
+    margin-left: 55px;
+} */
 
 .messages {
     width: 250px;

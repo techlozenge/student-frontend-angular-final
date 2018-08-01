@@ -27,17 +27,17 @@ export class StudentComponent implements OnInit {
   constructor (private dataService: DataService, public dialog: MatDialog) {}
  
   ngOnInit(): void {
-    this.dtOptions = {
-      paging: true,
-      searching: true,
-      info: true,
-      dom: 'Bfrtlip',
-      buttons: [
-        'copy',
-        'print',
-        'excel'
-      ]
-    }
+    // this.dtOptions = {
+    //   paging: true,
+    //   searching: true,
+    //   info: true,
+    //   dom: 'Bfrtlip',
+    //   buttons: [
+    //     'copy',
+    //     'print',
+    //     'excel'
+    //   ]
+    // }
     this.getStudents();
   }
  

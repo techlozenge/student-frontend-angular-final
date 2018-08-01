@@ -1,35 +1,25 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-                <li routerLinkActive="active"><a routerLink="/student" >Students</a></li>
-                <li routerLinkActive="active"><a routerLink="/grade" >Grades</a></li>
-                <li routerLinkActive="active"><a routerLink="/class" >Classes</a></li>
-                <li routerLinkActive="active"><a routerLink="/assignment" >Assignments</a></li>
-                <li routerLinkActive="active"><a routerLink="/instructor" >Instructors</a></li>
-                <li routerLinkActive="active"><a routerLink="/major" >Majors</a></li>
-                <li routerLinkActive="active"><a routerLink="/major-class" >Major Class</a></li>
-                <li routerLinkActive="active"><a routerLink="/student-class" >Student Class</a></li>
-            </ul>
-            <div class="navbar-form navbar-right">
-                <div class="input-group">
-                    <input id="srchText" type="text" autofocus="autofocus" class="form-control" placeholder="Search the Web">
-                    <span class="input-group-btn">
-                        <button id="srchButton" type="submit" class="btn btn-default">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/home">Home </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/student" >Students </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/grade" >Grades </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/class" >Classes </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/assignment" >Assignments </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/instructor" >Instructors </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/major" >Majors </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/major-class" >Major-Class </a></li>
+                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/student-class" >Student-Class </a></li>
+        </ul>
+        <div class="form-inline ml-auto">
+            <div class="input-group">
+                <input id="srchText" type="text" autofocus="autofocus" class="form-control" placeholder="Search the Web"> 
+                <span class="input-group-btn">
+                    <button id="srchButton" type="submit" class="btn btn-secondary">
+                    <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
             </div>
         </div>
     </div>
-  </nav>
+</nav>
