@@ -1,4 +1,4 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 table.table {
     width: auto;
@@ -11,12 +11,13 @@ table.table {
 
 /** only for the body of the table. */
 table.table tbody td {
-    padding: 5px;
+    padding: 2px;
 }
 
-#srchText {
+/* #srchText {
     width: 150px;
-}
+    height: 38px;
+} */
 
 .wrapper{
   position:relative;
@@ -40,21 +41,21 @@ table.table tbody td {
 
 #styler {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 35px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
     padding: 0px;
 }
 
-.breadcrumb {
+/* .breadcrumb {
     color: black;
     float: left;
     padding-left: 0px;
     margin-left: 0px;
     margin-top: 50px;
     margin-bottom: 5px;
-}
+} */
 
 h1 {
     padding: 0px;
@@ -91,10 +92,50 @@ footer {
     margin-left: 85px;
 }
 
-/* .col-lg-4 {
-    width: 350px;
-    margin-left: 55px;
+.srch-form {
+    margin-top: 6px;
+}
+
+/* .navbar {
+    margin: 0;
 } */
+
+.navbar {
+    min-height: 40px;
+  }
+  
+  .navbar-brand {
+    padding: 0 15px;
+    height: 80px;
+    line-height: 80px;
+  }
+  
+  .navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 23px;
+    padding: 9px 10px !important;
+  }
+  
+
+/* LINK STYLING */
+a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-style: bold;
+}
+  
+a:active {
+    color: black;
+}
+
+/* RESPONSE MESSAGE STYLING */
 
 .messages {
     width: 250px;

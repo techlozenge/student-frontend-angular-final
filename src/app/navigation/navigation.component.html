@@ -1,25 +1,27 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+<nav class="navbar navbar-collapse navbar-toggleable-md navbar-dark bg-dark fixed-top navbar-expand-md" role="navigation">
+    <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/home">Home </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/student" >Students </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/grade" >Grades </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/class" >Classes </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/assignment" >Assignments </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/instructor" >Instructors </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/major" >Majors </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/major-class" >Major-Class </a></li>
-                <li class="w-18 p-2" routerLinkActive="active"><a routerLink="/student-class" >Student-Class </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/home">Home</a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/student" >Students </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/grade" >Grades </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/class" >Classes </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/assignment" >Assignments </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/instructor" >Instructors </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/major" >Majors </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/major-class" >Major-Class </a></li>
+                <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/student-class" >Student-Class </a></li>
         </ul>
-        <div class="form-inline ml-auto">
-            <div class="input-group">
-                <input id="srchText" type="text" autofocus="autofocus" class="form-control" placeholder="Search the Web"> 
-                <span class="input-group-btn">
-                    <button id="srchButton" type="submit" class="btn btn-secondary">
-                    <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
+
+        <div class="form-inline ml-auto srch-form">
+            <form (ngSubmit)="doWebSearch(srchtext)" #searchForm="ngForm">
+                <div class="input-group mb-3">
+                    <input [(ngModel)]="srchtext" id="srchText" name="srchtext" type="text" [(ngModel)]="srchtext" autofocus="autofocus" placeholder="Search the Web"> 
+                    <span class="input-group-append">
+                        <button id="srchButton" type="submit" class="btn btn-outline-secondary">SEARCH</button>
+                    </span>
+                </div>
+            </form>
         </div>
+
     </div>
 </nav>

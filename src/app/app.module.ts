@@ -30,7 +30,9 @@ import { MajorComponent } from './major/major.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { ClassComponent } from './class/class.component';
 
-import { DataTablesModule } from 'angular-datatables';
+//import { DataTablesModule } from 'angular-datatables';
+// also removed DataTablesModule from 'imports'
+
 
 @NgModule({
   declarations: [
@@ -61,8 +63,7 @@ import { DataTablesModule } from 'angular-datatables';
     HttpModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    FormsModule,
-    DataTablesModule
+    FormsModule
   ],
   entryComponents: [DeleteConfirmComponent],
   providers: [DataService],

@@ -17,8 +17,6 @@ import 'rxjs/add/operator/map';
 })
 export class StudentComponent implements OnInit {
 
-  dtOptions: any = {};
-  dtTrigger: Subject<any> = new Subject();
   errorMessage: string;
   successMessage: string;
   students: any[];
@@ -27,17 +25,6 @@ export class StudentComponent implements OnInit {
   constructor (private dataService: DataService, public dialog: MatDialog) {}
  
   ngOnInit(): void {
-    // this.dtOptions = {
-    //   paging: true,
-    //   searching: true,
-    //   info: true,
-    //   dom: 'Bfrtlip',
-    //   buttons: [
-    //     'copy',
-    //     'print',
-    //     'excel'
-    //   ]
-    // }
     this.getStudents();
   }
  
