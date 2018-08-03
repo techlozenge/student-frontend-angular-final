@@ -6,8 +6,12 @@ This project administers a relatively straightforward school database.
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
 
 ![Admin SS](./Student-Admin-SS.png)
-Format: ![Admin SS](./)
 
+![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
+
+![Admin SS Student Inq](./Student-Admin-SS-Edit.png)
+
+# Change Log
 
 # 2018-3-3: 
 Converted to Angular 5 & misc. bug fixes 
