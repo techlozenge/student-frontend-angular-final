@@ -5,7 +5,16 @@ This project administers a relatively straightforward school database.
 
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
 
-* Landing Page
+* Starting the Application
+    * Backend CLI: sails lift (listens on port 3700)
+    * Frontend CLI: ng serve --open (listens on port 4200)
+
+* Application Styling
+    * Angular 5 
+    * Bootstrap 4
+    * styles.css
+
+* Application Landing Page
     * Home
 
 * Admin Components: 
@@ -27,19 +36,19 @@ The application leverages a MySQL database accessed via API calls to a separate 
     * Student-Class Cross-ref Form
 
 * Navigation Component
-    * Navigation (includes web search method)
+    * Navigation (includes web search method in nav bar)
 
 * Animations
     * fade-in-animation
 
 * Service
-    * data.service (performs all low-level API calls)
+    * data.service (all low-level API calls)
 
 * Routing
     * routine.module
 
 * Popup Dialog
-    delete-comfirm.component
+    * delete-comfirm.component
 
 Change log below screen shots.
 
