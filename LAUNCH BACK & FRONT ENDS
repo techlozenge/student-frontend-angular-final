@@ -1,18 +1,14 @@
-
-
 Backend
 
-    Data is stored in the Student_api Mysql database
-    Locally, go to /Users/danford/google drive/gfc/gfc work/javascript/sql
-    Then go to sails-student-api
+    Data is stored locally in a MySQL database
+    Go to the Sails project API folder (on local, sails-student-api)
     Launch Sails: sails lift
-    This will start the Student API listening on the Backend
+    This will start the Student API listening on port 3700
 
 Frontend
 
-    This is a web frontend using Angular 2
-    Locally, go to /Users/danford/Large-GFC-Work/angular/student-frontend-angular-final
-    Launch the Angular server: ng serve --open
+    The frontend is pure Angular 5
+    Locally, Angular project folder and perform: ng serve --open
     When you receive the "webpack: Compiled successfully." message the server is up
-    A window will open in the default browser showing the Student landing page
+    A window will open in the default browser showing the landing page
 

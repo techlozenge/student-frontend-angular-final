@@ -1,9 +1,47 @@
-# Angular 5 Goodness CRUD Administration System
+# Pure Angular 5 Goodness CRUD Administration System
 
 # Description:
 This project administers a relatively straightforward school database.
 
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
+
+* Landing Page
+    * Home
+
+* Admin Components: 
+    * Student
+    * Student Form
+    * Grades
+    * Grades Form
+    * Classes
+    * Classes Form
+    * Assignments
+    * Assignments Form
+    * Instructors
+    * Instructors Form
+    * Majors
+    * Majors Form
+    * Major-Class Cross-ref
+    * Major-Class Cross-ref Form
+    * Student-Class Cross-ref
+    * Student-Class Cross-ref Form
+
+* Navigation Component
+    * Navigation (includes web search method)
+
+* Animations
+    * fade-in-animation
+
+* Service
+    * data.service (performs all low-level API calls)
+
+* Routing
+    * routine.module
+
+* Popup Dialog
+    delete-comfirm.component
+
+Change log below screen shots.
 
 ![Admin SS](./Student-Admin-SS.png)
 
