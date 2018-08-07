@@ -5,6 +5,10 @@ Backend
     Launch Sails: sails lift
     This will start the Student API listening on port 3700
 
+    NOTE: As long as the data is compatible, you can modify the baseurl in data.service.ts: private baseUrl = 'http://localhost:1337/'
+
+    So a request to get the students is http://localhost:1337/student
+
 Frontend
 
     The frontend is pure Angular 5
