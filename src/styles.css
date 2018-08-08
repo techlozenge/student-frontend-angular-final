@@ -5,19 +5,15 @@ table.table {
     margin:0 auto;
 }
 
-/* table {
-    margin-top: 10px;
-} */
-
 /** only for the body of the table. */
 table.table tbody td {
     padding: 8px;
 }
 
-/* #srchText {
-    width: 150px;
-    height: 38px;
-} */
+/** aligning the button with the text box */
+.btn-block {
+    padding-top: 4px;
+}
 
 .wrapper{
   position:relative;

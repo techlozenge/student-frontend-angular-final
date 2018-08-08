@@ -1,6 +1,6 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-sm" role="navigation">
+<nav style="height: 55px;" class="navbar navbar-collapse navbar-toggleable-md navbar-dark bg-dark fixed-top navbar-expand-sm" role="navigation">
     <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
                 <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/home">Home</a></li>
                 <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/student" >Students </a></li>
                 <li class="w-16 p-2" routerLinkActive="active"><a routerLink="/grade" >Grades </a></li>
@@ -14,11 +14,14 @@
 
         <div class="form-inline ml-auto srch-form">
             <form (ngSubmit)="doWebSearch(srchtext)" #searchForm="ngForm">
-                <div class="input-group mb-3">
+                <div class="input-group" style="padding: 0; margin-top: 2px; margin-bottom: 3px;">
+
                     <input [(ngModel)]="srchtext" id="srchText" name="srchtext" type="text" [(ngModel)]="srchtext" autofocus="autofocus" placeholder="Search the Web"> 
+
                     <span class="input-group-append">
-                        <button id="srchButton" type="submit" class="btn btn-outline-secondary">SEARCH</button>
+                        <button id="srchButton" type="submit" class="btn btn-block btn-info">SEARCH</button>
                     </span>
+
                 </div>
             </form>
         </div>
