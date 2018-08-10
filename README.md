@@ -1,4 +1,4 @@
-# Pure Angular 5 Goodness CRUD Administration System
+# Angular 5 Goodness CRUD Frontend Admin System
 
 # _________________________________________________________________
 # Description:
@@ -8,7 +8,9 @@ This project administers a relatively straightforward school database.
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
 
 * Starting the Application
-    * Backend CLI: sails lift (listens on port 3700)
+    * Backend CLI: Not Included Here however, I use 'sails lift (listens on port 3700)'
+        * As long as you're using RESTful API calls you can use any end-point. Simply modify the frontend to match the response data.
+
     * Frontend CLI: ng serve --open (listens on port 4200)
 
 * Application Styling
@@ -18,6 +20,9 @@ The application leverages a MySQL database accessed via API calls to a separate 
 
 * Application Landing Page
     * Home
+
+* Navigation Component
+    * Navigation (includes web search method in nav bar)
 
 * Admin Components: 
     * Student
@@ -36,9 +41,6 @@ The application leverages a MySQL database accessed via API calls to a separate 
     * Major-Class Cross-ref Form
     * Student-Class Cross-ref
     * Student-Class Cross-ref Form
-
-* Navigation Component
-    * Navigation (includes web search method in nav bar)
 
 * Animations
     * fade-in-animation
