@@ -63,15 +63,23 @@ Change log below screen shots.
 # Helpful Links
 
 npmjs.com: https://www.npmjs.com/
+
 Regexr: http://regexr.com/
+
 Postman: https://www.getpostman.com/
+
 PlaceHolder Images: https://placeholder.com/
+
 MDN: https://developer.mozilla.org/en-US/
 
 Programmable Web: https://www.programmableweb.com/category/all/apis
+
 MD5 Hash Generator: http://www.md5hashgenerator.com/
+
 Placeholder Images: https://placeholder.com/
+
 Google Hosted Libraries: https://developers.google.com/speed/libraries/
+
 
 # Change Log
 
