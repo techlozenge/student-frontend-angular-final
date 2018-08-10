@@ -1,7 +1,12 @@
-# Pure Angular 5 Goodness CRUD Administration System
+# Pure Angular 5 Goodness CRUD Administration System (Template)
 
+# _______________________________________________________________________________
 # Description:
-This project administers a relatively straightforward school database.
+This project administers a relatively straightforward school database. 
+
+Angular 5
+Bootstrap 4
+Uses REST
 
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
 
@@ -60,33 +65,36 @@ Change log below helpful links section.
 
 ![Admin SS Student Inq](./Student-Admin-SS-Del.png)
 
+# _______________________________________________________________________________
 # Helpful Links
 
-Bootstrap Bootply: http://upgrade-bootstrap.bootply.com/ (Convert BS3 to BS4)
-npmjs.com: https://www.npmjs.com/
-Angular: https://angular.io/guide/quickstart
-Sails: https://sailsjs.com/get-started
-MySQL: https://www.mysql.com/
+[Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) (Converts BS3 to BS4)
 
-Regexr: http://regexr.com/
+[npmjs.com](https://www.npmjs.com/)
 
-Postman: https://www.getpostman.com/
+[Angular](https://angular.io/guide/quickstart)
 
-PlaceHolder Images: https://placeholder.com/
+[Sails](https://sailsjs.com/get-started)
 
-MDN: https://developer.mozilla.org/en-US/
+[MySQL](https://www.mysql.com/)
 
-Programmable Web: https://www.programmableweb.com/category/all/apis
+[Regular Expressions](http://regexr.com/)
 
-MD5 Hash Generator: http://www.md5hashgenerator.com/
+[Postman](https://www.getpostman.com/)
 
-Placeholder Images: https://placeholder.com/
+[PlaceHolder Images](https://placeholder.com/)
 
-Google Hosted Libraries: https://developers.google.com/speed/libraries/
+[Mozilla Developer Network](https://developer.mozilla.org/en-US/)
 
-CSS3 Button Generator: https://www.designrush.com/resources/css3buttongenerator
+[Programmable Web](https://www.programmableweb.com/category/all/apis)
 
+[MD5 Hash Generator](http://www.md5hashgenerator.com/)
 
+[Google Hosted Libraries](https://developers.google.com/speed/libraries/)
+
+[CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
+
+# _______________________________________________________________________________
 # Change Log
 
 ## 2018-3-3: 
@@ -104,5 +112,6 @@ Included a string along with the id in the Delete Confirm Component so the popup
 ## 2018-8-3: 
 Upgrading to Bootstrap 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar.
 
-## WIP: 
+## WI (August 2018)P: 
 Continuing Bootstrap 4 upgrades. 
+Adding simple ascending/descending table column sorts
