@@ -50,7 +50,7 @@ The application leverages a MySQL database accessed via API calls to a separate 
 * Popup Dialog
     * delete-comfirm.component
 
-Change log below screen shots.
+Change log below helpful links section.
 
 ![Admin SS](./Student-Admin-SS.png)
 
@@ -62,7 +62,11 @@ Change log below screen shots.
 
 # Helpful Links
 
+Bootstrap Bootply: http://upgrade-bootstrap.bootply.com/ (Convert BS3 to BS4)
 npmjs.com: https://www.npmjs.com/
+Angular: https://angular.io/guide/quickstart
+Sails: https://sailsjs.com/get-started
+MySQL: https://www.mysql.com/
 
 Regexr: http://regexr.com/
 
@@ -79,6 +83,8 @@ MD5 Hash Generator: http://www.md5hashgenerator.com/
 Placeholder Images: https://placeholder.com/
 
 Google Hosted Libraries: https://developers.google.com/speed/libraries/
+
+CSS3 Button Generator: https://www.designrush.com/resources/css3buttongenerator
 
 
 # Change Log
