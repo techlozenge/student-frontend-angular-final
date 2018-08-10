@@ -1,6 +1,6 @@
 # Pure Angular 5 Goodness CRUD Administration System (Template)
 
-# _______________________________________________________________________________
+# ___________________________________________________________________
 # Description:
 This project administers a relatively straightforward school database. 
 
@@ -65,36 +65,29 @@ Change log below helpful links section.
 
 ![Admin SS Student Inq](./Student-Admin-SS-Del.png)
 
-# _______________________________________________________________________________
+# ___________________________________________________________________
 # Helpful Links
 
-[Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) (Converts BS3 to BS4)
+*[Angular](https://angular.io/guide/quickstart)
+*[Sails](https://sailsjs.com/get-started)
+*[MySQL](https://www.mysql.com/)
+*[npmjs.com](https://www.npmjs.com/)
+*[Sequel PRO](https://www.sequelpro.com/) Database Administrator
+*[Postman](https://www.getpostman.com/)
+*[Homebrew](https://docs.brew.sh/) The missing package manager for macOS
+*[Gulp](https://gulpjs.com/) Automate tasks in your workflow
+*[Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
+*[Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
+*[Regular Expressions](http://regexr.com/)
+*[Loading.io](https://loading.io/) Build your own AJAX loading icons
+*[PlaceHolder Images](https://placeholder.com/)
+*[Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+*[Programmable Web](https://www.programmableweb.com/category/all/apis)
+*[MD5 Hash Generator](http://www.md5hashgenerator.com/)
+*[Google Hosted Libraries](https://developers.google.com/speed/libraries/)
+*[CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
 
-[npmjs.com](https://www.npmjs.com/)
-
-[Angular](https://angular.io/guide/quickstart)
-
-[Sails](https://sailsjs.com/get-started)
-
-[MySQL](https://www.mysql.com/)
-
-[Regular Expressions](http://regexr.com/)
-
-[Postman](https://www.getpostman.com/)
-
-[PlaceHolder Images](https://placeholder.com/)
-
-[Mozilla Developer Network](https://developer.mozilla.org/en-US/)
-
-[Programmable Web](https://www.programmableweb.com/category/all/apis)
-
-[MD5 Hash Generator](http://www.md5hashgenerator.com/)
-
-[Google Hosted Libraries](https://developers.google.com/speed/libraries/)
-
-[CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
-
-# _______________________________________________________________________________
+# ___________________________________________________________________
 # Change Log
 
 ## 2018-3-3: 
