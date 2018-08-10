@@ -1,0 +1,14 @@
+The dollar sign is commonly used as a shortcut to the function document.getElementById().
+
+It is, however, sometimes used by convention on the end of a var name to indicate that a variable holds an Observable or that a function will return an Observable.
+
+
+Well, as JavaScript developers know, there are some interesting particularities to this quirky language. One of the major ones is that JavaScript, by design, is single-threaded. That makes handling asynchronous data streams a little challenging. The way it works is by means of an Event Loop, which is well-explained here: https://medium.com/@fay_jai/what-is-the-javascript-event-loop-98707ed20a90 
+
+In brief:
+
+Each line of a JavaScript program processes synchronously within a Call Stack. If you need a visual, think of the Call Stack as the soup pot in which elements are progressively added to build up a browser-based program.
+
+If any of the elements within the Call Stack are written as asynchronous callback functions – that is, they aren’t intended to be processed until later – that function is then placed in an Event Table, where it is queued for processing (e.g. put back into the Call Stack) later. The Event Table is like a cutting board where JavaScript functions are readied for future processing.
+
+The process that checks whether an event is ready to be moved out of the Event Table and into the Call Stack for processing is called the Event Loop. The Event Loop is like a chef, ushering functions from Table to Stack (from cutting board to soup pot). Leveraging this model of “parking” asynchronous functions in the Event Table stops code from blocking the browser by continuing its process of processing the data and displaying it, as the Event Loop handles automatically pushing processable functions back to the Call Stack.

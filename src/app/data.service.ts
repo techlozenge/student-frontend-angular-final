@@ -73,8 +73,7 @@ export class DataService {
                     errMsg = errorJSON.message;
                 } 
             }
-        }
-        
+        }    
         return Observable.throw(errMsg);
     }
 
