@@ -5,12 +5,6 @@
 
 This project administers a relatively straightforward school database. 
 
-*Angular 5
-
-*Bootstrap 4
-
-*REST API Calls
-
 The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
 
 * Starting the Application
@@ -71,28 +65,29 @@ Change log below helpful links section.
 # _________________________________________________________________
 # Helpful Links
 
-*Technology Stack
-    *[Angular](https://angular.io/guide/quickstart)
-    *[Sails](https://sailsjs.com/get-started)
-    *[MySQL](https://www.mysql.com/)
+* Technology Stack
+    * [Angular](https://angular.io/guide/quickstart)
+    * [Sails](https://sailsjs.com/get-started)
+    * [MySQL](https://www.mysql.com/)
 
-*Tools
-    *[npmjs.com](https://www.npmjs.com/)
-    *[Sequel PRO](https://www.sequelpro.com/) Database Administrator
-    *[Postman](https://www.getpostman.com/)
-    *[iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
-    *[Homebrew](https://docs.brew.sh/) The missing package manager for macOS
-    *[Gulp](https://gulpjs.com/) Automate tasks in your workflow
-    *[Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
-    *[Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
-    *[Regular Expressions](http://regexr.com/)
-    *[Loading.io](https://loading.io/) Build your own AJAX loading icons
-    *[PlaceHolder Images](https://placeholder.com/)
-    *[Mozilla Developer Network](https://developer.mozilla.org/en-US/)
-    *[Programmable Web](https://www.programmableweb.com/category/all/apis)
-    *[MD5 Hash Generator](http://www.md5hashgenerator.com/)
-    *[Google Hosted Libraries](https://developers.google.com/speed/libraries/)
-    *[CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
+* Tools
+    * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
+    * [Sequel PRO](https://www.sequelpro.com/) Database Administrator
+    * [Postman](https://www.getpostman.com/) complete API development environment for API developers (performs GET, POST, DELETE, etc API calls)
+    * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
+    * [Homebrew](https://docs.brew.sh/) The missing package manager for macOS
+    * [Gulp](https://gulpjs.com/) Automate tasks in your workflow
+    * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
+    * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
+    * [Regular Expressions](http://regexr.com/) Pattern matching on steroids. Lots of steroids
+    * [lorem ipsum generator](https://loremipsum.io/) Generate placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+    * [Loading.io](https://loading.io/) Build your own AJAX loading icons
+    * [PlaceHolder Images](https://placeholder.com/) Link your page to their blank images
+    * [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+    * [Programmable Web](https://www.programmableweb.com/category/all/apis)
+    * [MD5 Hash Generator](http://www.md5hashgenerator.com/)
+    * [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
+    * [CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
 
 # _________________________________________________________________
 # Change Log
