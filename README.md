@@ -67,20 +67,26 @@ Change log below helpful links section.
 # _________________________________________________________________
 # Helpful Links
 
-* Technology Stack
+* Stack
     * [Angular](https://angular.io/guide/quickstart)
     * [Sails](https://sailsjs.com/get-started)
-    * [MySQL](https://www.mysql.com/)
+    * [MySQL](https://www.mysql.com/) Hosted on my local to simulate API calls but as long as your calls are RESTful, it doesn't matter
 
-* Tools
+* Libraries
+    * [jquery](https://jquery.com/) jQuery is a fast, small, and feature-rich JavaScript library.
+    * [Node.js](https://nodejs.org/en/) Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+    * [Bootstrap 4](https://getbootstrap.com/) Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
+        * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
+        * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
+    * [Datatables.net](https://datatables.net/) Add advanced interaction controls to your HTML tables
+
+* Applications and Web Apps
     * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
+    * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
     * [Sequel PRO](https://www.sequelpro.com/) Database Administrator
     * [Postman](https://www.getpostman.com/) complete API development environment for API developers (performs GET, POST, DELETE, etc API calls)
-    * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
     * [Homebrew](https://docs.brew.sh/) The missing package manager for macOS
     * [Gulp](https://gulpjs.com/) Automate tasks in your workflow
-    * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
-    * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
     * [Regular Expressions](http://regexr.com/) Pattern matching on steroids. Lots of steroids
     * [lorem ipsum generator](https://loremipsum.io/) Generate placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
     * [Loading.io](https://loading.io/) Build your own AJAX loading icons
