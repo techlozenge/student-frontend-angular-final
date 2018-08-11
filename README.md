@@ -79,6 +79,7 @@ Change log below helpful links section.
         * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
         * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
     * [Datatables.net](https://datatables.net/) Add advanced interaction controls to your HTML tables
+    * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free)
 
 * Applications and Web Apps
     * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
@@ -116,5 +117,6 @@ Included a string along with the id in the Delete Confirm Component so the popup
 Upgrading to Bootstrap 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar.
 
 ## WIP (August 2018): 
-Continuing Bootstrap 4 upgrades. 
-Adding simple ascending/descending table column sorts
+Continuing Bootstrap 4 upgrades
+Added simple ascending/descending table column sorts to all tables
+Implemented Font Awesome to replace the glyphicons that were dropped from BS4
