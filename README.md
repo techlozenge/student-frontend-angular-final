@@ -118,5 +118,7 @@ Upgrading to Bootstrap 4. Temporarily removed datatables.net so ensure a clean B
 
 ## WIP (August 2018): 
 Continuing Bootstrap 4 upgrades
+
 Added simple ascending/descending table column sorts to all tables
+
 Implemented Font Awesome to replace the glyphicons that were dropped from BS4
