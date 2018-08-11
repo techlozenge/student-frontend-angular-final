@@ -22,7 +22,9 @@
   <thead class="thead-dark">
     <tr>
       <th>Class ID</th>
-      <th>Instructor Name & Years of Experience</th>
+      <th onclick="sortTable(1)"> <i class="fas fa-sort"></i> <u>Last Name</u></th>
+      <th>First Name</th>
+      <th onclick="sortTable(3)"> <i class="fas fa-sort"></i> <u>Years of Experience</u></th>
       <th>Subject</th>
       <th>Course</th>
       <th>Admin</th>
@@ -31,7 +33,9 @@
   <tbody>
     <tr *ngFor="let classy of classes">
       <td>{{classy.class_id}}</td>
-      <td>{{classy.instructor?.first_name}} {{classy.instructor?.last_name}} {{classy.instructor?.years_of_experience}}</td>
+      <td>{{classy.instructor?.last_name}}</td>   
+      <td>{{classy.instructor?.first_name}}</td>
+      <td>{{classy.instructor?.years_of_experience}}</td>
       <td>{{classy.subject}}</td>
       <td>{{classy.course}}</td>
       <td class="text-center">

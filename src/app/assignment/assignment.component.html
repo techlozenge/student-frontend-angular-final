@@ -22,9 +22,10 @@
   <thead class="thead-dark">
     <tr>
       <th>Assignment ID</th>
-      <th>Student Name</th>
+      <th onclick="sortTable(1)"> <i class="fas fa-sort"></i> <u>Last Name</u></th>
+      <th>First Name</th>
       <th>Assignment Number</th>
-      <th>Grade</th>
+      <th onclick="sortTable(4)"> <i class="fas fa-sort"></i> <u>Grade</u></th>
       <th>Class</th>
       <th>Admin</th>
     </tr>
@@ -32,7 +33,8 @@
   <tbody>
     <tr *ngFor="let assignment of assignments">
       <td>{{assignment.assignment_id}}</td>
-      <td>{{assignment.student?.first_name}} {{assignment.student?.last_name}}</td>
+      <td>{{assignment.student?.last_name}}</td>
+      <td>{{assignment.student?.first_name}}</td>
       <td>{{assignment.assignment_nbr}}</td>
       <td>{{assignment.grade?.grade}}</td>
       <td>{{assignment.class?.subject}} {{assignment.class?.course}}</td>
