@@ -56,7 +56,7 @@ API calls are made to specific end-points to perform CRUD activities on a backen
     * data.service (low-level API calls)
 
 * Routing
-    * routine.module
+    * routing.module
 
 * Popup Dialog
     * delete-comfirm.component
@@ -66,12 +66,16 @@ API calls are made to specific end-points to perform CRUD activities on a backen
 # _________________________________________________________________
 # Screen Shots
 
-Landing Page ![Admin SS](./Student-Admin-SS.png)
+**Landing Page** 
+![Admin SS](./Student-Admin-SS.png)
 
+**Student List**
 ![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
 
+**Student Screen** 
 ![Admin SS Student Inq](./Student-Admin-SS-Edit.png)
 
+**Delete Confirmation Dialog** 
 ![Admin SS Student Inq](./Student-Admin-SS-Del.png)
 
 # _________________________________________________________________
