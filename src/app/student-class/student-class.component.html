@@ -24,7 +24,6 @@
       <th>ID</th>
       <th onclick="sortTable(1)"> <i class="fas fa-sort"></i> <u>Student</u></th>
       <th onclick="sortTable(2)"> <i class="fas fa-sort"></i> <u>Class</u></th>
-      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +32,8 @@
       <td>{{student_class.student?.last_name + ", " + student_class.student?.first_name}}</td>
       <td>{{student_class.class?.subject + " " + student_class.class?.course}}</td>
       <td class="text-center">
-        <a class="btn btn-primary" [routerLink]="['/student-class/edit/', student_class.student_class_id]">Edit</a>&nbsp;
-        <button (click)="deleteStudentClass(student_class.student_class_id, student_class.student.first_name + ' ' + student_class.student.last_name + ' in ' + student_class.class.subject + ' ' + student_class.class.course)" class="btn btn-danger">Delete</button>
+        <a class="btn btn-light" [routerLink]="['/student-class/edit/', student_class.student_class_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteStudentClass(student_class.student_class_id, student_class.student.first_name + ' ' + student_class.student.last_name + ' in ' + student_class.class.subject + ' ' + student_class.class.course)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

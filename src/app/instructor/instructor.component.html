@@ -27,7 +27,6 @@
       <th onclick="sortTable(3)"> <i class="fas fa-sort"></i> <u>Major</u></th>
       <th>Years Experience</th>
       <th>Tenured</th>
-      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -39,8 +38,8 @@
       <td>{{instructor?.years_of_experience}}</td>
       <td>{{instructor?.tenured}}</td>
       <td class="text-center">
-        <a class="btn btn-primary" [routerLink]="['/instructor/edit/', instructor.instructor_id]">Edit</a>&nbsp;
-        <button (click)="deleteInstructor(instructor.instructor_id, instructor.first_name + ' ' + instructor.last_name)" class="btn btn-danger">Delete</button>
+        <a class="btn btn-light" [routerLink]="['/instructor/edit/', instructor.instructor_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteInstructor(instructor.instructor_id, instructor.first_name + ' ' + instructor.last_name)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

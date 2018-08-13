@@ -23,7 +23,6 @@
     <tr>
       <th>ID</th>
       <th onclick="sortTable(1)"> <i class="fas fa-sort"></i> <u>Major</u></th>
-      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -31,8 +30,8 @@
       <td>{{major.major_id}}</td>
       <td>{{major.major}}</td>
       <td class="text-center">
-        <a class="btn btn-primary" [routerLink]="['/major/edit/', major.major_id]">Edit</a>&nbsp;
-        <button (click)="deleteMajor(major.major_id, major.major)" class="btn btn-danger">Delete</button>
+        <a class="btn btn-light" [routerLink]="['/major/edit/', major.major_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteMajor(major.major_id, major.major)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

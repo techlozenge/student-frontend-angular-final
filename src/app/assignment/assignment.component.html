@@ -27,7 +27,6 @@
       <th>Assignment Number</th>
       <th onclick="sortTable(4)"> <i class="fas fa-sort"></i> <u>Grade</u></th>
       <th>Class</th>
-      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -39,8 +38,8 @@
       <td>{{assignment.grade?.grade}}</td>
       <td>{{assignment.class?.subject}} {{assignment.class?.course}}</td>
       <td class="text-center">
-        <a class="btn btn-primary" [routerLink]="['/assignment/edit/', assignment.assignment_id]">Edit</a>&nbsp;
-        <button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)" class="btn btn-danger">Delete</button>
+        <a class="btn btn-light" [routerLink]="['/assignment/edit/', assignment.assignment_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>
