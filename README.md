@@ -1,17 +1,24 @@
-# Angular 5 Goodness CRUD Frontend Admin System
+# Web Frontend Administration System
 
 # _________________________________________________________________
 # Description:
 
-This project administers a relatively straightforward school database. 
+This project administers a relatively straightforward database for educators.
 
-The application leverages a MySQL database accessed via API calls to a separate Sails framework. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running the Sails backend on my local server to simulate web API calls).
+API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend on my local server to simulate actual web API calls).
 
 * Starting the Application
-    * Backend CLI: Not Included Here however, I use 'sails lift (listens on port 3700)'
-        * As long as you're using RESTful API calls you can use any end-point. Simply modify the frontend to match the response data.
 
-    * Frontend CLI: ng serve --open (listens on port 4200)
+    * Backend Sails CLI: (Not included here) I use 'sails lift' (listens on port 3700)
+        * As long as you're using RESTful API calls you can use any end-point. Simply modify the frontend code to match the appropriate response data.
+        * Here are some HTTP calls end-point examples from my local:
+            * http.GET: the students inquiry list: http://localhost:1337/student
+            * http.ADD: a specific student: http://localhost:1337/student
+            * http.GET: fetch a specific student: http://localhost:1337/student/4
+            * http.PUT: update a specific student: http://localhost:1337/student/4
+            * http.DELETE: remove a specific student: http://localhost:1337/student/4
+
+    * Frontend Angular CLI: ng serve --open (listens on port 4200)
 
 * Application Styling
     * Angular 5 
@@ -19,34 +26,34 @@ The application leverages a MySQL database accessed via API calls to a separate 
     * styles.css
 
 * Application Landing Page
-    * Home
+    * home
 
 * Navigation Component
-    * Navigation (includes web search method in nav bar)
+    * navigation. (includes a web search method in nav bar)
 
-* Admin Components: 
-    * Student
+* Admin Components
+    * Students
     * Student Form
     * Grades
     * Grades Form
     * Classes
-    * Classes Form
+    * Classe Form
     * Assignments
-    * Assignments Form
+    * Assignment Form
     * Instructors
-    * Instructors Form
+    * Instructor Form
     * Majors
-    * Majors Form
-    * Major-Class Cross-ref
+    * Major Form
+    * Major-Classes Cross-ref
     * Major-Class Cross-ref Form
-    * Student-Class Cross-ref
+    * Student-Classes Cross-ref
     * Student-Class Cross-ref Form
 
 * Animations
-    * fade-in-animation
+    * Angular 5 fade-in-animation
 
 * Service
-    * data.service (all low-level API calls)
+    * data.service (low-level API calls)
 
 * Routing
     * routine.module
@@ -54,9 +61,12 @@ The application leverages a MySQL database accessed via API calls to a separate 
 * Popup Dialog
     * delete-comfirm.component
 
-Change log below helpful links section.
+**The Change Log is below screen shots & helpful links section**
 
-![Admin SS](./Student-Admin-SS.png)
+# _________________________________________________________________
+# Screen Shots
+
+Landing Page ![Admin SS](./Student-Admin-SS.png)
 
 ![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
 
