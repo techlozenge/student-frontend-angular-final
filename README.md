@@ -1,7 +1,7 @@
 # Web Frontend Administration System
 
 # _________________________________________________________________
-# Description:
+# Description
 
 This project administers a relatively straightforward database for educators.
 

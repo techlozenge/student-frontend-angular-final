@@ -51,6 +51,8 @@ export class MajorFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.major = {};
+
+    this.location.back();
   }
 
 }

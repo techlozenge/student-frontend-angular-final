@@ -81,6 +81,8 @@ export class StudentClassFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.studentclass = {};
+    
+    this.location.back();
   }
 
 }

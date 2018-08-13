@@ -65,6 +65,8 @@ export class InstructorFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.instructor = {};
+
+    this.location.back();
   }
 
   ngAfterViewChecked() {

@@ -65,6 +65,8 @@ export class StudentFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.student = {};
+
+    this.location.back();
   }
 
   ngAfterViewChecked() {

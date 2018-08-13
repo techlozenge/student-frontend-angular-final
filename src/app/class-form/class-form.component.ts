@@ -67,6 +67,8 @@ export class ClassFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.classy = {};
+
+    this.location.back();
   }
 
   ngAfterViewChecked() {

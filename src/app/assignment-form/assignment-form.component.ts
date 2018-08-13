@@ -85,6 +85,8 @@ export class AssignmentFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.assignment = {};    
+
+    this.location.back();
   }
 
   ngAfterViewChecked() {
