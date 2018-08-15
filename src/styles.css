@@ -88,6 +88,10 @@ footer {
     margin-left: 85px;
 }
 
+.card-style {
+    border-left: 1px solid black;
+}
+
 .srch-form {
     margin-top: 6px;
 }

@@ -7,29 +7,40 @@ This project administers a relatively straightforward database for educators.
 
 API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend on my local server to simulate actual web API calls).
 
+Note: This project assumes a working familiarity with Angular and its associated languages and technologies. 
+
 * Starting the Application
 
-    * Backend Sails CLI: (Not included here) I use 'sails lift' (listens on port 3700)
-        * As long as you're using RESTful API calls you can use any end-point. Simply modify the frontend code to match the appropriate response data.
-        * Here are some HTTP calls end-point examples from my local:
-            * http.GET: the students inquiry list: http://localhost:1337/student
-            * http.ADD: a specific student: http://localhost:1337/student
-            * http.GET: fetch a specific student: http://localhost:1337/student/4
-            * http.PUT: update a specific student: http://localhost:1337/student/4
-            * http.DELETE: remove a specific student: http://localhost:1337/student/4
+    * Backend
+        * I use the Sails framework to act as an API server (Not included here) 
+        * From the CLI, use 'sails lift' (listens on port 3700) But ss long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend to match the appropriate request/response data.
+        * Here are some example HTTP calls to end-points:
+            * http.GET: table records listing: http://localhost:1337/student
+            * http.ADD: table record: http://localhost:1337/student
+            * http.GET: fetch record: http://localhost:1337/student/4
+            * http.PUT: update record: http://localhost:1337/student/4
+            * http.DELETE: remove record: http://localhost:1337/student/4
 
     * Frontend Angular CLI: ng serve --open (listens on port 4200)
 
-* Application Styling
+* Framework
     * Angular 5 
-    * Bootstrap 4
-    * styles.css
 
-* Application Landing Page
+*  Authentication
+    * There is currently no authentication built into this system
+
+* Styling
+    * Bootstrap 4
+    * CSS (styles.css)
+
+* Animation
+    * Angular 5 fade-in-animation
+
+* Landing Page
     * home
 
-* Navigation Component
-    * navigation. (includes a web search method in nav bar)
+* Navigation
+    * navigation (includes a web search method in nav bar)
 
 * Admin Components
     * Students
@@ -49,9 +60,6 @@ API calls are made to specific end-points to perform CRUD activities on a backen
     * Student-Classes Cross-ref
     * Student-Class Cross-ref Form
 
-* Animations
-    * Angular 5 fade-in-animation
-
 * Service
     * data.service (low-level API calls)
 
@@ -67,15 +75,19 @@ API calls are made to specific end-points to perform CRUD activities on a backen
 # Screen Shots
 
 **Landing Page** 
+
 ![Admin SS](./Student-Admin-SS.png)
 
 **Student List**
+
 ![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
 
 **Student Screen** 
+
 ![Admin SS Student Inq](./Student-Admin-SS-Edit.png)
 
 **Delete Confirmation Dialog** 
+
 ![Admin SS Student Inq](./Student-Admin-SS-Del.png)
 
 # _________________________________________________________________
@@ -84,7 +96,7 @@ API calls are made to specific end-points to perform CRUD activities on a backen
 * Stack
     * [Angular](https://angular.io/guide/quickstart)
     * [Sails](https://sailsjs.com/get-started)
-    * [MySQL](https://www.mysql.com/) Hosted on my local to simulate API calls but as long as your calls are RESTful, it doesn't matter
+    * [MySQL](https://www.mysql.com/) Hosted on my local to simulate API calls but as long as your calls are RESTful, it doesn't matter how the data is hosted.
 
 * Libraries
     * [jquery](https://jquery.com/) jQuery is a fast, small, and feature-rich JavaScript library.
