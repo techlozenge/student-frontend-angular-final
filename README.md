@@ -13,7 +13,7 @@ Note: This project assumes a working familiarity with Angular and its associated
 
     * Backend
         * I use the Sails framework to act as an API server (Not included here) 
-        * From the CLI, use 'sails lift' (listens on port 3700) But ss long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend to match the appropriate request/response data.
+        * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend to match the appropriate request/response data.
         * Here are some example HTTP calls to end-points:
             * http.GET: table records listing: http://localhost:1337/student
             * http.ADD: table record: http://localhost:1337/student
@@ -148,3 +148,5 @@ Continuing Bootstrap 4 upgrades
 Added simple ascending/descending table column sorts to all tables
 
 Implemented Font Awesome to replace the glyphicons that were dropped from BS4
+
+Updated footer to use Bootstrap 4

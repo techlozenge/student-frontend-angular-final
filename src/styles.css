@@ -17,7 +17,7 @@ table.table tbody td {
 
 .wrapper{
   position:relative;
-  width: 100%;
+  width: 98%;
 }
 
 .big-img{
@@ -31,7 +31,6 @@ table.table tbody td {
   width: 15%;
   border: 5px solid black;
 }
-
 
 /* massages the top hero image */
 
@@ -69,18 +68,18 @@ hr {
     border-top: 3px double #8c8b8b;
 }
 
-footer {
-    background-color: black;
-    color: white;
-    font-style: bold;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
-
 .container {
     margin-left: 15px;
     margin-top: 0px;
     padding-top: 0px;
+}
+
+.container p {
+    width: 75%;
+}
+
+footer {
+    width: 95%;
 }
 
 .col-md-4 {
@@ -96,9 +95,9 @@ footer {
     margin-top: 6px;
 }
 
-/* .navbar {
-    margin: 0;
-} */
+.navbar {
+    width: 100%;
+}
 
 .navbar {
     min-height: 40px;
