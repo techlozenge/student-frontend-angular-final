@@ -94,9 +94,9 @@ Note: This project assumes a working familiarity with Angular and its associated
 # Helpful Links
 
 * Stack
-    * [Angular](https://angular.io/guide/quickstart)
-    * [Sails](https://sailsjs.com/get-started)
-    * [MySQL](https://www.mysql.com/) Hosted on my local to simulate API calls but as long as your calls are RESTful, it doesn't matter how the data is hosted.
+    * [Angular](https://angular.io/guide/quickstart)  - an all-encompassing JavaScript framework that is frequently used by developers all over the world for building web, desktop, and mobile applications.
+    * [Sails](https://sailsjs.com/get-started) - MVC framework for Node.js for building practical, production-ready apps
+    * [MySQL](https://www.mysql.com/) - MySQL is a relational database management system based on SQL. The application is used for a wide range of purposes, including data warehousing, e-commerce, and logging applications. The most common use for mySQL however is for the purpose of a web database
 
 * Libraries
     * [jquery](https://jquery.com/) jQuery is a fast, small, and feature-rich JavaScript library.
@@ -110,6 +110,8 @@ Note: This project assumes a working familiarity with Angular and its associated
 * Applications and Web Apps
     * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
     * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
+    * [Online JSON Validator](http://jsonlint.com/)
+    * [Express](https://expressjs.com/)
     * [Sequel PRO](https://www.sequelpro.com/) Database Administrator
     * [Postman](https://www.getpostman.com/) complete API development environment for API developers (performs GET, POST, DELETE, etc API calls)
     * [Homebrew](https://docs.brew.sh/) The missing package manager for macOS
