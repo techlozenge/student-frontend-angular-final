@@ -3,7 +3,7 @@
 # _________________________________________________________________
 # Description
 
-This project administers a relatively straightforward database for educators.
+This project administers a relatively straightforward database for educators. It can be used as a very detailed template for an Angular 5 based web frontend which can be modified to accomodate user needs.
 
 API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend on my local server to simulate actual web API calls).
 
@@ -111,7 +111,7 @@ Note: This project assumes a working familiarity with Angular and its associated
     * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
     * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
     * [Online JSON Validator](http://jsonlint.com/)
-    * [Express](https://expressjs.com/)
+    * [Express](https://expressjs.com/) A web framework that let’s you structure a web application to handle multiple different http requests at a specific url. Express is a minimal, open source and flexible Node.js web app framework designed to make developing websites, web apps, & API’s much easier.
     * [Sequel PRO](https://www.sequelpro.com/) Database Administrator
     * [Postman](https://www.getpostman.com/) complete API development environment for API developers (performs GET, POST, DELETE, etc API calls)
     * [Homebrew](https://docs.brew.sh/) The missing package manager for macOS
