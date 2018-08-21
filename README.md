@@ -105,7 +105,7 @@ Note: This project assumes a working familiarity with Angular and its associated
         * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
         * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
     * [Datatables.net](https://datatables.net/) Add advanced interaction controls to your HTML tables
-    * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free)
+    * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free) The icons used by this frontend
 
 * Applications and Web Apps
     * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
