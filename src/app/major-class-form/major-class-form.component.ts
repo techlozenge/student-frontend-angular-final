@@ -62,22 +62,21 @@ export class MajorClassFormComponent implements OnInit {
       this.getClasses();
   }
 
-  // "majorclass" in this instance is the form that is passed to this method from the view
-  saveMajorClass(majorclass: NgForm){
-    if(typeof majorclass.value.major_class_id === "number"){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveMajorClass(majorclass: NgForm) {
+    if(typeof majorclass.value.major_class_id === "number") {
       this.dataService.editRecord("major_class", majorclass.value, majorclass.value.major_class_id)
           .subscribe(
-            majorclass => this.successMessage = "Record updated successfully",
+            majorclass => this.location.back(),
             error =>  this.errorMessage = <any>error);
     } else {
       this.dataService.addRecord("major_class", majorclass.value)
           .subscribe(
-            majorclass => this.successMessage = "Record added successfully",
+            majorclass => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.majorclass = {};
-
-    this.location.back();
   }
 
 }

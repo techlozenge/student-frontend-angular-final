@@ -51,24 +51,21 @@ export class ClassFormComponent implements OnInit {
       this.getInstructors();
   }
 
-  saveClass(classy: NgForm){
-    console.log("classy.value.class_id is " + classy.value.class_id);
-    if(typeof classy.value.class_id === "number"){
-      console.log("edit record");
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveClass(classy: NgForm) {
+    if(typeof classy.value.class_id === "number") {
       this.dataService.editRecord("class", classy.value, classy.value.class_id)
           .subscribe(
-            classy => this.successMessage = "Record updated succesfully",
+            classy => this.location.back(),
             error =>  this.errorMessage = <any>error);
-    }else{
-      console.log("add record");
+    } else {
       this.dataService.addRecord("class", classy.value)
           .subscribe(
-            classy => this.successMessage = "Record added succesfully",
+            classy => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.classy = {};
-
-    this.location.back();
   }
 
   ngAfterViewChecked() {

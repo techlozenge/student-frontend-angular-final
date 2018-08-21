@@ -38,21 +38,21 @@ export class MajorFormComponent implements OnInit {
   
   }
 
-  saveMajor(id){
-    if(typeof id === "number"){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveMajor(id) {
+    if(typeof id === "number") {
       this.dataService.editRecord("major", this.major, id)
           .subscribe(
-            major => this.successMessage = "Record updated succesfully",
+            major => this.location.back(),
             error =>  this.errorMessage = <any>error);
-    }else{
+    } else {
       this.dataService.addRecord("major", this.major)
           .subscribe(
-            major => this.successMessage = "Record added succesfully",
+            major => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.major = {};
-
-    this.location.back();
   }
 
 }

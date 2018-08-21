@@ -52,22 +52,38 @@ export class StudentFormComponent implements OnInit {
         this.getMajors();
   }
 
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
   saveStudent(student: NgForm){
-    if(typeof student.value.student_id === "number"){
+    if (typeof student.value.student_id === "number") {
       this.dataService.editRecord("student", student.value, student.value.student_id)
           .subscribe(
-            student => this.successMessage = "Record updated successfully",
+            student => this.location.back(),
             error =>  this.errorMessage = <any>error);
-    }else{
+    } else {
       this.dataService.addRecord("student", student.value)
           .subscribe(
-            student => this.successMessage = "Record added successfully",
+            student => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.student = {};
-
-    this.location.back();
   }
+
+  // saveStudent(student: NgForm){
+  //   if(typeof student.value.student_id === "number"){
+  //     this.dataService.editRecord("student", student.value, student.value.student_id)
+  //         .subscribe(
+  //           student => this.successMessage = "Record updated successfully",
+  //           error =>  this.errorMessage = <any>error);
+  //   }else{
+  //     this.dataService.addRecord("student", student.value)
+  //         .subscribe(
+  //           student => this.successMessage = "Record added successfully",
+  //           error =>  this.errorMessage = <any>error);
+  //   }
+  //   this.student = {};
+  //   this.location.back();
+  // }
 
   ngAfterViewChecked() {
     this.formChanged();

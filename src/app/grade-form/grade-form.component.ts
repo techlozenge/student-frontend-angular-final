@@ -39,21 +39,21 @@ export class GradeFormComponent implements OnInit {
   
   }
 
-  saveGrade(id){
-    if(typeof id === "number"){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveGrade(id) {
+    if(typeof id === "number") {
       this.dataService.editRecord("grade", this.grade, id)
           .subscribe(
-            grade => this.successMessage = "Record updated succesfully",
+            grade => this.location.back(),
             error =>  this.errorMessage = <any>error);
-    }else{
+    } else {
       this.dataService.addRecord("grade", this.grade)
           .subscribe(
-            grade => this.successMessage = "Record added succesfully",
+            grade => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.grade = {};
-
-    this.location.back();
   }
 
 }

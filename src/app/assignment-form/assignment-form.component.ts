@@ -60,7 +60,6 @@ export class AssignmentFormComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-
   ngOnInit() {
     this.route.params
       .subscribe((params: Params) => {
@@ -72,21 +71,21 @@ export class AssignmentFormComponent implements OnInit {
   
   }
 
-  saveAssignment(assignment: NgForm){
-    if(typeof assignment.value.assignment_id === "number"){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveAssignment(assignment: NgForm) {
+    if(typeof assignment.value.assignment_id === "number") {
       this.dataService.editRecord("assignment", assignment.value, assignment.value.assignment_id)
           .subscribe(
-            assignment => this.successMessage = "Record updated succesfully",
+            assignment => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }else{
       this.dataService.addRecord("assignment", assignment.value)
           .subscribe(
-            assignment => this.successMessage = "Record added succesfully",
+            assignment => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.assignment = {};    
-
-    this.location.back();
   }
 
   ngAfterViewChecked() {

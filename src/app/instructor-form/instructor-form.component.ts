@@ -52,21 +52,21 @@ export class InstructorFormComponent implements OnInit {
       this.getMajors();
   }
 
-  saveInstructor(instructor: NgForm){
-    if(typeof instructor.value.instructor_id === "number"){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveInstructor(instructor: NgForm) {
+    if(typeof instructor.value.instructor_id === "number") {
       this.dataService.editRecord("instructor", instructor.value, instructor.value.instructor_id)
           .subscribe(
-            instructor => this.successMessage = "Record updated successfully",
+            instructor => this.location.back(),
             error =>  this.errorMessage = <any>error);
     } else {
       this.dataService.addRecord("instructor", instructor.value)
           .subscribe(
-            instructor => this.successMessage = "Record added successfully",
+            instructor => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.instructor = {};
-
-    this.location.back();
   }
 
   ngAfterViewChecked() {

@@ -7,13 +7,13 @@ import { NgForm } from '@angular/forms';
 
 import { DataService } from '../data.service'
 
-
 @Component({
   selector: 'app-student-class-form',
   templateUrl: './student-class-form.component.html',
   styleUrls: ['./student-class-form.component.css'],
   animations: [fadeInAnimation]
 })
+
 export class StudentClassFormComponent implements OnInit {
 
   successMessage: string;
@@ -25,13 +25,11 @@ export class StudentClassFormComponent implements OnInit {
   students: object[];
   classes: object[];
   
-
   getRecordForEdit(){
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord("student_class", +params['id']))
       .subscribe(studentclass => this.studentclass = studentclass);
   }
-
 
   // methods to populate our dropdowns
     getStudents(){
@@ -47,13 +45,11 @@ export class StudentClassFormComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
-
 
   ngOnInit() {
     this.route.params
@@ -66,23 +62,21 @@ export class StudentClassFormComponent implements OnInit {
       this.getClasses();
   }
 
-
-  // "studentclass" in this instance is the form that is passed to this method from the view
-  saveStudentClass(studentclass: NgForm){
+  // 2018-08-21: If the update or add is successful, send the user back to the list
+  //             otherwise display the error.
+  saveStudentClass(studentclass: NgForm) {
     if(typeof studentclass.value.student_class_id === "number"){
       this.dataService.editRecord("student_class", studentclass.value, studentclass.value.student_class_id)
           .subscribe(
-            studentclass => this.successMessage = "Record updated successfully",
+            studentclass => this.location.back(),
             error =>  this.errorMessage = <any>error);
     } else {
       this.dataService.addRecord("student_class", studentclass.value)
           .subscribe(
-            studentclass => this.successMessage = "Record added successfully",
+            studentclass => this.location.back(),
             error =>  this.errorMessage = <any>error);
     }
     this.studentclass = {};
-    
-    this.location.back();
   }
 
 }

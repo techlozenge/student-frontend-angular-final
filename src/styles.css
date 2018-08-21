@@ -1,5 +1,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+/* TABLES */
+
 table.table {
     width: auto;
     margin: 0 auto;
@@ -8,6 +10,10 @@ table.table {
 /** only for the body of the table. */
 table.table tbody td {
     padding: 8px;
+}
+
+thead {
+    font-variant: small-caps;
 }
 
 /** aligning the button with the text box */
@@ -49,6 +55,11 @@ h1 {
     margin-bottom: 5px;
     font-size: 40px;
     font-style: bold;
+    font-variant: small-caps;
+}
+
+h2 {
+    font-variant: small-caps;
 }
 
 hr {
@@ -91,7 +102,6 @@ footer {
 .navbar-nav {
     font-variant: small-caps;
     padding-left: 15px;
-    /* font-family: fantasy; */
 }
   
   .navbar-brand {
@@ -111,8 +121,8 @@ footer {
     height: 30px;
 }
   
+/* LINKS */
 
-/* LINK STYLING */
 a {
     color: white;
     text-decoration: none;
@@ -132,9 +142,10 @@ a:active {
 /* RESPONSE MESSAGE STYLING */
 
 .messages {
-    width: 250px;
+    width: 300px;
     margin-top: 0;
     border: 2px solid black;
+    font-variant: small-caps;
 }
 
 
