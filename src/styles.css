@@ -2,7 +2,7 @@
 
 table.table {
     width: auto;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 /** only for the body of the table. */
@@ -16,7 +16,7 @@ table.table tbody td {
 }
 
 .wrapper{
-  position:relative;
+  position: relative;
   width: 98%;
 }
 
@@ -25,7 +25,7 @@ table.table tbody td {
 }
   
 .small-img{
-  position:absolute;
+  position: absolute;
   right: 43%;
   top: 63%;
   width: 15%;
@@ -42,15 +42,6 @@ table.table tbody td {
     margin-bottom: 0px;
     padding: 0px;
 }
-
-/* .breadcrumb {
-    color: black;
-    float: left;
-    padding-left: 0px;
-    margin-left: 0px;
-    margin-top: 50px;
-    margin-bottom: 5px;
-} */
 
 h1 {
     padding: 0px;
@@ -79,6 +70,7 @@ hr {
 }
 
 footer {
+    font-variant: small-caps;
     width: 95%;
 }
 
@@ -91,36 +83,39 @@ footer {
     border-left: 1px solid black;
 }
 
-.srch-form {
-    margin-top: 6px;
-}
-
 .navbar {
     width: 100%;
+    min-height: 40px;
 }
 
-.navbar {
-    min-height: 40px;
-  }
+.navbar-nav {
+    font-variant: small-caps;
+    padding-left: 15px;
+    /* font-family: fantasy; */
+}
   
   .navbar-brand {
     padding: 0 15px;
     height: 80px;
     line-height: 80px;
-  }
+}
   
   .navbar-toggle {
     /* (80px - button height 34px) / 2 = 23px */
     margin-top: 23px;
     padding: 9px 10px !important;
-  }
+}
+
+.input-group {
+    /* font-family: fantasy; */
+    height: 30px;
+}
   
 
 /* LINK STYLING */
 a {
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
     font-style: normal;
 }
 
