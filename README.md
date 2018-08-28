@@ -3,9 +3,9 @@
 # _________________________________________________________________
 # Description
 
-This project administers a relatively straightforward database for educators. It can be used as a very detailed template for an Angular 5 based web frontend which can be modified to accomodate user needs.
+This project administers a relatively straightforward remote database. It can be used as a highly detailed template for an Angular 5 based web frontend which can be modified to accomodate user need.
 
-API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend on my local server to simulate actual web API calls).
+API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend for a MySQL database on my local server to simulate actual web API calls).
 
 Note: This project assumes a working familiarity with Angular and its associated languages and technologies. 
 
@@ -22,6 +22,7 @@ Note: This project assumes a working familiarity with Angular and its associated
             * http.DELETE: remove record: http://localhost:1337/student/4
 
     * Frontend Angular CLI: ng serve --open (listens on port 4200)
+    * Note that Angular is currently set to development mode and not production.
 
 * Framework
     * Angular 5 
@@ -30,7 +31,7 @@ Note: This project assumes a working familiarity with Angular and its associated
     * There is currently no authentication built into this system
 
 * Styling
-    * Bootstrap 4
+    * Bootstrap 4 (see index.html)
     * CSS (styles.css)
 
 * Animation
@@ -40,7 +41,7 @@ Note: This project assumes a working familiarity with Angular and its associated
     * home
 
 * Navigation
-    * navigation (includes a web search method in nav bar)
+    * navigation (includes a web search method in the navigation bar)
 
 * Admin Components
     * Students
@@ -55,16 +56,16 @@ Note: This project assumes a working familiarity with Angular and its associated
     * Instructor Form
     * Majors
     * Major Form
-    * Major-Classes Cross-ref
-    * Major-Class Cross-ref Form
-    * Student-Classes Cross-ref
-    * Student-Class Cross-ref Form
+    * Major-Classes Cross-reference
+    * Major-Class Cross-reference Form
+    * Student-Classes Cross-reference
+    * Student-Class Cross-reference Form
 
 * Service
-    * data.service (low-level API calls)
+    * data.service.ts (low-level API calls)
 
 * Routing
-    * routing.module
+    * routing.module.ts
 
 * Popup Dialog
     * delete-comfirm.component
@@ -145,10 +146,12 @@ Included a string along with the id in the Delete Confirm Component so the popup
 Upgrading to Bootstrap 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar.
 
 ## WIP (August 2018): 
-Continuing Bootstrap 4 upgrades
+Completed upgrade to Bootstep 4
 
-Added simple ascending/descending table column sorts to all tables
+Added simple ascending/descending table column sorts to all tables (see assets/js folder)
 
 Implemented Font Awesome to replace the glyphicons that were dropped from BS4
 
-Updated footer to use Bootstrap 4
+Added 'piped' current date to left side of navigation bar
+
+Continuing minor style upgrades... 

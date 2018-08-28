@@ -1,0 +1,82 @@
+The two most common and popular MySQL database engines are MyISAM and InnoDB. MyISAM is the default engine for MySQL for versions earlier than 5.5.5, and functions well in most scenarios. ... InnoDB also provides support for foreign keys, whereas MyISAM does not.
+
+sqlcmd -S myServer\student_api -i C:\myScript.sql.
+
+
+Table: artists
+------------------
+CREATE TABLE `artists` (
+  `artist_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `artist_first_name` varchar(50) DEFAULT NULL,
+  `artist_last_name` varchar(50) DEFAULT NULL,
+  `artist_date_of_birth` date DEFAULT NULL,
+  `artist_date_deceased` date DEFAULT NULL,
+  `artist_description` varchar(511) DEFAULT NULL,
+  PRIMARY KEY (`artist_id`),
+  KEY `genre_id` (`genre_id`),
+  CONSTRAINT `artist_ibfk_1` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`genre_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+Table: albums
+------------------
+CREATE TABLE `albums` (
+  `album_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `album_artist_id` int(11) unsigned DEFAULT NULL,
+  `album_genre_id` int(11) unsigned DEFAULT NULL,
+  `album_title` varchar(255) DEFAULT NULL,
+  `album_date_released` date DEFAULT NULL,
+  `album_description` varchar(511) DEFAULT NULL,
+  PRIMARY KEY (`album_id`),
+  KEY `artist_id` (`artist_id`),
+  KEY `genre_id` (`genre_id`),
+  CONSTRAINT `album_ibfk_1` FOREIGN KEY (`artist_id`) REFERENCES `artists` (`artist_id`),
+  CONSTRAINT `album_ibfk_2` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`genre_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+Table: tracks
+------------------
+CREATE TABLE `tracks` (
+  `track_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `track_title` varchar(50) DEFAULT NULL,
+  `track_lyrics` varchar(511) DEFAULT NULL,
+  `track_minutes`int(3) unsigned DEFAULT NULL,
+  `track_seconds` int(2) unsigned DEFAULT NULL,
+  PRIMARY KEY (`track_id`),
+  KEY `album_id` (`album_id`),
+  CONSTRAINT `track_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `albums` (`album_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+Table: genres
+------------------
+CREATE TABLE `genres` (
+  `genre_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `genre_name` varchar(50) DEFAULT NULL,
+  `genre_description` varchar(511) DEFAULT NULL,
+  PRIMARY KEY (`genre_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `genres` (`genre_id`, `genre_name`, `genre_description`)
+VALUES
+  (1,'Alternative','Alternative rock (also called alternative music or alt-rock or simply alternative) is a style of rock music that emerged from the independent music underground of the 1980s and became widely popular in the 1990s. In this instance the word alternative refers to the genres distinction from mainstream rock music'),
+  (2,'Blues','Blues is a music genre and musical form originated by African Americans in the Deep South of the United States around the end of the 19th century. The genre developed from roots in African musical traditions and African-American work songs and spirituals and the folk music of white Americans of European heritage. Blues incorporated spirituals /work songs /field hollers /shouts /chants and rhymed simple narrative ballads. The blues form ubiquitous in jazz rhythm and blues and rock and roll is characterized by the call-and-response pattern and the blues scale and specific chord progressions of which the twelve-bar blues is the most common.'),
+  (3,'Classical',''),
+  (4,'Comedy',''),
+  (5,'Country',''),
+  (6,'Dance',''),
+  (7,'Electronic',''),
+  (8,'Hip-Hop/Rap',''),
+  (9,'Holiday',''),
+  (10,'Metal',''),
+  (11,'Pop',''),
+  (12,'R&B/Soul',''),
+  (13,'Reggae',''),
+  (14,'Rock',''),
+  (15,'Singer/Songwriter',''),
+  (16,'Soundtrack',''),
+  (17,'World','');
+

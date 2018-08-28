@@ -11,6 +11,8 @@ export class NavigationComponent implements OnInit {
 
   srchText: string;
 
+  today: number = Date.now();
+
   constructor() {}
 
   ngOnInit() {
