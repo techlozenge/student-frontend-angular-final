@@ -24,6 +24,8 @@ Note: This project assumes a working familiarity with Angular and its associated
     * Frontend Angular CLI: ng serve --open (listens on port 4200)
     * Note that Angular is currently set to development mode and not production.
 
+![Overview](./Angular-Frontend.png)
+
 * Framework
     * Angular 5 
 
