@@ -10,7 +10,7 @@ It can be used as a very detailed template for other uses.
 * Starting the Application
 
     * Backend
-        * I use the Sails backend framework to act as an API server ([if you're interested it can be found here](https://github.com/techlozenge/sails-student-api)
+        * I use the Sails backend framework to act as an API server ([if you're interested it can be found here](https://github.com/techlozenge/sails-student-api))
         * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logi to use the appropriate request/response data.
         * Here are some example HTTP calls to end-points:
             * http.GET: table records listing: http://localhost:1337/student
