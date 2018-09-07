@@ -3,9 +3,9 @@
 # _________________________________________________________________
 # Description
 
-This Angular project is a web frontend administration system. 
+This Angular project is a fully functional web frontend administration system. 
 
-It can be used as a very detailed template for other uses.
+Additionally, it can be leveraged as a very detailed template for other uses.
 
 * Starting the Application
 
@@ -20,7 +20,6 @@ It can be used as a very detailed template for other uses.
             * http.DELETE: remove record: http://localhost:1337/student/4
 
     * Frontend Angular CLI: ng serve --open (listens on port 4200)
-    * Note that Angular is currently set to development mode and not production.
 
 ![Overview](./Angular-Frontend.png)
 
