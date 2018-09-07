@@ -3,17 +3,15 @@
 # _________________________________________________________________
 # Description
 
-This project administers a relatively straightforward remote database. It can be used as a highly detailed template for an Angular 5 based web frontend which can be modified to accomodate user need.
+This Angular project is a web frontend administration system. 
 
-API calls are made to specific end-points to perform CRUD activities on a backend database. The API calls are made via HTTP web requests to Sails which manages the CRUD operations (currently I'm running a Sails backend for a MySQL database on my local server to simulate actual web API calls).
-
-Note: This project assumes a working familiarity with Angular and its associated languages and technologies. 
+It can be used as a very detailed template for other uses.
 
 * Starting the Application
 
     * Backend
-        * I use the Sails framework to act as an API server (Not included here) 
-        * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend to match the appropriate request/response data.
+        * I use the Sails backend framework to act as an API server ([if you're interested it can be found here](https://github.com/techlozenge/sails-student-api)
+        * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logi to use the appropriate request/response data.
         * Here are some example HTTP calls to end-points:
             * http.GET: table records listing: http://localhost:1337/student
             * http.ADD: table record: http://localhost:1337/student
