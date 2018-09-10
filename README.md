@@ -141,6 +141,8 @@ Injected ID number into the Delete Confirm Component
 Included a string along with the id in the Delete Confirm Component so the popup could include a descriptor of what's being deleted and not just an id number
 
 ## August 2018:
+Restyled README.md to document this project
+
 Completed upgrade to Bootstep 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar
 
 Added simple ascending/descending table column sorts to all tables (see assets/js folder)
@@ -152,3 +154,5 @@ Added 'piped' current date to left side of navigation bar
 Minor style upgrades
 
 ## WIP (September 2018):
+Added "Angular_5_and_Associated_Technologies" Word document. The intent of this document is to familiarize backend team members familiar with Angular: What it is, how to use it, and the supporting technologies it leverages
+
