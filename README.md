@@ -129,23 +129,19 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 # _________________________________________________________________
 # Change Log
 
-## 2018-3-3: 
+## March 2018: 
 Converted to Angular 5 & misc. bug fixes 
 
-## 2018-6-8: 
+## June 2018: 
 Styled Delete Confirm Component
 
-## 2018-7-19: 
+## July 2018:
 Injected ID number into the Delete Confirm Component
 
-## 2018-7-23: 
-Included a string along with the id in the Delete Confirm Component so the popup could include a descriptor of what's being deleted and not just an id number.
+Included a string along with the id in the Delete Confirm Component so the popup could include a descriptor of what's being deleted and not just an id number
 
-## 2018-8-3: 
-Upgrading to Bootstrap 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar.
-
-## WIP (August 2018): 
-Completed upgrade to Bootstep 4
+## August 2018:
+Completed upgrade to Bootstep 4. Temporarily removed datatables.net so ensure a clean Bootstrap 4 upgrade and styles. Added a working web search to the navigation bar
 
 Added simple ascending/descending table column sorts to all tables (see assets/js folder)
 
@@ -153,4 +149,6 @@ Implemented Font Awesome to replace the glyphicons that were dropped from BS4
 
 Added 'piped' current date to left side of navigation bar
 
-Continuing minor style upgrades... 
+Minor style upgrades
+
+## WIP (September 2018):
