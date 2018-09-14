@@ -131,13 +131,14 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: red;
     cursor: pointer;
     font-style: bold;
 }
   
-a:active {
+/* a:active {
     color: black;
-}
+} */
 
 /* RESPONSE MESSAGE STYLING */
 
