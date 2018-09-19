@@ -153,6 +153,6 @@ Added 'piped' current date to left side of navigation bar
 
 Minor style upgrades
 
-## WIP (September 2018):
+## September 2018:
 Added "Angular_5_and_Associated_Technologies" Word document. The intent of this document is to familiarize backend team members with Angular: What it is, how to use it, and the supporting technologies it leverages
 
