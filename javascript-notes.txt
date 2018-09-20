@@ -1,5 +1,19 @@
-The dollar sign is commonly used as a shortcut to the function document.getElementById().
+To update npm to the latest version, perform the following:
 
+    npm install npm@latest -g
+
+    Then check the new version:
+
+    npm -v
+
+In order to install angular-datatables, you first need to make sure you have the latest version node. To do that you'll need the package manager 'n'. Use the following commings to update node to the latest version:
+
+    sudo npm cache clean -f (force) clear you npm cache
+    sudo npm install -g n install "n" (this might take a while)
+    sudo n stable upgrade to lastest version
+
+
+The dollar sign is commonly used as a shortcut to the function document.getElementById().
 It is, however, sometimes used by convention on the end of a var name to indicate that a variable holds an Observable or that a function will return an Observable.
 
 

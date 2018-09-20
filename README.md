@@ -104,7 +104,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * [Bootstrap 4](https://getbootstrap.com/) Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
         * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
         * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
-    * [Datatables.net](https://datatables.net/) Add advanced interaction controls to your HTML tables
+    * [Angular DataTables](https://l-lin.github.io/angular-datatables/#/getting-started)  Angular Structural framework for dynamic web apps +  DataTables jQuery plug-in for complex HTML tables
     * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free) The icons used by this frontend
 
 * Applications and Web Apps
