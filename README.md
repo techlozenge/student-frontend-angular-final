@@ -1,4 +1,4 @@
-# Web Frontend Administration System
+# Angular 5 Web Frontend Administration System
 
 # _________________________________________________________________
 # Description
@@ -125,6 +125,11 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * [MD5 Hash Generator](http://www.md5hashgenerator.com/)
     * [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
     * [CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
+
+# _________________________________________________________________
+# TO-DO
+
+Need to upgrade framework to Angular 6.
 
 # _________________________________________________________________
 # Change Log
