@@ -130,6 +130,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 # TO-DO
 
 Need to upgrade framework to Angular 6.
+Good reference article: https://dzone.com/articles/getting-started-with-angular-60
 
 # _________________________________________________________________
 # Change Log
