@@ -127,6 +127,25 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * [CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
 
 # _________________________________________________________________
+# Launching the Sails Backend & Angular Frontend
+
+## How to launch the sails backend
+My data is stored locally in a MySQL DB and I've hooked up a Sails backend to act as an API endpoint server for the database. 
+
+Once your DB is running and you're inside of the Sails project, at the command line, type: sails lift
+
+This will launch the Sails backend listening on the port you assigned (mine is 1337).
+
+You can test your API endpoints by opening your browser and typing something like "http://localhost:1337/student" in the address bar. 
+
+## How to launch the angular rontend
+Once the backend API endpoints are availale, and you're in the angular project folder, from the command line, type: ng serve --open
+
+This will compile your project and open a window in your browser on your landing page.
+
+If you don't use the --open then you can launch your angular landing page by typing http://localhost:4200 in your address bar. 
+
+# _________________________________________________________________
 # TO-DO
 
 Need to upgrade framework to Angular 6.
