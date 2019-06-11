@@ -23,7 +23,7 @@ export class DataService {
 
     getRecord(endpoint: string, id): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-        console.log("endpoint: " + apiUrl);        
+        console.log("endpoint: " + apiUrl);
         return this.http.get(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
@@ -31,7 +31,7 @@ export class DataService {
 
     deleteRecord(endpoint: string, id:number): Observable<object> {
         let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-        console.log("endpoint: " + apiUrl);        
+        console.log("endpoint: " + apiUrl);
         return this.http.delete(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
@@ -62,18 +62,18 @@ export class DataService {
     private handleError(error: Response | any) {
         // In a real world app, you might use a remote logging infrastructure
         let errMsg: string;
-        if(typeof error._body === "string"){
+        if (typeof error._body === "string") {
             errMsg = error._body
         }else{
             if (error instanceof Response) {
-                if(error.status === 0){
+                if (error.status === 0){
                     errMsg = "Error connecting to API"
-                }else{
+                }else {
                     const errorJSON = error.json();
                     errMsg = errorJSON.message;
-                } 
+                }
             }
-        }    
+        }
         return Observable.throw(errMsg);
     }
 
