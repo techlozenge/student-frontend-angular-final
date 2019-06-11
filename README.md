@@ -83,7 +83,7 @@ This will launch the Sails backend listening on the port you assigned (mine is 1
 
 You can test your API endpoints by opening your browser and typing something like "http://localhost:1337/student" in the address bar. 
 
-## How to launch the angular rontend
+## How to launch the angular frontend
 Once the backend API endpoints are availale, and you're in the angular project folder, from the command line, type: ng serve --open
 
 This will compile your project and open a window in your browser on the landing page.
