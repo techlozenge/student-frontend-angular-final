@@ -14,31 +14,31 @@ export class DataService {
     constructor (private http: Http) {}
 
     getRecords(endpoint: string): Observable<any[]> {
-        let apiUrl = this.baseUrl+endpoint;
-        console.log("endpoint: " + apiUrl);
+        const apiUrl = this.baseUrl+endpoint;
+        console.log('endpoint: ' + apiUrl);
         return this.http.get(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
     getRecord(endpoint: string, id): Observable<object> {
-        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-        console.log("endpoint: " + apiUrl);
+        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        console.log('endpoint: ' + apiUrl);
         return this.http.get(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
     deleteRecord(endpoint: string, id:number): Observable<object> {
-        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-        console.log("endpoint: " + apiUrl);
+        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        console.log('endpoint: ' + apiUrl);
         return this.http.delete(apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
     editRecord(endpoint: string, record:object, id:number): Observable<object> {
-        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log(record)
         console.log(apiUrl)
         return this.http.put(apiUrl, record)
@@ -47,7 +47,7 @@ export class DataService {
     }
 
     addRecord(endpoint: string, record:object): Observable<object> {
-        let apiUrl = `${this.baseUrl}${endpoint}`;
+        const apiUrl = `${this.baseUrl}${endpoint}`;
         console.log(apiUrl)
         return this.http.post(apiUrl, record)
             .map(this.extractData)
@@ -55,19 +55,19 @@ export class DataService {
     }
 
     private extractData(res: Response) {
-        let results = res.json();
+        const results = res.json();
         return results || [];
     }
 
     private handleError(error: Response | any) {
         // In a real world app, you might use a remote logging infrastructure
         let errMsg: string;
-        if (typeof error._body === "string") {
+        if (typeof error._body === 'string') {
             errMsg = error._body
         }else{
             if (error instanceof Response) {
                 if (error.status === 0){
-                    errMsg = "Error connecting to API"
+                    errMsg = 'Error connecting to API'
                 }else {
                     const errorJSON = error.json();
                     errMsg = errorJSON.message;

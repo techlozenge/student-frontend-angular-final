@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { RouterModule }   from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { MatDialogModule, MatDialogConfig } from '@angular/material';
@@ -30,7 +30,7 @@ import { MajorComponent } from './major/major.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { ClassComponent } from './class/class.component';
 
-//import { DataTablesModule } from 'angular-datatables';
+// import { DataTablesModule } from 'angular-datatables';
 // also removed DataTablesModule from 'imports'
 
 
