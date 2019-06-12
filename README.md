@@ -127,7 +127,9 @@ If you don't use the --open then you can launch your angular landing page by typ
     * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free) The icons used by this frontend
 
 * Applications and Web Apps
-    * [npmjs.com](https://www.npmjs.com/) npm is the package manager for JavaScript
+    * [npmjs](https://www.npmjs.com/) npm is the package manager for JavaScript
+    * [RxJS](https://www.learnrxjs.io/) Learn RxJS
+    * [RxJS](https://www.learnrxjs.io/concepts/rxjs-primer.html) RxJS Primer
     * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
     * [Online JSON Validator](http://jsonlint.com/)
     * [Express](https://expressjs.com/) A web framework that let’s you structure a web application to handle multiple different http requests at a specific url. Express is a minimal, open source and flexible Node.js web app framework designed to make developing websites, web apps, & API’s much easier.

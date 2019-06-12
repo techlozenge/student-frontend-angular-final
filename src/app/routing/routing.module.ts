@@ -71,7 +71,7 @@ const routes: Routes = [
   { path: 'delete-confirm', component: DeleteConfirmComponent}
 
 ];
- 
+
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
