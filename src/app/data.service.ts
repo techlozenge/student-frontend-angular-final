@@ -14,7 +14,7 @@ export class DataService {
     constructor (private http: Http) {}
 
     getRecords(endpoint: string): Observable<any[]> {
-        const apiUrl = this.baseUrl+endpoint;
+        let apiUrl = this.baseUrl+endpoint;
         console.log('endpoint: ' + apiUrl);
         return this.http.get(apiUrl)
             .map(this.extractData)
@@ -22,7 +22,7 @@ export class DataService {
     }
 
     getRecord(endpoint: string, id): Observable<object> {
-        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log('endpoint: ' + apiUrl);
         return this.http.get(apiUrl)
             .map(this.extractData)
@@ -30,7 +30,7 @@ export class DataService {
     }
 
     deleteRecord(endpoint: string, id:number): Observable<object> {
-        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log('endpoint: ' + apiUrl);
         return this.http.delete(apiUrl)
             .map(this.extractData)
@@ -38,7 +38,7 @@ export class DataService {
     }
 
     editRecord(endpoint: string, record:object, id:number): Observable<object> {
-        const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
+        let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log(record)
         console.log(apiUrl)
         return this.http.put(apiUrl, record)
@@ -47,7 +47,7 @@ export class DataService {
     }
 
     addRecord(endpoint: string, record:object): Observable<object> {
-        const apiUrl = `${this.baseUrl}${endpoint}`;
+        let apiUrl = `${this.baseUrl}${endpoint}`;
         console.log(apiUrl)
         return this.http.post(apiUrl, record)
             .map(this.extractData)

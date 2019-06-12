@@ -17,11 +17,11 @@ export class ClassComponent implements OnInit {
   successMessage: string;
   classes: any[];
   mode = 'Observable';
- 
+
   constructor (private dataService: DataService, public dialog: MatDialog) {}
- 
+
   ngOnInit() { this.getClasses(); }
- 
+
   getClasses() {
     this.dataService.getRecords("class")
       .subscribe(
