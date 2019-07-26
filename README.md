@@ -128,7 +128,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 * Applications and Web Apps
     * [npmjs](https://www.npmjs.com/) npm is the package manager for JavaScript
-    * [RxJS]
+    * RxJS
         * [Learn RxJS](https://www.learnrxjs.io/) 
         * [RxJS Primer](https://www.learnrxjs.io/concepts/rxjs-primer.html) 
     * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS

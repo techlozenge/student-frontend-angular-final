@@ -1,7 +1,10 @@
 The two most common and popular MySQL database engines are MyISAM and InnoDB. MyISAM is the default engine for MySQL for versions earlier than 5.5.5, and functions well in most scenarios. ... InnoDB also provides support for foreign keys, whereas MyISAM does not.
 
-sqlcmd -S myServer\student_api -i C:\myScript.sql.
+sqlcmd -S myServer\music_db -i C:\music_db.sql.
 
+CREATE DATABASE music_db;
+
+USE music_db;
 
 Table: artists
 ------------------
