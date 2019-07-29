@@ -32,7 +32,7 @@ import { MajorClassFormComponent }   from '../major-class-form/major-class-form.
 
 import { HomeComponent }   from '../home/home.component';
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
- 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },

@@ -1,6 +1,6 @@
 # Angular 5 Web Frontend Administration System
 
-# _________________________________________________________________
+# ___________________________________________________________
 # Description
 
 This Angular project is a fully functional web frontend administration system. 
@@ -71,7 +71,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 
 **The Change Log is below screen shots & helpful links section**
 
-# _________________________________________________________________
+# ___________________________________________________________
 # Launching the Sails Backend & Angular Frontend
 
 ## How to launch the sails backend
@@ -90,7 +90,7 @@ This will compile your project and open a window in your browser on the landing 
 
 If you don't use the --open then you can launch your angular landing page by typing http://localhost:4200 in your address bar. 
 
-# _________________________________________________________________
+# ___________________________________________________________
 # Screen Shots
 
 **Landing Page** 
@@ -109,7 +109,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 ![Admin SS Student Inq](./Student-Admin-SS-Del.png)
 
-# _________________________________________________________________
+# ___________________________________________________________
 # Helpful Links
 
 * Stack
@@ -154,7 +154,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 Need to upgrade framework to Angular 6.
 Good reference article: https://dzone.com/articles/getting-started-with-angular-60
 
-# _________________________________________________________________
+# ___________________________________________________________
 # Change Log
 
 ## March 2018: 
