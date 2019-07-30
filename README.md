@@ -12,9 +12,11 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * Backend
         * I use the Sails backend framework to act as an API server.
             * [Sails as a Backend Framework](https://github.com/techlozenge/sails-student-api) (used by this Angular project)
-            * [Sails as a Frontend Framework](https://github.com/techlozenge/sails-student-frontend-v2) (replaces this Angular project)
+            * [Sails as a Frontend Framework](https://github.com/techlozenge/sails-student-frontend-v2) (replaces this Angular project and listens on port 3800)
             A document named [SETUP-SAILS-DB-&-FRONTEND-ENDPOINTS](https://github.com/techlozenge/sails-student-api/blob/master/SETUP-SAILS-DB-%26-FRONTEND-ENDPOINTS) exists in the front- and backend Sails projects. It describes the setup of each one.
+
         * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logic to use the appropriate request/response data.
+
         * Here are some example HTTP calls to end-points:
             * http.GET: table records listing: http://localhost:1337/student
             * http.ADD: table record: http://localhost:1337/student
@@ -51,7 +53,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * Grades
     * Grades Form
     * Classes
-    * Classe Form
+    * Class Form
     * Assignments
     * Assignment Form
     * Instructors
@@ -72,22 +74,24 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 * Popup Dialog
     * delete-comfirm.component
 
-**The Change Log is below screen shots & helpful links section**
-
 # ___________________________________________________________
 # Launching the Sails Backend & Angular Frontend
 
 ## How to launch the sails backend
 My data is stored locally in a MySQL DB and I've hooked up a Sails backend to act as an API endpoint server for the database. 
 
-Once your DB is running and you're in the Sails project folder, at the command line, type: sails lift
+Once your DB is running and loaded with data and Sails is all set up, and you're in the Sails project folder, at the command line, type: 
+
+    sails lift
 
 This will launch the Sails backend listening on the port you assigned (mine is 1337).
 
 You can test your API endpoints by opening your browser and typing something like "http://localhost:1337/student" in the address bar. 
 
 ## How to launch the angular frontend
-Once the backend API endpoints are availale, and you're in the angular project folder, from the command line, type: ng serve --open
+Once the backend API endpoints are availale, and you're in the angular project folder, from the command line, type: 
+
+    ng serve --open
 
 This will compile your project and open a window in your browser on the landing page.
 
@@ -151,7 +155,7 @@ If you don't use the --open then you can launch your angular landing page by typ
     * [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
     * [CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
 
-# _________________________________________________________________
+# ___________________________________________________________
 # TO-DO
 
 Need to upgrade framework to Angular 6.
