@@ -24,7 +24,9 @@ Additionally, it can be leveraged as a very detailed template for other uses.
             * http.PUT: update record: http://localhost:1337/student/4
             * http.DELETE: remove record: http://localhost:1337/student/4
 
-    * Frontend Angular CLI: ng serve --open (listens on port 4200)
+    * Frontend 
+        * Angular CLI: 
+            ng serve --open (listens on port 4200)
 
 ![Overview](./Angular-Frontend.png)
 
