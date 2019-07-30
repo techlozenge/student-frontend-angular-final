@@ -10,10 +10,14 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 * Starting the Application
 
     * Backend
-        * I use the Sails backend framework to act as an API server.
+
+        * I use the Sails web framework (0.12.13) as an API server.
+
             * [Sails as a Backend Framework](https://github.com/techlozenge/sails-student-api) (used by this Angular project)
+
             * [Sails as a Frontend Framework](https://github.com/techlozenge/sails-student-frontend-v2) (replaces this Angular project and listens on port 3800)
-            A document named [SETUP-SAILS-DB-&-FRONTEND-ENDPOINTS](https://github.com/techlozenge/sails-student-api/blob/master/SETUP-SAILS-DB-%26-FRONTEND-ENDPOINTS) exists in the front- and backend Sails projects. It describes the setup of each one.
+
+            A document named [SETUP-SAILS-DB-&-FRONTEND-ENDPOINTS](https://github.com/techlozenge/sails-student-api/blob/master/SETUP-SAILS-DB-%26-FRONTEND-ENDPOINTS) exists in the front- and backend Sails projects and it describes their setup.
 
         * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logic to use the appropriate request/response data.
 
@@ -25,7 +29,9 @@ Additionally, it can be leveraged as a very detailed template for other uses.
             * http.DELETE: remove record: http://localhost:1337/student/4
 
     * Frontend 
+
         * Angular CLI: 
+
             ng serve --open (listens on port 4200)
 
 ![Overview](./Angular-Frontend.png)
