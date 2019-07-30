@@ -30,9 +30,9 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 
     * Frontend 
 
-        * Angular CLI: 
+        * Angular CLI (listens on port 4200): 
 
-            ng serve --open (listens on port 4200)
+            ng serve --open
 
 ![Overview](./Angular-Frontend.png)
 
@@ -166,8 +166,11 @@ If you don't use the --open then you can launch your angular landing page by typ
 # ___________________________________________________________
 # TO-DO
 
-Need to upgrade framework to Angular 6.
-Good reference article: https://dzone.com/articles/getting-started-with-angular-60
+* Need to upgrade framework to Angular 6.
+
+    * Good reference article: https://dzone.com/articles/getting-started-with-angular-60
+    
+* Need to upgrade Sails to v1.0 (lots of breaking changes)
 
 # ___________________________________________________________
 # Change Log
