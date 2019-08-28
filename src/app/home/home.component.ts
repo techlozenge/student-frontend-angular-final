@@ -5,8 +5,7 @@ import { fadeInAnimation } from '../animations/fade-in.animation';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-   animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }
+  animations: [fadeInAnimation]
 })
 
 export class HomeComponent implements OnInit {

@@ -60,6 +60,10 @@ h1 {
 
 h2 {
     font-variant: small-caps;
+    text-align: center;
+    margin: 0px;
+    padding-bottom: 15px;
+    text-decoration: underline;
 }
 
 hr {
@@ -91,7 +95,9 @@ footer {
 }
 
 .card-style {
-    border-left: 1px solid black;
+    /* border-right: 1px solid black; */
+    padding-left: 60px;
+    margin: 0px;
 }
 
 .navbar {
@@ -175,10 +181,10 @@ a:hover {
 /* Validation formatting */
 
 .ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+  border-left: 8px solid #42A948; /* green */
 }
 .ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
+  border-left: 8px solid #a94442; /* red */
 }
 
 #deletemsg {

@@ -13,7 +13,6 @@ import 'rxjs/add/operator/map';
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css'],
   animations: [fadeInAnimation]
-
 })
 export class StudentComponent implements OnInit {
 

@@ -19,8 +19,8 @@ export class NavigationComponent implements OnInit {
   }
 
   doWebSearch(srchText: string) {
-    console.log("doing a web search using " + srchText);
-    window.open("http://www.google.com/search?q=" + srchText, "Search");
+    console.log('doing a web search using ' + srchText);
+    window.open('http://www.google.com/search?q=' + srchText, 'Search');
   }
 
 }

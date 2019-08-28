@@ -168,7 +168,11 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 * Need to upgrade framework to Angular 6.
 
-    * Good reference article: https://dzone.com/articles/getting-started-with-angular-60
+* Need to upgrade framework to Angular 7.
+
+* Need to upgrade framework to Angular 8.
+
+    * See: https://update.angular.io/#5.2:6.1
     
 * Need to upgrade Sails to v1.0 (lots of breaking changes)
 
