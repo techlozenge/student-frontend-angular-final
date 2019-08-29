@@ -9,27 +9,60 @@ table.table {
 
 /** only for the body of the table. */
 table.table tbody td {
-    padding: 8px;
+    padding: 6px;
+    margin: 0px;
 }
 
 thead {
     font-variant: small-caps;
 }
 
+.navbar {
+    width: 100%;
+    min-height: 40px;
+    background-color: black;
+}
+
+.navbar-nav {
+    font-variant: small-caps;
+    padding-left: 10px;
+}
+  
+  .navbar-brand {
+    padding: 0 12px;
+    height: 80px;
+    line-height: 70px;
+}
+  
+.navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 20px;
+    padding: 8px 8px !important;
+}
+
+/* this is used by the nav-bar seach function */
+.input-group {
+    /* font-family: fantasy; */
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+}
+  
 /** aligning the button with the text box */
 .btn-block {
     padding-top: 4px;
 }
 
-.wrapper{
-  position: relative;
-  width: 98%;
+.container {
+    margin: 0px;
+    padding: 0px;
 }
 
-.big-img{
-  border: 5px solid black;
+.container p {
+    width: 75%;
 }
-  
+
+ 
 .small-img{
   position: absolute;
   right: 43%;
@@ -38,14 +71,14 @@ thead {
   border: 5px solid black;
 }
 
-/* massages the top hero image */
-
-#styler {
+/* wrapper and styler massage the top hero image */
+.wrapper{
+    position: relative;
     width: 100%;
-    margin-top: 35px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+  }
+   #styler {
+    width: 100%;
+    margin: 0px;
     padding: 0px;
 }
 
@@ -61,6 +94,7 @@ h1 {
 h2 {
     font-variant: small-caps;
     text-align: center;
+    font-size: 30px;
     margin: 0px;
     padding-bottom: 15px;
     text-decoration: underline;
@@ -74,59 +108,13 @@ hr {
     border-top: 3px double #8c8b8b;
 }
 
-.container {
-    margin-left: 15px;
-    margin-top: 0px;
-    padding-top: 0px;
-}
-
-.container p {
-    width: 75%;
-}
-
-footer {
-    font-variant: small-caps;
-    width: 95%;
-}
-
-.col-md-4 {
-    width: 350px;
-    margin-left: 85px;
-}
-
 .card-style {
-    /* border-right: 1px solid black; */
+    /* this padding pushes the card to the left */
     padding-left: 60px;
-    margin: 0px;
+    border-right: 1px solid black;
 }
 
-.navbar {
-    width: 100%;
-    min-height: 40px;
-}
 
-.navbar-nav {
-    font-variant: small-caps;
-    padding-left: 15px;
-}
-  
-  .navbar-brand {
-    padding: 0 15px;
-    height: 80px;
-    line-height: 80px;
-}
-  
-  .navbar-toggle {
-    /* (80px - button height 34px) / 2 = 23px */
-    margin-top: 23px;
-    padding: 9px 10px !important;
-}
-
-.input-group {
-    /* font-family: fantasy; */
-    height: 30px;
-}
-  
 /* LINKS */
 
 a {
@@ -142,9 +130,10 @@ a:hover {
     font-style: bold;
 }
   
-/* a:active {
-    color: black;
-} */
+footer {
+    font-variant: small-caps;
+    width: 100%;
+}
 
 /* RESPONSE MESSAGE STYLING */
 
@@ -178,7 +167,7 @@ a:hover {
     }
 }
 
-/* Validation formatting */
+/* Validation formatting for screen fields */
 
 .ng-valid[required], .ng-valid.required  {
   border-left: 8px solid #42A948; /* green */
