@@ -1,4 +1,4 @@
-# Angular 5 Web Frontend Administration System
+# Angular 8 Web Frontend Administration System
 
 # ___________________________________________________________
 # Description
@@ -37,7 +37,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 ![Overview](./Angular-Frontend.png)
 
 * Framework
-    * Angular 5 
+    * Angular 8
 
 *  Authentication
     * There is currently no authentication built into this system
@@ -47,7 +47,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * CSS (styles.css)
 
 * Animation
-    * Angular 5 fade-in-animation
+    * Angular 8 fade-in-animation
 
 * Landing Page
     * home
@@ -165,19 +165,14 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 # ___________________________________________________________
 # TO-DO
-
-* Need to upgrade framework to Angular 6.
-
-* Need to upgrade framework to Angular 7.
-
-* Need to upgrade framework to Angular 8.
-
-    * See: https://update.angular.io/#5.2:6.1
     
 * Need to upgrade Sails to v1.0 (lots of breaking changes)
 
 # ___________________________________________________________
 # Change Log
+
+## September 2019 
+* Upgraded to from Angular 5.2 to 8.2
 
 ## March 2018: 
 Converted to Angular 5 & misc. bug fixes 
