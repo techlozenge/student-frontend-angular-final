@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit }      from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Location }               from '@angular/common';
+import { Location } from '@angular/common';
 import { fadeInAnimation } from '../animations/fade-in.animation';
 
 import { DataService } from '../data.service'
@@ -19,9 +19,9 @@ export class GradeFormComponent implements OnInit {
 
   grade: object = {};
 
-  getRecordForEdit(){
+  getRecordForEdit() {
     this.route.params
-      .switchMap((params: Params) => this.dataService.getRecord("grade", +params['id']))
+      .switchMap((params: Params) => this.dataService.getRecord('grade', +params['id']))
       .subscribe(grade => this.grade = grade);
   }
 
@@ -34,21 +34,22 @@ export class GradeFormComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe((params: Params) => {
+        // tslint:disable-next-line:no-unused-expression
         (+params['id']) ? this.getRecordForEdit() : null;
       });
-  
+
   }
 
   // 2018-08-21: If the update or add is successful, send the user back to the list
   //             otherwise display the error.
-  saveGrade(id) {
-    if(typeof id === "number") {
-      this.dataService.editRecord("grade", this.grade, id)
+  saveGrade(id: number) {
+    if (typeof id === 'number') {
+      this.dataService.editRecord('grade', this.grade, id)
           .subscribe(
             grade => this.location.back(),
             error =>  this.errorMessage = <any>error);
     } else {
-      this.dataService.addRecord("grade", this.grade)
+      this.dataService.addRecord('grade', this.grade)
           .subscribe(
             grade => this.location.back(),
             error =>  this.errorMessage = <any>error);
