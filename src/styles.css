@@ -1,5 +1,8 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+body {
+    background-color: #dffaea;
+}
 /* TABLES */
 
 table.table {
@@ -82,6 +85,10 @@ thead {
     width: 100%;
     margin: 0px;
     padding: 0px;
+}
+
+.img-style {
+    filter: drop-shadow(0 0 30px #333);
 }
 
 h1 {
