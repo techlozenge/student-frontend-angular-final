@@ -27,6 +27,7 @@ import { MajorClassComponent } from './major-class/major-class.component';
 import { MajorComponent } from './major/major.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { ClassComponent } from './class/class.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // import { DataTablesModule } from 'angular-datatables';
 // also removed DataTablesModule from 'imports'
@@ -53,7 +54,8 @@ import { ClassComponent } from './class/class.component';
     MajorComponent,
     InstructorComponent,
     AssignmentComponent,
-    ClassComponent
+    ClassComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

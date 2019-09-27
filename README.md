@@ -173,6 +173,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 ## September 2019 
 * Upgraded to from Angular 5.2 to 8.2
+* Added standard footer component across all pages
 
 ## March 2018: 
 Converted to Angular 5 & misc. bug fixes 
