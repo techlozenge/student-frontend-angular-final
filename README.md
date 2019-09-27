@@ -1,4 +1,4 @@
-# Angular 8 Web Frontend Administration System
+# Angular 8.2 Web-based Administration Service
 
 # ___________________________________________________________
 # Description
@@ -172,7 +172,35 @@ If you don't use the --open then you can launch your angular landing page by typ
 # Change Log
 
 ## September 2019 
+
 * Upgraded to from Angular 5.2 to 8.2
+
+        Angular CLI: 8.3.6
+        Node: 10.10.0
+        OS: darwin x64
+        Angular: 8.2.8
+        ... animations, common, compiler, compiler-cli, core, forms
+        ... language-service, platform-browser, platform-browser-dynamic
+        ... platform-server, router
+
+        Package                           Version
+        -----------------------------------------------------------
+        @angular-devkit/architect         0.803.6
+        @angular-devkit/build-angular     0.803.6
+        @angular-devkit/build-optimizer   0.803.6
+        @angular-devkit/build-webpack     0.803.6
+        @angular-devkit/core              8.3.6
+        @angular-devkit/schematics        8.3.6
+        @angular/cdk                      8.2.1
+        @angular/cli                      8.3.6
+        @angular/material                 8.2.1
+        @ngtools/webpack                  8.3.6
+        @schematics/angular               8.3.6
+        @schematics/update                0.803.6
+        rxjs                              6.5.3
+        typescript                        3.5.3
+        webpack                           4.39.2
+
 * Added standard footer component across all pages
 
 ## March 2018: 
