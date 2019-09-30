@@ -38,8 +38,8 @@
       <td>{{classy.subject}}</td>
       <td>{{classy.course}}</td>
       <td class="text-center">
-        <a class="btn btn-light" [routerLink]="['/class/edit/', classy.class_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-        <button (click)="deleteClass(classy.class_id, classy.instructor.first_name + ' ' + classy.instructor.last_name)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+        <a class="btn btn-dark" [routerLink]="['/class/edit/', classy.class_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteClass(classy.class_id, classy.instructor.first_name + ' ' + classy.instructor.last_name)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

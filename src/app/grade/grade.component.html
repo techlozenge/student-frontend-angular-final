@@ -30,8 +30,8 @@
       <td>{{grade.grade_id}}</td>
       <td>{{grade.grade}}</td>
       <td class="text-center">
-        <a class="btn btn-light" [routerLink]="['/grade/edit/', grade.grade_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-        <button (click)="deleteGrade(grade.grade_id, grade.grade)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+        <a class="btn btn-dark" [routerLink]="['/grade/edit/', grade.grade_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteGrade(grade.grade_id, grade.grade)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

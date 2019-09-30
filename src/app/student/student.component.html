@@ -21,7 +21,7 @@
 <h2>Students</h2>
 <br>
 
-<div class="table">
+<!-- <div class="table"> -->
   <table datatable id="dataTable" class="table table-hover table-bordered" >
       <thead class="thead-dark">
       <tr>
@@ -44,8 +44,8 @@
         <td>{{student.sat}}</td>
         <td>{{student.major?.major}}</td>
         <td class="text-center">
-          <a class="btn btn-light" [routerLink]="['/student/edit/', student.student_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-          <button class="btn btn-light" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)" ><i class="fas fa-trash-alt"></i></button>
+          <a class="btn btn-dark" [routerLink]="['/student/edit/', student.student_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+          <button class="btn btn-dark" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)" ><i class="fas fa-trash-alt"></i></button>
 
         </td>
       </tr>
@@ -69,5 +69,5 @@
     </div>
   </footer> -->
 
-</div>
+<!-- </div> -->
 </section>

@@ -35,8 +35,8 @@
       <td>{{major_class.class?.subject}} {{major_class.class?.course}}</td>
 
       <td class="text-center">
-        <a class="btn btn-light" [routerLink]="['/major-class/edit/', major_class.major_class_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-        <button (click)="deleteMajorClass(major_class.major_class_id, major_class.class?.subject + ' ' + major_class.class?.course)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+        <a class="btn btn-dark" [routerLink]="['/major-class/edit/', major_class.major_class_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteMajorClass(major_class.major_class_id, major_class.class?.subject + ' ' + major_class.class?.course)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>

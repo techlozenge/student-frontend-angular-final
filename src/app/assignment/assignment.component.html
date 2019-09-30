@@ -38,8 +38,8 @@
       <td>{{assignment.grade?.grade}}</td>
       <td>{{assignment.class?.subject}} {{assignment.class?.course}}</td>
       <td class="text-center">
-        <a class="btn btn-light" [routerLink]="['/assignment/edit/', assignment.assignment_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-        <button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)" class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+        <a class="btn btn-dark" [routerLink]="['/assignment/edit/', assignment.assignment_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+        <button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
   </tbody>
