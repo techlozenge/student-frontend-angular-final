@@ -108,12 +108,10 @@ If you don't use the --open then you can launch your angular landing page by typ
 # ___________________________________________________________
 # Screen Shots
 
-**Landing Page (top half)** 
+**Landing Page** 
 
 ![Admin SS](./Student-Admin-SS.png)
-
 ![Admin SS](./Student-Admin-SS2.png)
-
 ![Admin SS](./Student-Admin-SS3.png)
 
 **Student List**
