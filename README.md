@@ -43,8 +43,8 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * There is currently no authentication built into this system
 
 * Styling
-    * Bootstrap 4 (see index.html)
-    * CSS (styles.css)
+    * Bootstrap 4.3.1 (see index.html)
+    * CSS (see styles.css)
 
 * Animation
     * Angular 8 fade-in-animation
@@ -114,11 +114,11 @@ If you don't use the --open then you can launch your angular landing page by typ
 ![Admin SS](./Student-Admin-SS2.png)
 ![Admin SS](./Student-Admin-SS3.png)
 
-**Student List**
+**Student Listing**
 
 ![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
 
-**Student Screen** 
+**Add/Edit Student Screen** 
 
 ![Admin SS Student Inq](./Student-Admin-SS-Edit.png)
 
@@ -175,7 +175,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 ## September 2019 
 
-* Upgraded to from Angular 5.2 to 8.2
+* Upgraded from Angular 5.2 to 8.2
 
         Angular CLI: 8.3.6
         Node: 10.10.0
@@ -204,6 +204,7 @@ If you don't use the --open then you can launch your angular landing page by typ
         webpack                           4.39.2
 
 * Added standard footer component across all pages
+* Moved to Bootstrap 4.3.1
 
 ## March 2018: 
 Converted to Angular 5 & misc. bug fixes 
