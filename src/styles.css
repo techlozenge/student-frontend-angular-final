@@ -46,9 +46,9 @@ thead {
 /* this is used by the nav-bar seach function */
 .input-group {
     /* font-family: fantasy; */
-    padding: 0px;
-    margin: 0px;
-    height: 40px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 15px;
 }
   
 /** aligning the button with the text box */

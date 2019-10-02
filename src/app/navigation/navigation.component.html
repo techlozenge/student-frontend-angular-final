@@ -13,7 +13,7 @@
                 <li class="w-16 p-2" routerLinkActive="active-link"><a routerLink="/student-class" >student-class </a></li>
         </ul>
 
-        <div class="form-control-sm form-inline ml-auto srch-form">
+        <div class="form-inline">
             <form (ngSubmit)="doWebSearch(srchtext)" #searchForm="ngForm">
                 <div class="input-group">
                     <input [(ngModel)]="srchtext" id="srchText" name="srchtext" type="text" [(ngModel)]="srchtext" autofocus="autofocus" placeholder="Search the Web..."> 
