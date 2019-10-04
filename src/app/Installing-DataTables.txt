@@ -1,0 +1,129 @@
+
+
+
+To use angular-datatables, you need to have Node 10 or higher and NPM 6 or higher installed.
+
+    node: 10.10.0
+    npm: 6.4.1
+
+
+WORKING Version: student-frontend-angular-final
+
+PRODUCTION Version: student-frontend-angular-final-10032019
+
+--save-dev is used to save the package for development purpose. Example: unit tests, minification.
+
+--save is used to save the package required for the application to run.
+
+npm install jquery --save
+    jquery@3.4.1
+
+npm install datatables.net --save
+    datatables.net@1.10.20
+
+npm install datatables.net-dt --save
+    datatables.net-dt@1.10.20
+
+npm install angular-datatables --save
+    ngular-datatables@8.0.0
+
+npm install @types/jquery --save-dev
+    @types/jquery@3.3.31
+
+npm install @types/datatables.net --save-dev
+    @types/datatables.net@1.10.17
+
+_______________________________________________________________
+angular.json
+
+    Add the dependencies in the scripts and styles attributes:
+
+        {
+        "projects": {
+            "your-app-name": {
+            "architect": {
+                "build": {
+                "options": {
+                    "styles": [
+                    "node_modules/datatables.net-dt/css/jquery.dataTables.css"
+                    ],
+                    "scripts": [
+                    "node_modules/jquery/dist/jquery.js",
+                    "node_modules/datatables.net/js/jquery.dataTables.js"
+                    ],
+                    ...
+        }
+
+_______________________________________________________________
+NgModule (app.module.ts)
+
+    Import the DataTablesModule at the appropriate level of your app.
+
+        import { NgModule } from '@angular/core';
+        import { BrowserModule } from '@angular/platform-browser';
+
+THIS==> import { DataTablesModule } from 'angular-datatables';
+
+        import { AppComponent } from './app.component';
+
+        @NgModule({
+        declarations: [
+            AppComponent
+        ],
+        imports: [
+            BrowserModule,
+
+THIS==>     DataTablesModule
+        ],
+        providers: [],
+        bootstrap: [ AppComponent ]
+        })
+        export class AppModule {}
+
+_______________________________________________________________
+
+SAVE-POINT: student-frontend-datatables-installed
+_______________________________________________________________
+If you encounter the following error:
+
+    ERROR in Error encountered resolving symbol values statically. Function calls are not supported. Consider replacing the function or lambda with a reference to an exported function (position 194:50 in the original .ts file), resolving symbol NgModule in /home/l-lin/projects/angular-datatables/demo/node_modules/angular-datatables/node_modules/@angular/core/core.d.ts, resolving symbol DataTablesModule in /home/l-lin/projects/angular-datatables/demo/node_modules/angular-datatables/src/angular-datatables.module.ts, resolving symbol DataTablesModule in /home/l-lin/projects/angular-datatables/demo/node_modules/angular-datatables/src/angular-datatables.module.ts
+
+    Please update your tsconfig.json and add the following blocks:
+
+        {
+            "compilerOptions": {
+                ...
+                "paths": {
+                    "@angular/*": [
+                        "../node_modules/@angular/*"
+                    ]
+                }
+            }
+        }
+
+_______________________________________________________________
+Start with "Zero Configuration"
+
+    Do this in the student.component.html & student.component.ts:
+
+    <table datatable class="row-border hover">
+        <thead>
+            ...
+            ...
+        </thead>
+        <tbody>
+            ...
+            ...
+        </tbody>
+    </table>            
+
+    Typescript:
+
+        import { Component } from '@angular/core';
+
+            @Component({
+            selector: 'zero-config',
+            templateUrl: 'zero-config.component.html'
+            })
+
+        export class ZeroConfigComponent {}

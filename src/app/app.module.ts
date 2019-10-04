@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// import { DataTablesModule } from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -63,6 +64,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    // DataTablesModule,
     FormsModule
   ],
   entryComponents: [DeleteConfirmComponent],

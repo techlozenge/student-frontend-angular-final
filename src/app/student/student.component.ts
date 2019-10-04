@@ -14,6 +14,8 @@ import 'rxjs/add/operator/map';
 })
 export class StudentComponent implements OnInit {
 
+  // dtOptions: DataTables.Settings = {};
+
   errorMessage: string;
   successMessage: string;
   students: any[];
@@ -22,6 +24,13 @@ export class StudentComponent implements OnInit {
   constructor (private dataService: DataService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
+
+    // this.dtOptions = {
+    //   pagingType: 'full_numbers',
+    //   pageLength: 5,
+    //   processing: true
+    // };
+
     this.getStudents();
   }
 
