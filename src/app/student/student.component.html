@@ -1,4 +1,9 @@
 <section @fadeInAnimation>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+      
   <!-- <ol >
     <li><a class="active w-18 p-1" routerLink="/home">Home</a></li>
     <li class="active w-18 p-2">Students</li>
@@ -21,8 +26,8 @@
 <h2>Students</h2>
 <br>
 
-  <table datatable id="dataTable" class="table table-hover table-bordered" >
-      <thead class="thead-dark">
+<table datatable id="dataTable" class="table table-hover table-bordered"> 
+    <thead class="thead-dark">
       <tr>
         <th onclick="sortTable(0)">ID <i class="fas fa-sort"></i></th>
         <th onclick="sortTable(1)">Last Name  <i class="fas fa-sort"></i></th>
@@ -51,22 +56,60 @@
     </tbody>
   </table>
   <br>
-  
-  <!-- <footer class="bg-dark text-white mt-4">
-    <div class="container-fluid py-3">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-        </div>
-            <div class="row">
-            <div class="col-md-6">&#xA9; 2019 Davetown Student Administration System
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3 text-right small align-self-end">©2019 Greased Pole, LLC</div>
-        </div>
-    </div>
-  </footer> -->
+  <br>
+  <br>
 
-<!-- </div> -->
+  <mat-table [dataSource]="dataSource" matSort>
+
+       <!-- ID Column -->
+       <ng-container matColumnDef="student_id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> student_id </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.student_id}} </mat-cell>
+      </ng-container>
+  
+       <!-- Last Name Column -->
+       <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
+      </ng-container>
+  
+       <!-- First Name Column -->
+       <ng-container matColumnDef="firstName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
+        </ng-container>
+    
+       <!-- Start Date Column -->
+       <ng-container matColumnDef="startDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.startDate}} </mat-cell>
+        </ng-container>
+    
+       <!-- Start Date Column -->
+       <ng-container matColumnDef="gpa">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> GPA </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.gpa}} </mat-cell>
+        </ng-container>
+    
+       <!-- SAT Score Column -->
+       <ng-container matColumnDef="satScore">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> SAT Score </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.satScore}} </mat-cell>
+        </ng-container>
+    
+       <!-- Major Column -->
+       <ng-container matColumnDef="major">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Major </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.major}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  
+  <br>
 </section>
