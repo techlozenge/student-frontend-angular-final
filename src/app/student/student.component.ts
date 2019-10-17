@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { Subject } from 'rxjs/Rx';
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
-// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-student',
@@ -13,50 +12,35 @@ import { fadeInAnimation } from '../animations/fade-in.animation';
   styleUrls: ['./student.component.css'],
   animations: [fadeInAnimation]
 })
-export class StudentComponent implements OnInit {
+export class StudentComponent implements OnInit, AfterViewInit {
 
   students: any[];
   events: any[];
   errorMessage: string;
   successMessage: string;
   mode = 'Observable';
-  pageSize = 1;
-  pageSizeOptions = [1, 5, 10, 50];
+
   displayedColumns = ['student_id', 'last_name', 'first_name'];
+
   dataSource: MatTableDataSource<StudentData>;
-  paginator: MatPaginator;
-  sort: MatSort;
 
-  @ViewChild(MatPaginator, {static: false}) set matPaginator(mp: MatPaginator) {
-    this.paginator = mp;
-    this.setDataSourceAttributes();
-  }
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  // @ViewChild(MatSort, {static: false}) set matSort(ms: MatSort) {
-  //   this.sort = ms;
-  //   this.setDataSourceAttributes();
-  // }
-
-  constructor (private dataService: DataService, public dialog: MatDialog) {}
+constructor (private dataService: DataService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getStudents();
     this.dataSource = new MatTableDataSource(this.students);
-  }
-
-  setDataSourceAttributes() {
+    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
-
-    if (this.paginator) {
-      this.applyFilter('');
-    }
+    console.log('hit ngOnInit');
   }
 
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    console.log('hit ngAfterViewInit');
   }
 
   getStudents() {

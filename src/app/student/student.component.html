@@ -59,28 +59,45 @@
   <br>
   <br>
 
-  <div [hidden]="isLoading">
-    <mat-table [dataSource]="students" matSort style="width: 80%">
+  <mat-table class="lessons-table mat-elevation-z8" [dataSource]="students" matSort style="width: 80%; margin-left: 40px;">
 
-       <!-- ID Column -->
-       <ng-container matColumnDef="student_id">
+      <!-- ID Column -->
+      <!-- <ng-container matColumnDef="student_id">
+        <div *matHeaderCellDef mat-sort-header> ID </div>
+        <div *matCellDef="let student"> {{student.student_id}} </div>
+      </ng-container> -->
+  
+      <!-- Last Name Column -->
+      <!-- <ng-container matColumnDef="last_name">
+        <div *matHeaderCellDef mat-sort-header> Last Name </div>
+        <div *matCellDef="let student"> {{student.last_name}} </div>
+      </ng-container> -->
+  
+       <!-- First Name Column -->
+       <!-- <ng-container matColumnDef="first_name">
+          <div *matHeaderCellDef mat-sort-header> First Name </div>
+          <div *matCellDef="let student"> {{student.first_name}} </div>
+        </ng-container> -->
+    
+      <!-- ID Column -->
+      <ng-container matColumnDef="student_id">
         <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
         <mat-cell *matCellDef="let student"> {{student.student_id}} </mat-cell>
       </ng-container>
   
-       Last Name Column
-       <ng-container matColumnDef="last_name">
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="last_name">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
         <mat-cell *matCellDef="let student"> {{student.last_name}} </mat-cell>
       </ng-container>
   
-       <!-- First Name Column -->
-       <ng-container matColumnDef="first_name">
+      <!-- First Name Column -->
+      <ng-container matColumnDef="first_name">
           <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
           <mat-cell *matCellDef="let student"> {{student.first_name}} </mat-cell>
-        </ng-container>
-    
-       <!-- Start Date Column -->
+      </ng-container>
+
+        <!-- Start Date Column -->
        <!-- <ng-container matColumnDef="startDate">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{row.startDate}} </mat-cell>
@@ -105,21 +122,12 @@
         </ng-container> -->
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let student; columns: displayedColumns;">
-        </mat-row>
-    
-    </mat-table>
 
-    <mat-paginator #paginator [pageSize]="50" [pageSizeOptions]="[5,10,25]"></mat-paginator>
+        <mat-row *matRowDef="let student; columns: displayedColumns;"></mat-row>
     
-  </div>
+      </mat-table>
 
-    <!-- <mat-paginator  #paginator
-                      [length]="length"
-                      [pageSize]="pageSize"
-                      [pageSizeOptions]="pageSizeOptions">
-    </mat-paginator> -->
-    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
-  
+    <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[5,10,25]"></mat-paginator>
+    
   <br>
 </section>
