@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/Rx';
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-student',
@@ -15,40 +15,42 @@ import 'rxjs/add/operator/map';
 })
 export class StudentComponent implements OnInit {
 
-
-  displayedColumns = ['ID', 'Last Name', 'First Name', 'Start Date', 'GPA', 'SAT Score', 'Major'];
-  dataSource: MatTableDataSource<StudentData>;
-  @ViewChild(MatPaginator, {static: false}) MatPaginator: any;
-  @ViewChild(MatSort, {static: false}) MatSort: any;
-  paginator: MatPaginator;
-  sort: MatSort;
-
-
-  // students: any[];
-  students: StudentData[] = [];
-
+  students: any[];
   events: any[];
   errorMessage: string;
   successMessage: string;
   mode = 'Observable';
+  pageSize = 1;
+  pageSizeOptions = [1, 5, 10, 50];
+  displayedColumns = ['student_id', 'last_name', 'first_name'];
+  dataSource: MatTableDataSource<StudentData>;
+  paginator: MatPaginator;
+  sort: MatSort;
+
+  @ViewChild(MatPaginator, {static: false}) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.setDataSourceAttributes();
+  }
+
+  // @ViewChild(MatSort, {static: false}) set matSort(ms: MatSort) {
+  //   this.sort = ms;
+  //   this.setDataSourceAttributes();
+  // }
 
   constructor (private dataService: DataService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getStudents();
-
     this.dataSource = new MatTableDataSource(this.students);
   }
 
-
-  /*
-   * Set the paginator and sort after the view init since this component will
-   * be able to query its view for the initialized paginator and sort.
-   */
-  // tslint:disable-next-line:use-lifecycle-interface
-  ngAfterViewInit() {
+  setDataSourceAttributes() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
+
+    if (this.paginator) {
+      this.applyFilter('');
+    }
   }
 
   applyFilter(filterValue: string) {
@@ -56,7 +58,6 @@ export class StudentComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-
 
   getStudents() {
     this.dataService.getRecords('student')
@@ -88,8 +89,8 @@ export class StudentComponent implements OnInit {
 export interface StudentData {
   student_id: string;
   last_name: string;
-  firstName: string;
-  startDate: string;
+  first_name: string;
+  start_date: string;
   gpa: string;
   satScore: string;
   major: string;

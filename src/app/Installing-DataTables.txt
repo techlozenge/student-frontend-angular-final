@@ -24,8 +24,7 @@ npm install datatables.net --save
 npm install datatables.net-dt --save
     datatables.net-dt@1.10.20
 
-npm install angular-datatables --save
-    ngular-datatables@8.0.0
+npm install angular-datatables --save angular-datatables@8.0.0
 
 npm install @types/jquery --save-dev
     @types/jquery@3.3.31
