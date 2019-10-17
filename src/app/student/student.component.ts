@@ -12,7 +12,7 @@ import { fadeInAnimation } from '../animations/fade-in.animation';
   styleUrls: ['./student.component.css'],
   animations: [fadeInAnimation]
 })
-export class StudentComponent implements OnInit, AfterViewInit {
+export class StudentComponent implements AfterViewInit {
 
   students: any[];
   events: any[];
@@ -25,23 +25,25 @@ export class StudentComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<StudentData>;
 
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
 
-constructor (private dataService: DataService, public dialog: MatDialog) {}
+constructor (private dataService: DataService, public dialog: MatDialog) {
+  this.getStudents();
+  this.dataSource = new MatTableDataSource(this.students);
+}
 
-  ngOnInit(): void {
-    this.getStudents();
-    this.dataSource = new MatTableDataSource(this.students);
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    console.log('hit ngOnInit');
-  }
+  // ngOnInit(): void {
+  // }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     console.log('hit ngAfterViewInit');
   }
+
+  onRowClicked(row: any) {
+    console.log('Row clicked: ', row);
+}
 
   getStudents() {
     this.dataService.getRecords('student')
