@@ -103,7 +103,7 @@ export class DataService {
             errMsg = error._body
         } else {
             if (error instanceof Response) {
-                if (error.status === 0){
+                if (error.status === 0) {
                     errMsg = 'Error connecting to API'
                 } else {
                     const errorJSON = error.json();

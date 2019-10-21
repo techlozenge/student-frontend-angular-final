@@ -59,25 +59,7 @@
   <br>
   <br>
 
-  <mat-table class="lessons-table mat-elevation-z8" [dataSource]="students" matSort style="width: 80%; margin-left: 40px;">
-
-      <!-- ID Column -->
-      <!-- <ng-container matColumnDef="student_id">
-        <div *matHeaderCellDef mat-sort-header> ID </div>
-        <div *matCellDef="let student"> {{student.student_id}} </div>
-      </ng-container> -->
-  
-      <!-- Last Name Column -->
-      <!-- <ng-container matColumnDef="last_name">
-        <div *matHeaderCellDef mat-sort-header> Last Name </div>
-        <div *matCellDef="let student"> {{student.last_name}} </div>
-      </ng-container> -->
-  
-       <!-- First Name Column -->
-       <!-- <ng-container matColumnDef="first_name">
-          <div *matHeaderCellDef mat-sort-header> First Name </div>
-          <div *matCellDef="let student"> {{student.first_name}} </div>
-        </ng-container> -->
+  <table mat-table matSort [dataSource]="students" (matSortChange)="onMatSortChange($event)" class="mat-elevation-z8" style="width: 80%; margin-left: 40px;">
     
       <!-- ID Column -->
       <ng-container matColumnDef="student_id">
@@ -125,9 +107,9 @@
 
         <mat-row *matRowDef="let student; columns: displayedColumns;" (click)="onRowClicked(student)"></mat-row>
     
-      </mat-table>
+      </table>
 
-    <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[5,10,25]"></mat-paginator>
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5,10,25]"></mat-paginator>
     
   <br>
 </section>
