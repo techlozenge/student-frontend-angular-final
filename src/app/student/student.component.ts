@@ -4,6 +4,7 @@ import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { __core_private_testing_placeholder__ } from '@angular/core/testing';
 
 @Component({
   selector: 'app-student',
@@ -13,8 +14,6 @@ import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class StudentComponent implements OnInit, AfterViewInit {
 
-  students: any[];
-
   events: any[];
   errorMessage: string;
   successMessage: string;
@@ -22,22 +21,24 @@ export class StudentComponent implements OnInit, AfterViewInit {
 
   displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat'];
 
+  students: any;
+
   dataSource: any;
 
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator: MatSort;
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource();
-    this.getStudents();
+    console.log('in OnInit');
   }
 
-constructor (private dataService: DataService, public dialog: MatDialog) {}
+constructor (private dataService: DataService, public dialog: MatDialog) {
+  console.log('in constructor');
+  this.getStudents();
+}
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    console.log('hit ngAfterViewInit');
+    console.log(' in ngAfterViewInit');
   }
 
   onRowClicked(row: any) {
@@ -52,8 +53,11 @@ constructor (private dataService: DataService, public dialog: MatDialog) {}
     this.dataService.getRecords('student')
       .subscribe(
         students => {
-          this.dataSource.data = students;
-          console.log(this.dataSource.data);
+          console.log('in getStudents');
+          this.dataSource = new MatTableDataSource(students);
+          console.log('', this.dataSource.data);
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
           return this.students = students;
         },
         error => this.errorMessage = <any>error
@@ -76,4 +80,13 @@ constructor (private dataService: DataService, public dialog: MatDialog) {}
       }
     });
   }
+}
+
+export interface StudentData {
+  student_id: string;
+  last_name: string;
+  first_name: string;
+  start_data: string;
+  gpa: number;
+  sat: number;
 }

@@ -57,9 +57,7 @@
   <br>
   <br>
 
-  <table mat-table #table [dataSource]="students"  matSort (matSortChange)="onSortData($event)" class="mat-elevation-z8" style="width: 80%; margin-left: 60px;">
-
-  <!-- <table mat-table matSort [dataSource]="students" (matSortChange)="onMatSortChange($event)" class="mat-elevation-z8" style="width: 80%; margin-left: 40px;"> -->
+  <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="mat-elevation-z9" style="width: 80%; margin-left: 60px;">
     
       <!-- ID Column -->
       <ng-container cdkColumnDef="student_id">
