@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-// import { Subject } from 'rxjs/Rx';
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-student',
@@ -12,29 +11,32 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./student.component.css'],
   animations: [fadeInAnimation]
 })
-export class StudentComponent implements AfterViewInit {
+export class StudentComponent implements OnInit, AfterViewInit {
 
   students: any[];
+
   events: any[];
   errorMessage: string;
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['student_id', 'last_name', 'first_name'];
+  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat'];
 
-  dataSource: MatTableDataSource<StudentData>;
+  dataSource: any;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatSort;
 
-constructor (private dataService: DataService, public dialog: MatDialog) {
-  this.getStudents();
-  this.dataSource = new MatTableDataSource(this.students);
-}
+  ngOnInit() {
+    this.dataSource = new MatTableDataSource();
+    this.getStudents();
+  }
+
+constructor (private dataService: DataService, public dialog: MatDialog) {}
 
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
     console.log('hit ngAfterViewInit');
   }
 
@@ -42,15 +44,16 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
     console.log('Row clicked: ', row);
   }
 
-  onMatSortChange(event: any) {
+  onSortData(event: any) {
     console.log('event: ', event);
-    console.log('header: ', this.sort.active + ' direction: ' + this.sort.direction);
   }
 
   getStudents() {
     this.dataService.getRecords('student')
       .subscribe(
         students => {
+          this.dataSource.data = students;
+          console.log(this.dataSource.data);
           return this.students = students;
         },
         error => this.errorMessage = <any>error
@@ -73,15 +76,4 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
       }
     });
   }
-
-}
-
-export interface StudentData {
-  student_id: string;
-  last_name: string;
-  first_name: string;
-  start_date: string;
-  gpa: string;
-  satScore: string;
-  major: string;
 }

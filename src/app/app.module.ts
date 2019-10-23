@@ -87,7 +87,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     FooterComponent
   ],
   exports: [
+      BrowserModule,
       CdkTableModule,
+      BrowserAnimationsModule,
       MatAutocompleteModule,
       MatButtonModule,
       MatButtonToggleModule,
