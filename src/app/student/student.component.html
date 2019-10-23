@@ -1,107 +1,108 @@
 <section @fadeInAnimation>
 
-  <!-- <ol >
-    <li><a class="active w-18 p-1" routerLink="/home">Home</a></li>
-    <li class="active w-18 p-2">Students</li>
-</ol> -->
+  <br/>
 
-<br/>
+  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+      {{errorMessage}} {{successMessage}} 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
 
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
-    {{errorMessage}} {{successMessage}} 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+  <br><br><br>
 
-<br><br><br>
-
-<a class="btn btn-primary" routerLink="/student/add">Add Student</a>
-
-<br>
-<h2>Students</h2>
-<br>
-
-<table datatable id="dataTable" class="table table-hover table-bordered mat-elevation-z8"> 
-    <thead class="thead-dark">
-      <tr>
-        <th onclick="sortTable(0)">ID <i class="fas fa-sort"></i></th>
-        <th onclick="sortTable(1)">Last Name  <i class="fas fa-sort"></i></th>
-        <th>First Name </th>
-        <th onclick="sortTable(3)">Start Date <i class="fas fa-sort"></i></th>
-        <th onclick="sortTable(4)">GPA <i class="fas fa-sort"></i></th>
-        <th>SAT Score</th>
-        <th onclick="sortTable(6)">Major <i class="fas fa-sort"></i></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let student of students">
-        <td>{{student.student_id}}</td>
-        <td>{{student.last_name}}</td>
-        <td>{{student.first_name}}</td>
-        <td>{{student.start_date}}</td>
-        <td>{{student.gpa}}</td>
-        <td>{{student.sat}}</td>
-        <td>{{student.major?.major}}</td>
-        <td class="text-center">
-          <a class="btn btn-dark" [routerLink]="['/student/edit/', student.student_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-          <button class="btn btn-dark" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)" ><i class="fas fa-trash-alt"></i></button>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+  <a class="btn btn-primary" routerLink="/student/add">Add Student</a>
 
   <br>
-  <br>
+  <h2>Students</h2>
   <br>
 
-  <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="mat-elevation-z9" style="width: 80%; margin-left: 60px;">
-    
+  <table datatable id="dataTable" class="table table-hover table-bordered mat-elevation-z8"> 
+      <thead class="thead-dark">
+        <tr>
+          <th onclick="sortTable(0)">ID <i class="fas fa-sort"></i></th>
+          <th onclick="sortTable(1)">Last Name  <i class="fas fa-sort"></i></th>
+          <th>First Name </th>
+          <th onclick="sortTable(3)">Start Date <i class="fas fa-sort"></i></th>
+          <th onclick="sortTable(4)">GPA <i class="fas fa-sort"></i></th>
+          <th>SAT Score</th>
+          <th onclick="sortTable(6)">Major <i class="fas fa-sort"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{student.student_id}}</td>
+          <td>{{student.last_name}}</td>
+          <td>{{student.first_name}}</td>
+          <td>{{student.start_date}}</td>
+          <td>{{student.gpa}}</td>
+          <td>{{student.sat}}</td>
+          <td>{{student.major?.major}}</td>
+          <td class="text-center">
+            <a class="btn btn-dark" [routerLink]="['/student/edit/', student.student_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
+            <button class="btn btn-dark" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)" ><i class="fas fa-trash-alt"></i></button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="mat-elevation-z9" style="width: 80%; margin-left: 60px;">
+      
       <!-- ID Column -->
       <ng-container cdkColumnDef="student_id">
-        <th mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *cdkCellDef="let student"> {{student.student_id}} </td>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.student_id}} </td>
       </ng-container>
-  
+    
       <!-- Last Name Column -->
       <ng-container cdkColumnDef="last_name">
-        <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Last Name </th>
-        <td mat-cell *cdkCellDef="let student"> {{student.last_name}} </td>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.last_name}} </td>
       </ng-container>
-  
+    
       <!-- First Name Column -->
       <ng-container cdkColumnDef="first_name">
-          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> First Name </th>
+          <th mat-header-cell *cdkHeaderCellDef> First Name </th>
           <td mat-cell *cdkCellDef="let student"> {{student.first_name}} </td>
       </ng-container>
 
       <!-- Start Date Column -->
       <ng-container cdkColumnDef="start_date">
-        <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Start Date </th>
-        <td mat-cell *cdkCellDef="let student"> {{student.start_date}} </td>
-    </ng-container>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Start Date </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.start_date}} </td>
+      </ng-container>
 
       <!-- GPA Column -->
       <ng-container cdkColumnDef="gpa">
-        <th mat-header-cell *cdkHeaderCellDef mat-sort-header> GPA </th>
-        <td mat-cell *cdkCellDef="let student"> {{student.gpa}} </td>
-    </ng-container>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> GPA </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.gpa}} </td>
+      </ng-container>
 
       <!-- SAT Column -->
       <ng-container cdkColumnDef="sat">
-        <th mat-header-cell *cdkHeaderCellDef mat-sort-header> SAT </th>
-        <td mat-cell *cdkCellDef="let student"> {{student.sat}} </td>
-    </ng-container>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> SAT </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.sat}} </td>
+      </ng-container>
+
+      <!-- Major Column -->
+      <ng-container cdkColumnDef="major">
+          <th mat-header-cell *cdkHeaderCellDef> Major </th>
+          <td mat-cell *cdkCellDef="let student"> {{student.major?.major}} </td>
+      </ng-container>
 
       <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
 
-        <tr mat-row *cdkRowDef="let student; columns: displayedColumns;" (click)="onRowClicked(student)"></tr>
-    
-      </table>
+      <tr mat-row *cdkRowDef="let student; columns: displayedColumns;" (click)="onRowClicked(student)"></tr>
+      
+    </table>
 
       <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" class="mat-elevation-z8" style="width: 80%; margin-left: 60px;"></mat-paginator>
     
-      <br>
+  <br>
+
 </section>

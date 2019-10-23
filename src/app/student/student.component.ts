@@ -19,7 +19,7 @@ export class StudentComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat'];
+  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major'];
 
   students: any;
 
