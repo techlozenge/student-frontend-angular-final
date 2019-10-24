@@ -4,7 +4,6 @@ import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import { __core_private_testing_placeholder__ } from '@angular/core/testing';
 
 @Component({
   selector: 'app-student',
@@ -19,7 +18,7 @@ export class StudentComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major'];
+  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major', 'edit', 'delete'];
 
   students: any;
 
@@ -38,15 +37,15 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
 }
 
   ngAfterViewInit(): void {
-    console.log(' in ngAfterViewInit');
+    // console.log(' in ngAfterViewInit');
   }
 
   onRowClicked(row: any) {
-    console.log('Row clicked: ', row);
+    // console.log('Row clicked: ', row);
   }
 
   onSortData(event: any) {
-    console.log('event: ', event);
+    // console.log('event: ', event);
   }
 
   getStudents() {

@@ -153,6 +153,42 @@ footer {
     font-variant: small-caps;
 }
 
+/* MAT-TABLE STYLING */
+
+.mat-table {
+    padding: 8px;
+    margin: 1px;
+    border: 1px solid black;
+    background-color: #dffaea;
+}
+
+.mat-cell {
+    color: black;
+}
+
+.mat-button {
+    color: white;
+    background-color: darkgray;
+}
+
+.mat-button:hover {
+    color: white;
+    background-color: blue;
+}
+
+.mat-header-cell {
+    color: white;
+    background-color: darkgray;
+    font-style: bold;
+    font-variant: small-caps;
+    font-size: 15px;
+    vertical-align: center;
+    text-align: center;
+}
+
+.mat-paginator {
+    background-color: lightgray;
+}
 
 /* Customize container
 
