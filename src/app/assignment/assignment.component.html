@@ -1,47 +1,89 @@
 <section @fadeInAnimation>
-  <!-- <ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li class="active">Assignments</li>
-</ol> -->
 
-<br/>
+  <br/>
 
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+  <div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
+      {{errorMessage}} {{successMessage}} 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
 
-<br><br><br>
-<h2>Assignments</h2>
+  <br><br><br>
 
-<a class="btn btn-primary" routerLink="/assignment/add">Add Assignment</a><br><br>
+  <a class="btn btn-primary" routerLink="/assignment/add">Add Assignment</a>
 
-<table class="table table-hover table-bordered" id="dataTable">
-  <thead class="thead-dark">
-    <tr>
-      <th>Assignment ID</th>
-      <th onclick="sortTable(1)">Last Name <i class="fas fa-sort"></i></th>
-      <th>First Name</th>
-      <th>Assignment Number</th>
-      <th onclick="sortTable(4)">Grade <i class="fas fa-sort"></i></th>
-      <th>Class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let assignment of assignments">
-      <td>{{assignment.assignment_id}}</td>
-      <td>{{assignment.student?.last_name}}</td>
-      <td>{{assignment.student?.first_name}}</td>
-      <td>{{assignment.assignment_nbr}}</td>
-      <td>{{assignment.grade?.grade}}</td>
-      <td>{{assignment.class?.subject}} {{assignment.class?.course}}</td>
-      <td class="text-center">
-        <a class="btn btn-dark" [routerLink]="['/assignment/edit/', assignment.assignment_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-        <button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <br>
+  <h2>Assignments</h2>
+  <br>
+
+    <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="table-hover mat-elevation-z11" style="width: 80%; margin-left: 160px;">
+      
+      <!-- ID Column -->
+      <ng-container cdkColumnDef="assignment_id">
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.assignment_id}} </td>
+      </ng-container>
+    
+      <!-- Student Last Name Column -->
+      <ng-container cdkColumnDef="student_last_name">
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Student Last Name </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.student?.last_name}} </td>
+      </ng-container>
+    
+      <!-- Student First Name Column -->
+      <ng-container cdkColumnDef="student_first_name">
+          <th mat-header-cell *cdkHeaderCellDef> Student First Name </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.student?.first_name}} </td>
+      </ng-container>
+
+      <!-- Assignment Number Column -->
+      <ng-container cdkColumnDef="assignment_nbr">
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Assignment Nbr </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.assignment_nbr}} </td>
+      </ng-container>
+
+      <!-- Grade Column -->
+      <ng-container cdkColumnDef="grade">
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Grade </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.grade?.grade}} </td>
+      </ng-container>
+
+      <!-- Subject Column -->
+      <ng-container cdkColumnDef="subject">
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Subject </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.class?.subject}} </td>
+      </ng-container>
+
+      <!-- Course Column -->
+      <ng-container cdkColumnDef="course">
+          <th mat-header-cell *cdkHeaderCellDef> Course </th>
+          <td mat-cell *cdkCellDef="let assignment"> {{assignment.class?.course}} </td>
+      </ng-container>
+
+      <!-- Old-Style Edit & Delete Buttons -->
+
+      <ng-container cdkColumnDef="edit">
+        <th mat-header-cell  *matHeaderCellDef >  </th>
+        <td mat-cell *matCellDef="let assignment" ><a [routerLink]="['/assignment/edit/', assignment.assignment_id]"><button mat-button ><i class="fas fa-pencil-alt"></i></button></a>
+        </td>
+      </ng-container>
+
+      <ng-container cdkColumnDef="delete">
+        <th mat-header-cell  *matHeaderCellDef >  </th>
+        <td mat-cell *matCellDef="let assignment">
+             <button mat-button (click)="deleteAssignment(assignment.assignment_id, assignment.student.first_name + ' ' + assignment.student.last_name)"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *cdkRowDef="let assignment; columns: displayedColumns;" (click)="onRowClicked(assignment)"></tr>
+      
+    </table>
+
+      <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" class="mat-elevation-z8" style="width: 80%; margin-left: 160px;"></mat-paginator>
+    
+  <br>
+
 </section>
