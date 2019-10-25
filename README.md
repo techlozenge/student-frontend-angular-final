@@ -175,6 +175,10 @@ If you don't use the --open then you can launch your angular landing page by typ
 # ___________________________________________________________
 # Change Log
 
+## October 2019
+
+* Upgrading all data tables to Mat Tables using MatSort and MatPagination
+
 ## September 2019 
 
 * Upgraded from Angular 5.2 to 8.2
