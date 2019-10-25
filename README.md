@@ -7,6 +7,8 @@ This Angular project is a fully functional web frontend administration system.
 
 Additionally, it can be leveraged as a very detailed template for other uses.
 
+* NOTE 10/25/2019: I am in the process of converting all of the components to use Angular Material Tables that leverage a MatSort and MatPagination.
+
 * Starting the Application
 
     * Backend
