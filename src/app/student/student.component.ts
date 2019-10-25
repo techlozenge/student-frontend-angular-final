@@ -21,7 +21,6 @@ export class StudentComponent implements OnInit, AfterViewInit {
   displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major', 'edit', 'delete'];
 
   students: any;
-
   dataSource: any;
 
   @ViewChild(MatSort, {static: false}) sort: MatSort;
@@ -79,13 +78,4 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
       }
     });
   }
-}
-
-export interface StudentData {
-  student_id: string;
-  last_name: string;
-  first_name: string;
-  start_data: string;
-  gpa: number;
-  sat: number;
 }

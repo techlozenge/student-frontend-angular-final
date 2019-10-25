@@ -156,6 +156,7 @@ footer {
 /* MAT-TABLE STYLING */
 
 .mat-table {
+    overflow: auto;
     padding: 8px;
     margin: 1px;
     border: 1px solid black;

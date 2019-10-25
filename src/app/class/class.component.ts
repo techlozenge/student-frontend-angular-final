@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { fadeInAnimation } from '../animations/fade-in.animation';
-
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
+import { fadeInAnimation } from '../animations/fade-in.animation';
+import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-class',
@@ -11,42 +11,72 @@ import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.compone
   styleUrls: ['./class.component.css'],
   animations: [fadeInAnimation]
 })
-export class ClassComponent implements OnInit {
+export class ClassComponent implements OnInit, AfterViewInit {
 
+  events: any[];
   errorMessage: string;
   successMessage: string;
-  classes: any[];
   mode = 'Observable';
 
-  constructor (private dataService: DataService, public dialog: MatDialog) {}
+  // tslint:disable-next-line:max-line-length
+  displayedColumns = ['class_id', 'instructor_last_name', 'instructor_first_name', 'instructor-years_of_experience', 'subject', 'course', 'edit', 'delete'];
 
-  ngOnInit() { this.getClasses(); }
+  classes: any;
+  dataSource: any;
 
-  getClasses() {
-    this.dataService.getRecords("class")
-      .subscribe(
-        classes => this.classes = classes,
-        error =>  this.errorMessage = <any>error);
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatSort;
+
+  ngOnInit() {
+    console.log('in OnInit');
   }
 
-  deleteClass(id:number, str:string) {
+constructor (private dataService: DataService, public dialog: MatDialog) {
+  console.log('in constructor');
+  this.getClasses();
+}
 
-    let dialogRef = this.dialog.open(DeleteConfirmComponent, {
+  ngAfterViewInit(): void {
+    // console.log(' in ngAfterViewInit');
+  }
+
+  onRowClicked(row: any) {
+    // console.log('Row clicked: ', row);
+  }
+
+  onSortData(event: any) {
+    // console.log('event: ', event);
+  }
+
+  getClasses() {
+    this.dataService.getRecords('class')
+      .subscribe(
+        classes => {
+          console.log('in getclasses');
+          this.dataSource = new MatTableDataSource(classes);
+          console.log('', this.dataSource.data);
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+          return this.classes = classes;
+        },
+        error => this.errorMessage = <any>error
+        )
+  }
+
+  deleteClass(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
       data: {
         dataKey: id,
         value: str
       }
     });
-
     dialogRef.afterClosed().subscribe(result => {
-      if(result){
-        this.dataService.deleteRecord("class", id)
+      if (result) {
+        this.dataService.deleteRecord('class', id)
           .subscribe(
-            classy => {this.successMessage = "Record(s) deleted succesfully"; this.getClasses(); },
+            classes => {this.successMessage = 'Record(s) deleted succesfully'; this.getClasses(); },
             error =>  this.errorMessage = <any>error);
       }
     });
   }
-
 }
-
