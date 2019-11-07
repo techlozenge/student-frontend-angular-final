@@ -61,6 +61,7 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
+import { TableFilterPipe } from './filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import {CdkTableModule} from '@angular/cdk/table';
     InstructorComponent,
     AssignmentComponent,
     ClassComponent,
-    FooterComponent
+    FooterComponent,
+    TableFilterPipe
   ],
   exports: [
       BrowserModule,
