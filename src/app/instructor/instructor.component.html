@@ -9,13 +9,13 @@
       </button>
   </div>
 
-  <br><br><br>
-
-  <a class="btn btn-primary" routerLink="/instructor/add">Add Instructor</a>
+  <br><br>
 
   <br>
   <h2>Instructors</h2>
   <br>
+
+    <a class="btn btn-primary button-push" routerLink="/instructor/add">Add Instructor</a>
 
     <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="table-hover mat-elevation-z11" style="width: 80%; margin-left: 160px;">
       

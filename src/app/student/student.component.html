@@ -9,45 +9,13 @@
       </button>
   </div>
 
-  <br><br><br>
-
-  <a class="btn btn-primary" routerLink="/student/add">Add Student</a>
+  <br><br>
 
   <br>
   <h2>Students</h2>
   <br>
 
-  <!-- <table datatable id="dataTable" class="table table-hover table-bordered mat-elevation-z8"> 
-      <thead class="thead-dark">
-        <tr>
-          <th onclick="sortTable(0)">ID <i class="fas fa-sort"></i></th>
-          <th onclick="sortTable(1)">Last Name  <i class="fas fa-sort"></i></th>
-          <th>First Name </th>
-          <th onclick="sortTable(3)">Start Date <i class="fas fa-sort"></i></th>
-          <th onclick="sortTable(4)">GPA <i class="fas fa-sort"></i></th>
-          <th>SAT Score</th>
-          <th onclick="sortTable(6)">Major <i class="fas fa-sort"></i></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let student of students">
-          <td>{{student.student_id}}</td>
-          <td>{{student.last_name}}</td>
-          <td>{{student.first_name}}</td>
-          <td>{{student.start_date}}</td>
-          <td>{{student.gpa}}</td>
-          <td>{{student.sat}}</td>
-          <td>{{student.major?.major}}</td>
-
-          <td class="text-center">
-            <a class="btn btn-dark" [routerLink]="['/student/edit/', student.student_id]"><i class="fas fa-pencil-alt"></i></a>&nbsp;
-
-            <button class="btn btn-dark" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)" ><i class="fas fa-trash-alt"></i></button>
-
-          </td>
-        </tr>
-      </tbody>
-    </table> -->
+    <a class="btn btn-primary button-push" routerLink="/student/add">Add Student</a>
 
     <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortData($event)" class="table-hover mat-elevation-z11" style="width: 80%; margin-left: 160px;">
       
