@@ -116,17 +116,21 @@ If you don't use the --open then you can launch your angular landing page by typ
 ![Admin SS](./Student-Admin-SS2.png)
 ![Admin SS](./Student-Admin-SS3.png)
 
-**Student Listing**
+**Classes Listing**
 
-![Admin SS Student Inq](./Student-Admin-SS-Inq.png)
+![Classes List](./Classes-List.png)
 
-**Add/Edit Student Screen** 
+**Add Class Screen** 
 
-![Admin SS Student Inq](./Student-Admin-SS-Edit.png)
+![Class Add](./Classes-Add.png)
+
+**Edit Class Screen** 
+
+![Class Edit](./Classes-Edit.png)
 
 **Delete Confirmation Dialog** 
 
-![Admin SS Student Inq](./Student-Admin-SS-Del.png)
+![Classes Delete](./Classes-Delete.png)
 
 # ___________________________________________________________
 # Helpful Links
