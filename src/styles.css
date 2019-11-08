@@ -3,6 +3,7 @@
 body {
     background-color: #dffaea;
 }
+
 /* TABLES */
 
 table.table {
@@ -19,6 +20,8 @@ table.table tbody td {
 thead {
     font-variant: small-caps;
 }
+
+/* NAVBAR */
 
 .navbar {
     width: 100%;
@@ -38,14 +41,12 @@ thead {
 }
   
 .navbar-toggle {
-    /* (80px - button height 34px) / 2 = 23px */
     margin-top: 20px;
     padding: 8px 8px !important;
 }
 
 /* this is used by the nav-bar seach function */
 .input-group {
-    /* font-family: fantasy; */
     padding-top: 0px;
     margin-top: 0px;
     padding-bottom: 15px;
@@ -60,6 +61,7 @@ thead {
     margin-left: 160px;
 }
 
+/*  CONTAINER DEFAULTS */ 
 .container {
     margin: 0px;
     padding: 0px;
@@ -69,7 +71,6 @@ thead {
     width: 75%;
 }
 
- 
 .small-img{
   position: absolute;
   right: 43%;
@@ -106,11 +107,17 @@ h1 {
 
 h2 {
     font-variant: small-caps;
-    text-align: center;
     font-size: 30px;
     margin: 0px;
     padding-bottom: 15px;
     text-decoration: underline;
+}
+
+h3 {
+    font-variant: small-caps;
+    font-style: italic;
+    font-size: 21px;
+    padding-bottom: 10px;
 }
 
 hr {
@@ -121,12 +128,27 @@ hr {
     border-top: 3px double #8c8b8b;
 }
 
+/* HOME PAGE CARD STYLING */
+
 .card-style {
-    /* this padding pushes the card to the left */
-    padding-left: 60px;
-    border-right: 1px solid black;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 55px;
+    padding-bottom: 30px;
+    border-right: 2px solid black;
 }
 
+.card-style h2 {
+    padding-left: 80px;
+}
+
+.card-style p {
+    padding-left: 40px;
+}
+
+.card-style img {
+    padding-left: 40px;
+}
 
 /* LINKS */
 
@@ -146,6 +168,7 @@ a:hover {
 /* FOOTER STYLING */
 
 footer {
+    height: 50px;  
     font-variant: small-caps;
     width: 100%;
 }
