@@ -11,9 +11,7 @@
 
   <br><br>
 
-  <br>
-  <h2>Students</h2>
-  <br>
+  <h2 class="summaryHeading">Student Summary</h2>
 
     <a class="btn btn-primary button-push" routerLink="/student/add">Add Student</a>
 
@@ -65,14 +63,14 @@
 
       <ng-container cdkColumnDef="edit">
         <th mat-header-cell  *matHeaderCellDef >  </th>
-        <td mat-cell *matCellDef="let student" ><a [routerLink]="['/student/edit/', student.student_id]"><button mat-button ><i class="fas fa-pencil-alt"></i></button></a>
+        <td mat-cell *matCellDef="let student" ><a [routerLink]="['/student/edit/', student.student_id]"><button mat-raised-button [color]="'primary'" ><i class="fas fa-pencil-alt"></i></button></a>
         </td>
       </ng-container>
 
       <ng-container cdkColumnDef="delete">
         <th mat-header-cell  *matHeaderCellDef >  </th>
         <td mat-cell *matCellDef="let student">
-             <button mat-button (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)"><i class="fas fa-trash-alt"></i></button>
+             <button mat-raised-button [color]="'warn'" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)"><i class="fas fa-trash-alt"></i></button>
         </td>
       </ng-container>
 

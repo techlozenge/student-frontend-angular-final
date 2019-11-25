@@ -5,10 +5,9 @@
       <li class="active">Manage Student</li>
   </ol> -->
 
-  <br><br><br><br><br>
+  <br><br><br>
 
-  <a class="btn btn-primary" routerLink="/student">Return to Students</a>
-  <h2>Student</h2>
+  <h2 class="summaryHeading">Student Detail</h2>
 
   <div>
     <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
@@ -19,65 +18,77 @@
     </div>
   </div>
   
-<form novalidate (ngSubmit)="saveStudent(studentForm)"  #studentForm="ngForm" class="form-horizontal">
+<form novalidate (ngSubmit)="saveStudent(studentForm)"  #studentForm="ngForm" class=" centerContent formStyle">
     <input [ngModel]="student?.student_id" ngModel #student_id="ngModel" type="hidden" name="student_id">
+
     <div class="form-group">
-      <label for="first_name" class="col-sm-2 control-label">First Name</label>
-      <div class="col-sm-10">
+<!--      <label for="first_name" class="col-sm-2 control-label">First Name</label> -->
+      <div class="col-sm-8">
         <input [ngModel]="student?.first_name" ngModel #first_name="ngModel" type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required minlength="2" maxlength="30">
          <span *ngIf="formErrors.first_name" class="text-danger">
           {{ formErrors.first_name }}
         </span>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-      <div class="col-sm-10">
+<!--      <label for="last_name" class="col-sm-2 control-label">Last Name</label> -->
+      <div class="col-sm-8">
         <input [ngModel]="student?.last_name" ngModel #last_name="ngModel" type="text" class="form-control" id="last_name" name="last_name"  placeholder="Last Name" required minlength="2" maxlength="30">
         <span *ngIf="formErrors.last_name" class="text-danger">
           {{ formErrors.last_name }}
         </span>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="start_date" class="col-sm-2 control-label">Start Date</label>
-      <div class="col-sm-10">
-        <input [ngModel]="student?.start_date" ngModel #start_date="ngModel" type="text" class="form-control" id="start_date" name="start_date" placeholder="2017-01-01" pattern="(\d{4})-(\d{2})-(\d{2})">
+<!--      <label for="start_date" class="col-sm-2 control-label">Start Date</label> -->
+      <div class="col-sm-8">
+        <input [ngModel]="student?.start_date" ngModel #start_date="ngModel" type="text" class="form-control" id="start_date" name="start_date" placeholder="Start Date (Format is YYYY-MM-DD)" required pattern="(\d{4})-(\d{2})-(\d{2})">
         <span *ngIf="formErrors.start_date" class="text-danger">
           {{ formErrors.start_date }}
         </span>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="gpa" class="col-sm-2 control-label">GPA</label>
-      <div class="col-sm-10">
-        <input [ngModel]="student?.gpa" ngModel #gpa="ngModel" type="text" class="form-control" id="gpa" name="gpa" placeholder="4.0" maxLength="4" pattern="\d+\.\d+">
+<!--      <label for="gpa" class="col-sm-2 control-label">GPA</label> -->
+      <div class="col-sm-8">
+        <input [ngModel]="student?.gpa" ngModel #gpa="ngModel" type="text" class="form-control" id="gpa" name="gpa" placeholder="GPA" maxLength="4" required pattern="\d+\.\d+">
         <span *ngIf="formErrors.gpa" class="text-danger">
           {{ formErrors.gpa }}
         </span>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="sat" class="col-sm-2 control-label">SAT Score</label>
-      <div class="col-sm-10">
-        <input [ngModel]="student?.sat" ngModel #sat="ngModel" type="text" class="form-control" id="sat" name="sat" placeholder="1400" pattern="([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-5][0-9]{2}|1600)" maxlength="4">
+<!--     <label for="sat" class="col-sm-2 control-label">SAT Score</label> -->
+      <div class="col-sm-8">
+        <input [ngModel]="student?.sat" ngModel #sat="ngModel" type="text" class="form-control" id="sat" name="sat" placeholder="SAT Score" pattern="([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-5][0-9]{2}|1600)" required maxlength="4">
         <span *ngIf="formErrors.sat" class="text-danger">
           {{ formErrors.sat }}
         </span>
       </div>
     </div>
+
     <div class="form-group">
-      <label for="major_id" class="col-sm-2 control-label">Major</label>
-      <div class="col-sm-10">
+<!--      <label for="major_id" class="col-sm-2 control-label">Major</label> -->
+      <div class="col-sm-8">
         <select [ngModel]="student?.major?.major_id" ngModel #major_id="ngModel" class="form-control" name="major_id" id="major_id" required>
+          <option [ngValue]="null">Select a Major...</option>
           <option *ngFor="let major of majors" [value]="major.major_id">{{major.major}}</option>
         </select>
       </div>
     </div>
-     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+
+
+    <div class="form-group text-right">
+      <div class="col-sm-offset-2 col-sm-8">
         <button [disabled]="!studentForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-primary btn-margin" routerLink="/student">Cancel</a>
       </div>
     </div>
+
+
   </form>
 </section>
