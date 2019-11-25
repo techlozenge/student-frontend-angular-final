@@ -40,19 +40,19 @@ It can be leveraged as a detailed template for other uses.
 
 * Framework
 
-    * Angular CLI: 8.3.6
-    * Node: 10.10.0
-    * OS: darwin x64
-    * Angular:
+    Angular CLI: 8.3.6
+    Node: 10.10.0
+    OS: darwin x64
+    Angular:
 
-    ** Package                      Version
-    ** ------------------------------------------------------
-    ** @angular-devkit/architect    0.803.6
-    ** @angular-devkit/core         8.3.6
-    ** @angular-devkit/schematics   8.3.6
-    ** @schematics/angular          8.3.6
-    ** @schematics/update           0.803.6
-    ** rxjs                         6.4.0
+    Package                      Version
+    ------------------------------------------------------
+    @angular-devkit/architect    0.803.6
+    @angular-devkit/core         8.3.6
+    @angular-devkit/schematics   8.3.6
+    @schematics/angular          8.3.6
+    @schematics/update           0.803.6
+    rxjs                         6.4.0
 
 *  Authentication
     * There is currently no authentication built into this system
