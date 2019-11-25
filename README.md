@@ -5,15 +5,15 @@
 
 This Angular project is a fully functional web frontend administration system. 
 
-Additionally, it can be leveraged as a very detailed template for other uses.
+It can be leveraged as a detailed template for other uses.
 
-* NOTE 10/25/2019: I am in the process of converting all of the components to use Angular Material Tables that leverage a MatSort and MatPagination.
+* Note: I have converted all of the summary components to use Angular Material Tables that leverage MatSort and MatPagination.
 
 * Starting the Application
 
     * Backend
 
-        * I use the Sails web framework (0.12.13) as an API server.
+        * I use the Sails web framework (0.12.13) as an API server the serves MySQL data.
 
             * [Sails as a Backend Framework](https://github.com/techlozenge/sails-student-api) (used by this Angular project)
 
@@ -39,7 +39,20 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 ![Overview](./Angular-Frontend.png)
 
 * Framework
-    * Angular 8
+
+    * Angular CLI: 8.3.6
+    * Node: 10.10.0
+    * OS: darwin x64
+    * Angular:
+
+    ** Package                      Version
+    ** ------------------------------------------------------
+    ** @angular-devkit/architect    0.803.6
+    ** @angular-devkit/core         8.3.6
+    ** @angular-devkit/schematics   8.3.6
+    ** @schematics/angular          8.3.6
+    ** @schematics/update           0.803.6
+    ** rxjs                         6.4.0
 
 *  Authentication
     * There is currently no authentication built into this system
@@ -49,13 +62,13 @@ Additionally, it can be leveraged as a very detailed template for other uses.
     * CSS (see styles.css)
 
 * Animation
-    * Angular 8 fade-in-animation
+    * Angular fade-in-animation
 
 * Landing Page
     * home
 
 * Navigation
-    * navigation (includes a web search method in the navigation bar)
+    * navigation (includes web search in the navigation bar)
 
 * Admin Components
     * Students
@@ -88,7 +101,7 @@ Additionally, it can be leveraged as a very detailed template for other uses.
 # Launching the Sails Backend & Angular Frontend
 
 ## How to launch the sails backend
-My data is stored locally in a MySQL DB and I've hooked up a Sails backend to act as an API endpoint server for the database. 
+My data is served locally in a MySQL DB and I've hooked up a Sails backend to act as an API endpoint server for the database. 
 
 Once your DB is running and loaded with data and Sails is all set up, and you're in the Sails project folder, at the command line, type: 
 
@@ -181,7 +194,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 ## October 2019
 
-* Upgrading all data tables to Mat Tables using MatSort and MatPagination
+* Upgraded all data summary tables to Mat Tables using MatSort and MatPagination
 
 ## September 2019 
 
