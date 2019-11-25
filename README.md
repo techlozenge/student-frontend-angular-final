@@ -44,9 +44,6 @@ It can be leveraged as a detailed template for other uses.
     Node: 10.10.0
     OS: darwin x64
     Angular:
-
-    Package                      Version
-    ------------------------------------------------------
     @angular-devkit/architect    0.803.6
     @angular-devkit/core         8.3.6
     @angular-devkit/schematics   8.3.6
