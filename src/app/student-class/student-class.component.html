@@ -45,14 +45,14 @@
 
       <ng-container cdkColumnDef="edit">
         <th mat-header-cell  *matHeaderCellDef >  </th>
-        <td mat-cell *matCellDef="let student_class" ><a [routerLink]="['/student-class/edit/', student_class.student_class_id]"><button mat-button ><i class="fas fa-pencil-alt"></i></button></a>
+        <td mat-cell *matCellDef="let student_class" ><a [routerLink]="['/student-class/edit/', student_class.student_class_id]"><button mat-raised-button [color]="'primary'" ><i class="fas fa-pencil-alt"></i></button></a>
         </td>
       </ng-container>
 
       <ng-container cdkColumnDef="delete">
         <th mat-header-cell  *matHeaderCellDef >  </th>
         <td mat-cell *matCellDef="let student_class">
-             <button mat-button (click)="deleteStudentClass(student_class.student_class_id, student_class.student.first_name + ' ' + student_class.student.last_name + ' in ' + student_class.class.subject + ' ' + student_class.class.course)"><i class="fas fa-trash-alt"></i></button>
+             <button mat-raised-button [color]="'warn'" (click)="deleteStudentClass(student_class.student_class_id, student_class.student.first_name + ' ' + student_class.student.last_name + ' in ' + student_class.class.subject + ' ' + student_class.class.course)"><i class="fas fa-trash-alt"></i></button>
         </td>
       </ng-container>
 
