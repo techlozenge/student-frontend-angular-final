@@ -1,13 +1,7 @@
 <section @fadeInAnimation>
-  <!-- <ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/major-class">Major_Class</a></li>
-    <li class="active">Manage Major_Class</li>
-</ol> -->
 
-<br><br><br><br><br>
-<a class="btn btn-primary" routerLink="/major-class">Return to Major_Classes</a>
-<h2>Major_Class Cross-Reference</h2>
+<br><br><br>
+<h2 class="summaryHeading">Major-Class Detail</h2>
 
 <div>
   <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
@@ -18,26 +12,17 @@
   </div>
 </div>
 
-<!--
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
- -->
-
-<!-- BEGIN Form  -->
-<form (ngSubmit)="saveMajorClass(majorClassForm)"  #majorClassForm="ngForm" class="form-horizontal">
+<form novalidate (ngSubmit)="saveMajorClass(majorClassForm)"  #majorClassForm="ngForm" class="centerContent formStyle">
 
 <!-- hidden major_class_id  -->
   <input [ngModel]="majorclass?.major_class_id" ngModel #major_class_id="ngModel" type="hidden" name="major_class_id">
 
   <!-- major_id  -->
   <div class="form-group">
-    <label for="major_id" class="col-sm-2 control-label">Major</label>
-    <div class="col-sm-10">
+    <!-- <label for="major_id" class="col-sm-2 control-label">Major</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="majorclass?.major?.major_id" ngModel #major_id="ngModel" class="form-control" name="major_id" id="major_id" required>
+        <option [ngValue]="null">Select a Major...</option>
         <option *ngFor="let major of majors" [value]="major.major_id">{{major.major}}</option>
       </select>
     </div>
@@ -46,19 +31,20 @@
 
   <!-- class_id  -->
     <div class="form-group">
-    <label for="class_id" class="col-sm-2 control-label">Class</label>
-    <div class="col-sm-10">
+    <!-- <label for="class_id" class="col-sm-2 control-label">Class</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="majorclass?.class?.class_id" ngModel #class_id="ngModel" class="form-control" name="class_id" id="class_id" required>
+        <option [ngValue]="null">Select a Class...</option>
         <option *ngFor="let class of classes" [value]="class.class_id">{{class.course}} {{class.subject}}</option>
       </select>
     </div>
   </div>
 
-
   <!-- submit button  -->
    <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button [disabled]="!majorClassForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary btn-margin" routerLink="/major-class">Cancel</a>
     </div>
   </div>
 </form>

@@ -25,7 +25,7 @@
     
       <!-- Instructor Last Name Column -->
       <ng-container cdkColumnDef="instructor_last_name">
-          <th mat-header-cell *cdkHeaderCellDef> Instr Last Name </th>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Instr Last Name </th>
           <td mat-cell *cdkCellDef="let class"> {{class.instructor?.last_name}} </td>
       </ng-container>
     
@@ -37,7 +37,7 @@
 
       <!-- Instructor Years of Experience Column -->
       <ng-container cdkColumnDef="instructor-years_of_experience">
-          <th mat-header-cell *cdkHeaderCellDef> Instr Experience </th>
+          <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Instr Experience </th>
           <td mat-cell *cdkCellDef="let class"> {{class.instructor?.years_of_experience}} </td>
       </ng-container>
 

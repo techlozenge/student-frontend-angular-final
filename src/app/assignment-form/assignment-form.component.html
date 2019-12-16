@@ -1,15 +1,8 @@
 <section @fadeInAnimation>
-  <!-- <ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/assignment">Assignment</a></li>
-    <li class="active">Manage Assignment</li>
-</ol> -->
 
-<br><br><br><br><br>
-<a class="btn btn-primary" routerLink="/assignment">Return to Assignments</a>
-<h2>Assignment</h2>
+<br><br><br>
 
-<!--<app-status-message [successMessage]="successMessage" [errorMessage]="errorMessage"></app-status-message>-->
+<h2 class="summaryHeading">Assignment</h2>
 
 <div>
   <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
@@ -20,31 +13,22 @@
   </div>
 </div>
 
-<!-- 
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
--->
-
-<form (ngSubmit)="saveAssignment(assignmentForm)"  #assignmentForm="ngForm" class="form-horizontal">
+<form novalidate (ngSubmit)="saveAssignment(assignmentForm)"  #assignmentForm="ngForm" class=" centerContent formStyle">
   <input [ngModel]="assignment?.assignment_id" ngModel #assignment_id="ngModel" type="hidden" name="assignment_id">
 
   <div class="form-group">
-    <label for="student_id" class="col-sm-2 control-label">Student ID</label>
-    <div class="col-sm-10">
-      <!--<input [ngModel]="assignment?.student_id" ngModel #student_id="ngModel" type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter Student ID" required>-->
+    <!-- <label for="student_id" class="col-sm-2 control-label">Student ID</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="assignment?.student?.student_id" ngModel #student_id="ngModel" class="form-control" name="student_id" id="student_id" required>
+        <option [ngValue]="null">Select a Student...</option>
           <option *ngFor="let student of student" [value]="student.student_id">{{student.last_name}}, {{student.first_name}}</option>
         </select>
     </div>
   </div>
   
   <div class="form-group">
-    <label for="assignment_nbr" class="col-sm-2 control-label">Assignment Number</label>
-    <div class="col-sm-10">
+    <!-- <label for="assignment_nbr" class="col-sm-2 control-label">Assignment Number</label> -->
+    <div class="col-sm-8">
       <input [ngModel]="assignment?.assignment_nbr" type="text" class="form-control" id="assignment_nbr" name="assignment_nbr"  placeholder="Enter Assignment Number" required pattern="\d+" maxLength="10"/>
       <span *ngIf="formErrors.assignment_nbr" class="text-danger">
           {{ formErrors.assignment_nbr }}
@@ -53,20 +37,20 @@
   </div>
 
   <div class="form-group">
-    <label for="grade_id" class="col-sm-2 control-label">Grade ID</label>
-    <div class="col-sm-10">
-      <!--<input [ngModel]="assignment.grade" ngModel type="text" class="form-control" id="grade_id" name="grade_id" placeholder="Enter Grade ID" required>-->
+    <!-- <label for="grade_id" class="col-sm-2 control-label">Grade ID</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="assignment?.grade?.grade_id" ngModel #grade_id="ngModel" class="form-control" name="grade_id" id="grade_id" required>
+        <option [ngValue]="null">Select a Grade...</option>
           <option *ngFor="let grade of grade" [value]="grade.grade_id">{{grade.grade}}</option>
         </select>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="class_id" class="col-sm-2 control-label">Class ID</label>
-    <div class="col-sm-10">
-      <!--<input [ngModel]="assignment.class_id" ngModel type="text" class="form-control" id="class_id" name="class_id" placeholder="Enter Class ID">-->
+    <!-- <label for="class_id" class="col-sm-2 control-label">Class ID</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="assignment?.class?.class_id" ngModel #class_id="ngModel" class="form-control" name="class_id" id="class_id" required>
+        <option [ngValue]="null">Select a Class...</option>
           <option *ngFor="let class of classy" [value]="class.class_id">{{class.subject}} {{class.course}}</option>
         </select>
     </div>
@@ -75,6 +59,7 @@
    <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button [disabled]="!assignmentForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary btn-margin" routerLink="/assignment">Cancel</a>
     </div>
   </div>
 </form>

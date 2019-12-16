@@ -1,13 +1,7 @@
 <section @fadeInAnimation>
-<!-- <ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/instructor">Instructors</a></li>
-    <li class="active">Manage Instructor</li>
-</ol> -->
 
-<br><br><br><br><br>
-<a class="btn btn-primary" routerLink="/instructor">Return to Instructors</a>
-<h2>Instructor</h2>
+<br><br><br>
+<h2 class="summaryHeading">Instructor Detail</h2>
 
 <div>
   <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
@@ -18,25 +12,15 @@
   </div>
 </div>
 
-<!-- 
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
--->
-
-<!-- BEGIN Form -->
-<form (ngSubmit)="saveInstructor(instructorForm)" #instructorForm="ngForm" class="form-horizontal">
+<form novalidate (ngSubmit)="saveInstructor(instructorForm)" #instructorForm="ngForm" class="centerContent formStyle">
 
   <!-- hidden instructor_id -->
   <input [ngModel]="instructor?.instructor_id" ngModel #instructor_id="ngModel" type="hidden" name="instructor_id">
 
   <!-- first_name -->
   <div class="form-group">
-    <label for="first_name" class="col-sm-2 control-label">First Name</label>
-    <div class="col-sm-10">
+    <!-- <label for="first_name" class="col-sm-2 control-label">First Name</label> -->
+    <div class="col-sm-8">
       <input [ngModel]="instructor?.first_name" ngModel #first_name="ngModel" type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required minlength="2" maxlength="30">
         <span *ngIf="formErrors.first_name" class="text-danger">
           {{ formErrors.first_name }}
@@ -46,8 +30,8 @@
 
   <!-- last_name -->
   <div class="form-group">
-    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-    <div class="col-sm-10">
+    <!-- <label for="last_name" class="col-sm-2 control-label">Last Name</label> -->
+    <div class="col-sm-8">
       <input [ngModel]="instructor?.last_name" ngModel #last_name="ngModel" type="text" class="form-control" id="last_name" name="last_name"  placeholder="Last Name" required minlength="2" maxlength="30">
       <span *ngIf="formErrors.last_name" class="text-danger">
         {{ formErrors.last_name }}
@@ -57,9 +41,10 @@
 
   <!-- major_id -->
   <div class="form-group">
-    <label for="major_id" class="col-sm-2 control-label">Major</label>
-    <div class="col-sm-10">
+    <!-- <label for="major_id" class="col-sm-2 control-label">Major</label> -->
+    <div class="col-sm-8">
       <select [ngModel]="instructor?.major?.major_id" ngModel #major_id="ngModel" class="form-control" name="major_id" id="major_id" required>
+        <option [ngValue]="null">Select a Major...</option>
         <option *ngFor="let major of majors" [value]="major.major_id">{{major.major}}</option>
       </select>
     </div>
@@ -67,8 +52,8 @@
  
   <!-- years_of_experience -->
   <div class="form-group">
-    <label for="years_of_experience" class="col-sm-2 control-label">Years of Experience</label>
-    <div class="col-sm-10">
+    <!-- <label for="years_of_experience" class="col-sm-2 control-label">Years of Experience</label> -->
+    <div class="col-sm-8">
       <!-- \d is the regular expression for a number, * means that it accepts more than one of them -->
       <input [ngModel]="instructor?.years_of_experience" ngModel #years_of_experience="ngModel" type="text" class="form-control" id="years_of_experience" name="years_of_experience" placeholder="Enter Number of years of experience" pattern="\d*" required maxLength="2">
       <span *ngIf="formErrors.years_of_experience" class="text-danger">
@@ -79,9 +64,8 @@
   
   <!-- tenured -->
   <div class="form-group">
-    <label for="tenured" class="col-sm-2 control-label">Tenured</label>
-    <div class="col-sm-10">
-      <!--<input [ngModel]="instructor?.tenured" ngModel #tenured="ngModel" type="text" class="form-control" id="tenured" name="tenured" placeholder="Enter 'true' if tenured, 'false' if not" pattern="(?:true|false)" required>-->
+    <!-- <label for="tenured" class="col-sm-2 control-label">Tenured</label> -->
+    <div class="col-sm-8">
       <input [ngModel]="instructor?.tenured" ngModel #tenured="ngModel" type="text" class="form-control" id="tenured" name="tenured" placeholder="Enter '1' if tenured, '0' if not" pattern="(?:1|0)" required maxlength="1">
      <span *ngIf="formErrors.tenured" class="text-danger">
         {{ formErrors.tenured }}
@@ -91,8 +75,9 @@
   
   <!-- submit button -->
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-8">
       <button [disabled]="!instructorForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary btn-margin" routerLink="/instructor">Cancel</a>
     </div>
   </div>
 

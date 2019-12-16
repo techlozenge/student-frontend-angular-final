@@ -1,13 +1,7 @@
 <section @fadeInAnimation>
-  <!-- <ol class="breadcrumb">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/major">Majors</a></li>
-    <li class="active">Manage Majors</li>
-</ol> -->
 
-<br><br><br><br><br>
-<a class="btn btn-primary" routerLink="/major">Return to Majors</a>
-<h2>Major</h2>
+<br><br><br>
+<h2 class="summaryHeading">Major Detail</h2>
 
 <div>
   <div class="messages" [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage" id="deletemsg">
@@ -18,26 +12,20 @@
   </div>
 </div>
 
-<!-- 
-<div [ngClass]="(errorMessage)?'alert alert-danger':'alert alert-success'" role="alert" *ngIf="errorMessage || successMessage">
-    {{errorMessage}} {{successMessage}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
--->
+<form novalidate (ngSubmit)="saveMajor(major.major_id)"  #majorForm="ngForm" class="centerContent formStyle">
 
-<form (ngSubmit)="saveMajor(major.major_id)"  #majorForm="ngForm" class="form-horizontal">
   <input [(ngModel)]="major.major_id" #major_id="ngModel" type="hidden" name="major_id">
+
   <div class="form-group">
-    <label for="major" class="col-sm-2 control-label">Major</label>
-    <div class="col-sm-10">
+    <!-- <label for="major" class="col-sm-2 control-label">Major</label> -->
+    <div class="col-sm-8">
       <input [(ngModel)]="major.major" type="text" class="form-control" id="major" name="major" placeholder="Major" required maxLength="30">
     </div>
   </div>
    <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-8">
       <button [disabled]="!majorForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary btn-margin" routerLink="/major">Cancel</a>
     </div>
   </div>
 </form>
