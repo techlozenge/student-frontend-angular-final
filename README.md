@@ -126,21 +126,21 @@ If you don't use the --open then you can launch your angular landing page by typ
 ![Admin SS](./Student-Admin-SS2.png)
 ![Admin SS](./Student-Admin-SS3.png)
 
-**Classes Listing**
+**Student Listing**
 
-![Classes List](./Classes-List.png)
+![Student Summary](./student_summary.png)
 
-**Add Class Screen** 
+**Add Student Screen** 
 
-![Class Add](./Classes-Add.png)
+![Student Add](./student_add.png)
 
-**Edit Class Screen** 
+**Edit Student Screen** 
 
-![Class Edit](./Classes-Edit.png)
+![Student Edit](./student_edit.png)
 
 **Delete Confirmation Dialog** 
 
-![Classes Delete](./Classes-Delete.png)
+![Student Delete](./student_delete.png)
 
 # ___________________________________________________________
 # Helpful Links
@@ -188,6 +188,10 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 # ___________________________________________________________
 # Change Log
+
+## December 2019
+
+* Upgraded all of the form screens to provide a more streamlined UX
 
 ## October 2019
 
