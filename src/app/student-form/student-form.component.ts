@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service'
 import { fadeInAnimation } from '../animations/fade-in.animation';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
 
 @Component({
   selector: 'app-student-form',
@@ -23,12 +25,14 @@ export class StudentFormComponent implements OnInit {
   student: object;
   majors: object[];
 
+  students: any;
+  dataSource: any;
+
   formErrors = {
     'first_name': '',
     'last_name': '',
     'sat': '',
-    'start_date': '',
-    'gpa': ''
+    'start_date': ''
   };
 
   validationMessages = {
@@ -48,12 +52,8 @@ export class StudentFormComponent implements OnInit {
     },
     'start_date': {
       'pattern': 'Start date should be in the following format: YYYY-MM-DD'
-    },
-    'gpa': {
-      'pattern': 'GPA must be a decimal'
     }
   };
-
 
   getRecordForEdit() {
     this.route.params
@@ -71,7 +71,8 @@ export class StudentFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -146,6 +147,26 @@ export class StudentFormComponent implements OnInit {
         }
       }
     }
+  }
+
+  deleteStudent(id: number, str: string) {
+    console.log('in deleteStudent for student ', id);
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('deleting student ', id);
+        this.dataService.deleteRecord('student', id)
+          .subscribe(
+            student => this.location.back(),
+            error => this.errorMessage = <any>error);
+      }
+      this.student = {};
+    });
   }
 
 }

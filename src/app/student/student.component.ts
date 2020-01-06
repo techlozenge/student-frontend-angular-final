@@ -18,7 +18,9 @@ export class StudentComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major', 'edit', 'delete'];
+  // displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major', 'edit', 'delete'];
+
+  displayedColumns = ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat', 'major'];
 
   students: any;
   dataSource: any;
@@ -40,7 +42,7 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
   }
 
   onRowClicked(row: any) {
-    // console.log('Row clicked: ', row);
+    console.log('Row clicked: ', row.student_id);
   }
 
   onSortData(event: any) {
@@ -78,4 +80,5 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
       }
     });
   }
+
 }

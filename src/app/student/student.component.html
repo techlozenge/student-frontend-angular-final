@@ -20,63 +20,63 @@
       <!-- ID Column -->
       <ng-container cdkColumnDef="student_id">
           <th mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.student_id}} </td>
+          <td class="mat-column-sm" mat-cell *cdkCellDef="let student"> {{student.student_id}} </td>
       </ng-container>
     
       <!-- Last Name Column -->
       <ng-container cdkColumnDef="last_name">
           <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Last Name </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.last_name}} </td>
+          <td class="mat-column" mat-cell *cdkCellDef="let student"> {{student.last_name}} </td>
       </ng-container>
     
       <!-- First Name Column -->
       <ng-container cdkColumnDef="first_name">
           <th mat-header-cell *cdkHeaderCellDef> First Name </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.first_name}} </td>
+          <td class="mat-column" mat-cell *cdkCellDef="let student"> {{student.first_name}} </td>
       </ng-container>
 
       <!-- Start Date Column -->
       <ng-container cdkColumnDef="start_date">
           <th mat-header-cell *cdkHeaderCellDef mat-sort-header> Start Date </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.start_date}} </td>
+          <td class="mat-column" mat-cell *cdkCellDef="let student"> {{student.start_date}} </td>
       </ng-container>
 
       <!-- GPA Column -->
       <ng-container cdkColumnDef="gpa">
           <th mat-header-cell *cdkHeaderCellDef mat-sort-header> GPA </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.gpa}} </td>
+          <td class="mat-column-sm" mat-cell *cdkCellDef="let student"> {{student.gpa}} </td>
       </ng-container>
 
       <!-- SAT Column -->
       <ng-container cdkColumnDef="sat">
           <th mat-header-cell *cdkHeaderCellDef mat-sort-header> SAT </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.sat}} </td>
+          <td class="mat-column-sm" mat-cell *cdkCellDef="let student"> {{student.sat}} </td>
       </ng-container>
 
       <!-- Major Column -->
       <ng-container cdkColumnDef="major">
           <th mat-header-cell *cdkHeaderCellDef> Major </th>
-          <td mat-cell *cdkCellDef="let student"> {{student.major?.major}} </td>
+          <td class="mat-column-md" mat-cell *cdkCellDef="let student"> {{student.major?.major}} </td>
       </ng-container>
 
       <!-- Old-Style Edit & Delete Buttons -->
 
-      <ng-container cdkColumnDef="edit">
+      <!-- <ng-container cdkColumnDef="edit">
         <th mat-header-cell  *matHeaderCellDef >  </th>
         <td mat-cell *matCellDef="let student" ><a [routerLink]="['/student/edit/', student.student_id]"><button mat-raised-button [color]="'primary'" ><i class="fas fa-pencil-alt"></i></button></a>
         </td>
-      </ng-container>
+      </ng-container> -->
 
-      <ng-container cdkColumnDef="delete">
-        <th mat-header-cell  *matHeaderCellDef >  </th>
+      <!-- <ng-container cdkColumnDef="delete">
+        <th mat-header-cell  *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let student">
              <button mat-raised-button [color]="'warn'" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)"><i class="fas fa-trash-alt"></i></button>
         </td>
-      </ng-container>
+      </ng-container> -->
 
       <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
 
-      <tr mat-row *cdkRowDef="let student; columns: displayedColumns;" (click)="onRowClicked(student)"></tr>
+      <tr mat-row *cdkRowDef="let student; columns: displayedColumns;" (click)="onRowClicked(student)" [routerLink]="['/student/edit/', student.student_id]"></tr>
       
     </table>
 
