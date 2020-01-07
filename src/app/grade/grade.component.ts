@@ -18,7 +18,8 @@ export class GradeComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['grade_id', 'grade', 'edit', 'delete'];
+  // displayedColumns = ['grade_id', 'grade', 'edit', 'delete'];
+  displayedColumns = ['grade_id', 'grade'];
 
   grades: any;
   dataSource: any;

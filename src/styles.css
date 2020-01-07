@@ -65,6 +65,10 @@ thead {
     margin-left: 160px;
 }
 
+.button-push-grade {
+    margin-left: 360px;
+}
+
 /*  CONTAINER DEFAULTS */ 
 .container {
     margin: 0px;
