@@ -19,7 +19,8 @@ export class ClassComponent implements OnInit, AfterViewInit {
   mode = 'Observable';
 
   // tslint:disable-next-line:max-line-length
-  displayedColumns = ['class_id', 'instructor_last_name', 'instructor_first_name', 'instructor-years_of_experience', 'subject', 'course', 'edit', 'delete'];
+  // displayedColumns = ['class_id', 'instructor_last_name', 'instructor_first_name', 'instructor-years_of_experience', 'subject', 'course', 'edit', 'delete'];
+  displayedColumns = ['class_id', 'instructor_last_name', 'instructor_first_name', 'instructor-years_of_experience', 'subject', 'course'];
 
   classes: any;
   dataSource: any;

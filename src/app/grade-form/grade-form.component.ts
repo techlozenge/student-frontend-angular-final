@@ -75,7 +75,6 @@ export class GradeFormComponent implements OnInit {
             grade => this.location.back(),
             error => this.errorMessage = <any>error);
       }
-      this.grade = {};
     });
   }
 

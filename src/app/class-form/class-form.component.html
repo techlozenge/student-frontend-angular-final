@@ -49,9 +49,12 @@
     </div>
   </div>
 
-   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button [disabled]="!classForm.form.valid"  type="submit" class="btn btn-primary">Submit</button>
+   <div class="form-group text-right">
+    <div class="col-sm-offset-2 col-sm-8">
+      <a class="btn btn-danger btn-margin" (click)="deleteClass(classy.class_id, classy.subject + ' ' + classy.course)">Delete</a>
+
+      <button [disabled]="!classForm.form.valid"  type="submit" class="btn btn-primary btn-margin">Submit</button>
+
       <a class="btn btn-primary btn-margin" routerLink="/class">Cancel</a>
     </div>
   </div>

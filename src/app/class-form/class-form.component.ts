@@ -4,7 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { fadeInAnimation } from '../animations/fade-in.animation';
-
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
 import { DataService } from '../data.service'
 
 @Component({
@@ -60,7 +61,8 @@ export class ClassFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -89,6 +91,25 @@ export class ClassFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.classy = {};
+  }
+
+  deleteClass(id: number, str: string) {
+    console.log('in deleteclass for class ', id);
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('deleting class ', id);
+        this.dataService.deleteRecord('class', id)
+          .subscribe(
+            classy => this.location.back(),
+            error => this.errorMessage = <any>error);
+      }
+    });
   }
 
   // tslint:disable-next-line:use-lifecycle-interface
@@ -121,4 +142,5 @@ export class ClassFormComponent implements OnInit {
       }
     }
   }
+
 }
