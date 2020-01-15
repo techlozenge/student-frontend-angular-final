@@ -14,6 +14,7 @@
 </div>
 
 <form novalidate (ngSubmit)="saveAssignment(assignmentForm)"  #assignmentForm="ngForm" class=" centerContent formStyle">
+  
   <input [ngModel]="assignment?.assignment_id" ngModel #assignment_id="ngModel" type="hidden" name="assignment_id">
 
   <div class="form-group">
@@ -56,11 +57,17 @@
     </div>
   </div>
   
-   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button [disabled]="!assignmentForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+   <div class="form-group text-right">
+    <div class="col-sm-offset-2 col-sm-8">
+      
+      <a class="btn btn-danger btn-margin" (click)="deleteAssignment(assignment.assignment_id, ' for ' + assignment.student.first_name + ' ' + assignment.student.last_name + ', ' + assignment.grade.grade)">Delete</a>
+      
+      <button [disabled]="!assignmentForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
+      
       <a class="btn btn-primary btn-margin" routerLink="/assignment">Cancel</a>
+    
     </div>
   </div>
 </form>
+
 </section>

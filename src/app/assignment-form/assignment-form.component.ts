@@ -4,6 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { fadeInAnimation } from '../animations/fade-in.animation';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
 import { DataService } from '../data.service';
 
 @Component({
@@ -41,8 +43,9 @@ export class AssignmentFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
-  ) {}
+    private location: Location,
+    public dialog: MatDialog
+    ) {}
 
   getRecordForEdit() {
     this.route.params
@@ -132,4 +135,22 @@ export class AssignmentFormComponent implements OnInit {
       }
     }
   }
+
+  deleteAssignment(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.deleteRecord('assignment', id)
+          .subscribe(
+            assignment => this.location.back(),
+            error =>  this.errorMessage = <any>error);
+      }
+    });
+  }
+
 }

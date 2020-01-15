@@ -19,7 +19,8 @@ export class AssignmentComponent implements OnInit, AfterViewInit {
   mode = 'Observable';
 
   // tslint:disable-next-line:max-line-length
-  displayedColumns = ['assignment_id', 'student_last_name', 'student_first_name', 'assignment_nbr', 'grade', 'subject', 'course', 'edit', 'delete'];
+  // displayedColumns = ['assignment_id', 'student_last_name', 'student_first_name', 'assignment_nbr', 'grade', 'subject', 'course', 'edit', 'delete'];
+  displayedColumns = ['assignment_id', 'student_last_name', 'student_first_name', 'assignment_nbr', 'grade', 'subject', 'course'];
 
   assignments: any;
   dataSource: any;
