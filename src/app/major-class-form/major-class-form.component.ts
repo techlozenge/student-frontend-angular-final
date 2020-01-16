@@ -7,7 +7,6 @@ import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-major-class-form',

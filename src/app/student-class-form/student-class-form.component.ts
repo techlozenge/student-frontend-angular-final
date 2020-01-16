@@ -4,8 +4,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
-
 import { DataService } from '../data.service'
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-student-class-form',
@@ -48,7 +49,8 @@ export class StudentClassFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -81,4 +83,22 @@ export class StudentClassFormComponent implements OnInit {
     }
     this.studentclass = {};
   }
+
+  deleteStudentClass(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.deleteRecord('student_class', id)
+          .subscribe(
+            studentclass => this.location.back(),
+            error =>  this.errorMessage = <any>error);
+      }
+    });
+  }
+
 }

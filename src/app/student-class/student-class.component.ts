@@ -18,7 +18,8 @@ export class StudentClassComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['student_class_id', 'last_name', 'first_name', 'class', 'edit', 'delete'];
+  // displayedColumns = ['student_class_id', 'last_name', 'first_name', 'class', 'edit', 'delete'];
+  displayedColumns = ['student_class_id', 'last_name', 'first_name', 'class'];
 
   studentclass: any;
   dataSource: any;
