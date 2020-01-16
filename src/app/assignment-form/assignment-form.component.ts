@@ -137,20 +137,20 @@ export class AssignmentFormComponent implements OnInit {
   }
 
   deleteAssignment(id: number, str: string) {
-    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
-      data: {
-        dataKey: id,
-        value: str
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.dataService.deleteRecord('assignment', id)
-          .subscribe(
-            assignment => this.location.back(),
-            error =>  this.errorMessage = <any>error);
-      }
-    });
-  }
+      const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+        data: {
+          dataKey: id,
+          value: str
+        }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.dataService.deleteRecord('assignment', id)
+            .subscribe(
+              assignment => this.location.back(),
+              error =>  this.errorMessage = <any>error);
+        }
+      });
+    }
 
 }

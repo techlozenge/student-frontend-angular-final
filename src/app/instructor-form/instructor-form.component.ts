@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service'
 import { fadeInAnimation } from '../animations/fade-in.animation';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
 
 @Component({
   selector: 'app-instructor-form',
@@ -73,7 +75,8 @@ export class InstructorFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -133,4 +136,22 @@ export class InstructorFormComponent implements OnInit {
       }
     }
   }
+
+  deleteInstructor(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.deleteRecord('instructor', id)
+          .subscribe(
+              instructor => this.location.back(),
+              error =>  this.errorMessage = <any>error);
+      }
+    });
+  }
+
 }

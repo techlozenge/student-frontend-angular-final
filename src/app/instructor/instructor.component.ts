@@ -18,7 +18,8 @@ export class InstructorComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['instructor_id', 'last_name', 'first_name', 'major', 'years_of_experience', 'tenured', 'edit', 'delete'];
+  // displayedColumns = ['instructor_id', 'last_name', 'first_name', 'major', 'years_of_experience', 'tenured', 'edit', 'delete'];
+  displayedColumns = ['instructor_id', 'last_name', 'first_name', 'major', 'years_of_experience', 'tenured'];
 
   instructors: any;
   dataSource: any;
