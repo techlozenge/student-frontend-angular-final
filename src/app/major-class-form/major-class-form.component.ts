@@ -5,6 +5,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service'
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-major-class-form',
@@ -47,7 +50,8 @@ export class MajorClassFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -79,6 +83,23 @@ export class MajorClassFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.majorclass = {};
+  }
+
+  deleteMajorClass(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.deleteRecord('major_class', id)
+          .subscribe(
+            majorclass => this.location.back(),
+            error =>  this.errorMessage = <any>error);
+    }
+    });
   }
 
 }

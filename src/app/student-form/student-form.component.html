@@ -79,6 +79,8 @@
 
     <div class="form-group text-right">
       <div class="col-sm-offset-2 col-sm-8">
+
+        <!-- <button [disabled]="!studentForm.form.valid" type="submit" class="btn btn-danger btn-margin" routerLink="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)">Delete</button> -->
         <a class="btn btn-danger btn-margin" (click)="deleteStudent(student.student_id, student.first_name + ' ' + student.last_name)">Delete</a>
       
         <button [disabled]="!studentForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>

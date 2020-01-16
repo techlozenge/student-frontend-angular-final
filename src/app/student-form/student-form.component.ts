@@ -165,8 +165,6 @@ export class StudentFormComponent implements OnInit {
             student => this.location.back(),
             error => this.errorMessage = <any>error);
       }
-      // if left alone and the user clicks cancel they will come back to an empty form
-      // this.student = {};
     });
   }
 

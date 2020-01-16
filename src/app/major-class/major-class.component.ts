@@ -18,7 +18,8 @@ export class MajorClassComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['major_class_id', 'major_class.major', 'class', 'edit', 'delete'];
+  // displayedColumns = ['major_class_id', 'major_class.major', 'class', 'edit', 'delete'];
+  displayedColumns = ['major_class_id', 'major_class.major', 'class'];
 
   majorclass: any;
   dataSource: any;
@@ -78,4 +79,5 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
       }
     });
   }
+
 }
