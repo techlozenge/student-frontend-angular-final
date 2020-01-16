@@ -22,11 +22,18 @@
       <input [(ngModel)]="major.major" type="text" class="form-control" id="major" name="major" placeholder="Major" required maxLength="30">
     </div>
   </div>
-   <div class="form-group">
+
+   <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
-      <button [disabled]="!majorForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+
+      <a class="btn btn-danger btn-margin" (click)="deleteMajor(major.major_id, ' for ' + major.major)">Delete</a>
+
+      <button [disabled]="!majorForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
+      
       <a class="btn btn-primary btn-margin" routerLink="/major">Cancel</a>
+    
     </div>
   </div>
+
 </form>
 </section>

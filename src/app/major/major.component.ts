@@ -18,7 +18,8 @@ export class MajorComponent implements OnInit, AfterViewInit {
   successMessage: string;
   mode = 'Observable';
 
-  displayedColumns = ['major_id', 'major', 'edit', 'delete'];
+  // displayedColumns = ['major_id', 'major', 'edit', 'delete'];
+  displayedColumns = ['major_id', 'major'];
 
   majors: any;
   dataSource: any;

@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { fadeInAnimation } from '../animations/fade-in.animation';
+import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
+import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from '../data.service'
 
 @Component({
@@ -27,7 +30,8 @@ export class MajorFormComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -54,6 +58,23 @@ export class MajorFormComponent implements OnInit {
             error =>  this.errorMessage = <any>error);
     }
     this.major = {};
+  }
+
+  deleteMajor(id: number, str: string) {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent, {
+      data: {
+        dataKey: id,
+        value: str
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataService.deleteRecord('major', id)
+          .subscribe(
+              major => this.location.back(),
+              error =>  this.errorMessage = <any>error);
+      }
+    });
   }
 
 }
