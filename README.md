@@ -189,6 +189,13 @@ If you don't use the --open then you can launch your angular landing page by typ
 # ___________________________________________________________
 # Change Log
 
+## January 2020
+
+* Improved routing and clean up code
+* Implemented clicking on a summary table row takes user to the edit screen
+* Removed all of the old-style edit/delete buttons from the summary screens and moved them into the edit detail screens
+* Made the delete button only visible and enabled when in edit mode
+
 ## December 2019
 
 * Upgraded all of the form screens to provide a more streamlined UX
