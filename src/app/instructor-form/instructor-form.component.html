@@ -77,7 +77,9 @@
   <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
 
-      <a class="btn btn-danger btn-margin" (click)="deleteInstructor(instructor.instructor_id, ' for ' + instructor.first_name + ' ' + instructor.last_name + ', ' + instructor.major.major)">Delete</a>
+      <span *ngIf="enabled == true">
+        <a class="btn btn-danger btn-margin" (click)="deleteInstructor(instructor.instructor_id, ' for ' + instructor.first_name + ' ' + instructor.last_name + ', ' + instructor.major.major)">Delete</a>
+      </span>
 
       <button [disabled]="!instructorForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
 

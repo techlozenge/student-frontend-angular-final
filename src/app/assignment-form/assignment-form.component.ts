@@ -22,7 +22,7 @@ export class AssignmentFormComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
 
- // assignment: object = {};
+  enabled: boolean;
 
   assignment: object;
   student: object[];
@@ -48,6 +48,7 @@ export class AssignmentFormComponent implements OnInit {
     ) {}
 
   getRecordForEdit() {
+    this.enabled = true;
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord('assignment', +params['id']))
       .subscribe(assignment => this.assignment = assignment);
@@ -78,12 +79,11 @@ export class AssignmentFormComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
         // tslint:disable-next-line:no-unused-expression
-        (+params['id']) ? this.getRecordForEdit() : null;
+        (+params['id']) ? this.getRecordForEdit() : this.enabled = false;
       });
       this.getStudent();
       this.getGrade();
       this.getClass();
-
   }
 
   // 2018-08-21: If the update or add is successful, send the user back to the list

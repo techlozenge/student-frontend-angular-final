@@ -26,7 +26,10 @@ export class StudentClassFormComponent implements OnInit {
   students: object[];
   classes: object[];
 
+  enabled: boolean;
+
   getRecordForEdit() {
+    this.enabled = true;
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord('student_class', +params['id']))
       .subscribe(studentclass => this.studentclass = studentclass);
@@ -57,7 +60,7 @@ export class StudentClassFormComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
         // tslint:disable-next-line:no-unused-expression
-        (+params['id']) ? this.getRecordForEdit() : null;
+        (+params['id']) ? this.getRecordForEdit() : this.enabled = false;
       });
 
       // populate the dropdowns

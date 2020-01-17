@@ -51,7 +51,10 @@
 
    <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
-      <a class="btn btn-danger btn-margin" (click)="deleteClass(classy.class_id, classy.subject + ' ' + classy.course)">Delete</a>
+
+      <span *ngIf="enabled == true">
+        <a class="btn btn-danger btn-margin" (click)="deleteClass(classy.class_id, classy.subject + ' ' + classy.course)">Delete</a>
+      </span>
 
       <button [disabled]="!classForm.form.valid"  type="submit" class="btn btn-primary btn-margin">Submit</button>
 

@@ -44,7 +44,9 @@
    <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
 
-      <a class="btn btn-danger btn-margin" (click)="deleteMajorClass(majorclass.major_class_id, majorclass.major.major + '-' + majorclass.class.subject)">Delete</a>
+      <span *ngIf="enabled == true">
+        <a class="btn btn-danger btn-margin" (click)="deleteMajorClass(majorclass.major_class_id, majorclass.major.major + '-' + majorclass.class.subject)">Delete</a>
+      </span>
 
       <button [disabled]="!majorClassForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
       

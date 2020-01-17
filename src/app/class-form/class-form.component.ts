@@ -25,6 +25,8 @@ export class ClassFormComponent implements OnInit {
   classy: object = {};
   instructors: object[];
 
+  enabled: boolean;
+
   formErrors = {
     'instructor': '',
     'subject': '',
@@ -46,6 +48,7 @@ export class ClassFormComponent implements OnInit {
   };
 
   getRecordForEdit() {
+    this.enabled = true;
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord('class', +params['id']))
       .subscribe(classy => this.classy = classy);
@@ -69,7 +72,7 @@ export class ClassFormComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
         // tslint:disable-next-line:no-unused-expression
-        (+params['id']) ? this.getRecordForEdit() : null;
+        (+params['id']) ? this.getRecordForEdit() : this.enabled = false;
       });
       this.getInstructors();
   }

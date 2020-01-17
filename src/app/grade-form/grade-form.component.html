@@ -25,11 +25,15 @@
 
   <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
-      <a class="btn btn-danger btn-margin" (click)="deleteGrade(grade.grade_id, grade.grade)">Delete</a>
+
+      <span *ngIf="enabled == true">
+        <a class="btn btn-danger btn-margin" (click)="deleteGrade(grade.grade_id, grade.grade)">Delete</a>
+      </span>
 
       <button [disabled]="!gradeForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
 
       <button class="btn btn-primary btn-margin" routerLink="/grade">Cancel</button>
+    
     </div>
   </div>
 

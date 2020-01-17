@@ -28,6 +28,8 @@ export class StudentFormComponent implements OnInit {
   students: any;
   dataSource: any;
 
+  enabled: boolean;
+
   formErrors = {
     'first_name': '',
     'last_name': '',
@@ -56,6 +58,7 @@ export class StudentFormComponent implements OnInit {
   };
 
   getRecordForEdit() {
+    this.enabled = true;
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord('student', +params['id']))
       .subscribe(student => this.student = student);
@@ -79,7 +82,7 @@ export class StudentFormComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
         // tslint:disable-next-line:no-unused-expression
-        (+params['id']) ? this.getRecordForEdit() : null;
+        (+params['id']) ? this.getRecordForEdit() : this.enabled = false;
       });
         this.getMajors();
   }

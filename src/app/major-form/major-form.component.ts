@@ -21,7 +21,10 @@ export class MajorFormComponent implements OnInit {
 
   major: object = {};
 
+  enabled: boolean;
+
   getRecordForEdit() {
+    this.enabled = true;
     this.route.params
       .switchMap((params: Params) => this.dataService.getRecord('major', +params['id']))
       .subscribe(major => this.major = major);
@@ -38,7 +41,7 @@ export class MajorFormComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
         // tslint:disable-next-line:no-unused-expression
-        (+params['id']) ? this.getRecordForEdit() : null;
+        (+params['id']) ? this.getRecordForEdit() : this.enabled = false;
       });
 
   }

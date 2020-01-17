@@ -60,7 +60,9 @@
    <div class="form-group text-right">
     <div class="col-sm-offset-2 col-sm-8">
       
-      <a class="btn btn-danger btn-margin" (click)="deleteAssignment(assignment.assignment_id, ' for ' + assignment.student.first_name + ' ' + assignment.student.last_name + ', ' + assignment.grade.grade)">Delete</a>
+      <span *ngIf="enabled == true">
+        <a class="btn btn-danger btn-margin" (click)="deleteAssignment(assignment.assignment_id, ' for ' + assignment.student.first_name + ' ' + assignment.student.last_name + ', ' + assignment.grade.grade)">Delete</a>
+    </span>
       
       <button [disabled]="!assignmentForm.form.valid" type="submit" class="btn btn-primary btn-margin">Submit</button>
       
