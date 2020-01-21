@@ -3,17 +3,17 @@
 # ___________________________________________________________
 # Description
 
-This Angular project is a fully functional web frontend administration system. 
+This Angular project is a fully functional web administration system. 
 
 It can be leveraged as a detailed template for other uses.
 
-* Note: I have converted all of the summary components to use Angular Material Tables that leverage MatSort and MatPagination.
+The project uses Angular Material Tables that leverages both  MatSort and MatPagination.
 
 * Starting the Application
 
     * Backend
 
-        * I use the Sails web framework (0.12.13) as an API server the serves MySQL data.
+        * The backend uses the Sails web framework (0.12.13) as an API server that serves MySQL data.
 
             * [Sails as a Backend Framework](https://github.com/techlozenge/sails-student-api) (used by this Angular project)
 
@@ -21,7 +21,7 @@ It can be leveraged as a detailed template for other uses.
 
             A document named [SETUP-SAILS-DB-&-FRONTEND-ENDPOINTS](https://github.com/techlozenge/sails-student-api/blob/master/SETUP-SAILS-DB-%26-FRONTEND-ENDPOINTS) exists in the front- and backend Sails projects and it describes their setup.
 
-        * From the CLI, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logic to use the appropriate request/response data.
+        * From the command line, use 'sails lift' (listens on port 3700) But as long as you're using RESTful API calls you can use any end-point api. Simply modify the frontend and its associated logic to use the appropriate request/response data.
 
         * Here are some example HTTP calls to end-points:
             * http.GET: table records listing: http://localhost:1337/student
@@ -55,7 +55,7 @@ It can be leveraged as a detailed template for other uses.
     * There is currently no authentication built into this system
 
 * Styling
-    * Bootstrap 4.3.1 (see index.html)
+    * Bootstrap 4 (see index.html)
     * CSS (see styles.css)
 
 * Animation
@@ -151,9 +151,10 @@ If you don't use the --open then you can launch your angular landing page by typ
     * [MySQL](https://www.mysql.com/) - MySQL is a relational database management system based on SQL. The application is used for a wide range of purposes, including data warehousing, e-commerce, and logging applications. The most common use for mySQL however is for the purpose of a web database
 
 * Libraries
+    * [TypeScript](https://www.typescriptlang.org/) TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript.
     * [jquery](https://jquery.com/) jQuery is a fast, small, and feature-rich JavaScript library.
     * [Node.js](https://nodejs.org/en/) Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-    * [Bootstrap 4](https://getbootstrap.com/) Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
+    * [Bootstrap](https://getbootstrap.com/) Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
         * [Bootstrap Bootply](http://upgrade-bootstrap.bootply.com/) Converts BS3 to BS4
         * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/) utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements
     * [Angular DataTables](https://l-lin.github.io/angular-datatables/#/getting-started)  Angular Structural framework for dynamic web apps +  DataTables jQuery plug-in for complex HTML tables
@@ -164,7 +165,7 @@ If you don't use the --open then you can launch your angular landing page by typ
     * RxJS
         * [Learn RxJS](https://www.learnrxjs.io/) 
         * [RxJS Primer](https://www.learnrxjs.io/concepts/rxjs-primer.html) 
-    * [iTerm 2](https://www.iterm2.com/) iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS
+    * [iTerm 2](https://www.iterm2.com/) iTerm2 is a GPL-licensed terminal emulator for macOS. It was derived from and has mostly supplanted the earlier "iTerm" application. iTerm2 supports operating system features such as window transparency, full-screen mode, split panes, Exposé Tabs, Growl notifications, and standard keyboard shortcuts.
     * [Online JSON Validator](http://jsonlint.com/)
     * [Express](https://expressjs.com/) A web framework that let’s you structure a web application to handle multiple different http requests at a specific url. Express is a minimal, open source and flexible Node.js web app framework designed to make developing websites, web apps, & API’s much easier.
     * [Sequel PRO](https://www.sequelpro.com/) Database Administrator
@@ -263,4 +264,108 @@ Minor style upgrades
 
 ## September 2018:
 Added "Angular_5_and_Associated_Technologies" Word document. The intent of this document is to familiarize backend team members with Angular: What it is, how to use it, and the supporting technologies it leverages
+
+# ___________________________________________________________
+# Appendix
+
+## MacOS Command-Level Tools, Package Managers, & Languages
+
+**iTerm2:**
+https://iterm2.com/ 
+What is it: iTerm2 is a replacement for Terminal and the successor to iTerm. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.
+Check: Go to the Mac Launchpad and see if it is there
+Install Prerequisites: None
+Install: https://iterm2.com/downloads.html - Download and install the app.
+
+**Homebrew:** 
+https://brew.sh/ 
+What is it: Homebrew is a free and open-source software package management system.
+Note: Homebrew installs Python 3 but your Mac may have both python and ruby already installed
+Check: brew -v
+Install Prerequisites: iTerm2
+Install: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Note: Homebrew installs python. You can check to see if you have it by typing:
+
+python --version
+Python 2.7.16
+(and)
+python3 --version
+Python 3.6.4
+
+You can also install ruby via Homebrew by typing: brew install ruby
+
+You can learn more about python at https://www.python.org/
+You can learn more about ruby at https://www.ruby-lang.org/en/
+
+**.bash_profile**
+What is it: Contains specific settings that are executed when a user logs in to the system
+Located in: /Users/[username] e.g. /Users/johndoe/.bash_profile
+
+Note: the ‘.’ prefixing the file name means the file is hidden. If you perform an ‘ls’ you won’t see it. However, perform ‘ls -la’ to see all files including hidden files.
+
+Here is a sample .bash_profile (the ‘#’ is a comment):
+
+	# NOTE: To refresh this file, type "source .bash_profile" without the quotes
+	export PS1="\w @ (\u) $ "
+	alias c='clear'
+	alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+	JAVA_HOME=$(/usr/libexec/java_home)
+	export JAVA_HOME
+
+**Node.js:** 
+https://nodejs.org/en/ 
+What is it: Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser
+Check: node -v
+Install Prerequisites: iTerm2, brew
+Install: brew update; brew install node
+Wait. Homebrew has to download some files and install them. But that’s it.
+
+**npm (Node Program Manager):** 
+https://www.npmjs.com/ 
+What is it: npm is a package manager for the JavaScript programming language. 
+Check: npm -v
+Install Prerequisites: iTerm2, brew
+Install: npm is installed with Node.js
+
+**git:**
+https://git-scm.com/ 
+Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows
+Check: git --version
+Install Prerequisites: iTerm2, brew, node/npm
+Install: https://git-scm.com/download/mac - Download and install on Mac OS
+
+**Typescript:**
+https://www.typescriptlang.org/ 
+TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript
+Check: tsc -v
+Install Prerequisites: iTerm2, brew, node/npm
+Install: sudo npm install -g typescript
+
+**Maven:** 
+https://maven.apache.org/ 
+What is it: Maven is a build automation tool used primarily for Java projects
+Check: mvn -v
+Install Prerequisites: iTerm2, brew
+Install: brew install maven 
+Go Here: ~/.m2
+See if settings.xml exists. If not then add it.
+
+**Java:** 
+What is it: Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible
+Check: java -version
+Install Prerequisites: None
+Install: https://java.com/en/download/help/mac_install.xml & follow instructions.
+
+**ng (Angular):**
+https://angular.io/ 
+Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.
+Check: ng —version
+Install Prerequisites: iTerm2, node/npm
+Install: npm install -g @angular/cli
+
+**vi (visual text editor):**
+What is it: vi is a screen-oriented text editor originally created for the Unix operating system. The portable subset of the behavior of vi and programs based on it, and the ex editor language supported within these programs, is described by the Single Unix Specification and POSIX
+Check: N/A
+Install: Comes preinstalled with MacOS
+Note: If you haven’t used vi in the past then I strongly suggest that you find a tutorial on the web before starting.
 
