@@ -1,4 +1,4 @@
-<nav style="height: 50px;" class="navbar navbar-collapse navbar-toggleable-md fixed-top navbar-expand-sm" role="navigation">
+<nav style="height: 50px;" class="navbar navbar-collapse navbar-toggleable-md fixed-top navbar-expand-sm shadow" role="navigation">
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
                 <li class="w-16 p-2" style="color: yellow;">{{today | date}}</li>
@@ -15,7 +15,7 @@
 
         <div class="form-inline">
             <form (ngSubmit)="doWebSearch(srchtext)" #searchForm="ngForm">
-                <div class="input-group">
+                <div class="input-group p-1">
                     <input [(ngModel)]="srchtext" id="srchText" name="srchtext" type="text" [(ngModel)]="srchtext" autofocus="autofocus" placeholder="Search the Web..."> 
                     <span class="input-group-append">
                         <button id="srchButton" type="submit" class="btn btn-block btn-info"><i class="fas fa-search"></i></button>

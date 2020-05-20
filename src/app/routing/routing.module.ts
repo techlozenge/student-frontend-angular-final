@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
- 
+
 import { StudentComponent } from '../student/student.component';
 import { StudentFormComponent } from '../student-form/student-form.component';
-
 
 import { GradeComponent } from '../grade/grade.component';
 import { GradeFormComponent } from '../grade-form/grade-form.component';
 
-
 import { ClassComponent } from '../class/class.component';
 import { ClassFormComponent } from '../class-form/class-form.component';
 
-
 import { AssignmentComponent } from '../assignment/assignment.component';
 import { AssignmentFormComponent } from '../assignment-form/assignment-form.component';
-
 
 import { InstructorComponent } from '../instructor/instructor.component';
 import { InstructorFormComponent } from '../instructor-form/instructor-form.component';
@@ -28,7 +24,6 @@ import { StudentClassFormComponent } from '../student-class-form/student-class-f
 
 import { MajorClassComponent } from '../major-class/major-class.component';
 import { MajorClassFormComponent } from '../major-class-form/major-class-form.component';
-
 
 import { HomeComponent } from '../home/home.component';
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';

@@ -6,11 +6,6 @@ body {
 
 /* TABLES */
 
-table.table {
-    /* width: auto;
-    margin: 0 auto; */
-}
-
 /** only for the body of the table. */
 table.table tbody td {
     padding: 6px;
@@ -26,7 +21,8 @@ thead {
 .navbar {
     width: 100%;
     min-height: 40px;
-    background-color: black;
+    background-color: #eb5757;
+    border-bottom: 2px solid black;
 }
 
 .navbar-nav {
@@ -194,7 +190,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: red;
+    color: white;
     cursor: pointer;
     font-style: bold;
 }
@@ -205,6 +201,8 @@ footer {
     height: 50px;  
     font-variant: small-caps;
     width: 100%;
+    background-color: #eb5757;
+    border-top: 2px solid black;
 }
 
 /* RESPONSE MESSAGE STYLING */

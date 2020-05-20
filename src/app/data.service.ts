@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Response } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-// import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
@@ -21,14 +19,6 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    // getRecords(endpoint: string): Observable<any[]> {
-    //     let apiUrl = this.baseUrl+endpoint;
-    //     console.log('endpoint: ' + apiUrl);
-    //     return this.http.get(apiUrl)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
-
     getRecord(endpoint: string, id): Observable<object> {
         const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log('endpoint: ' + apiUrl);
@@ -36,28 +26,12 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    // getRecord(endpoint: string, id): Observable<object> {
-    //     let apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-    //     console.log('endpoint: ' + apiUrl);
-    //     return this.http.get(apiUrl)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
-
     deleteRecord(endpoint: string, id: number): Observable<object> {
         const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
         console.log('endpoint: ' + apiUrl);
         return this.http.delete(apiUrl)
             .catch(this.handleError);
     }
-
-    // deleteRecord(endpoint: string, id:number): Observable<object> {
-    //     const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-    //     console.log('endpoint: ' + apiUrl);
-    //     return this.http.delete(apiUrl)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
 
     editRecord(endpoint: string, record: object, id: number): Observable<object> {
         const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
@@ -67,15 +41,6 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    // editRecord(endpoint: string, record: object, id: number): Observable<object> {
-    //     const apiUrl = `${this.baseUrl}${endpoint}/${id}`;
-    //     console.log(record)
-    //     console.log(apiUrl)
-    //     return this.http.put(apiUrl, record)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
-
     addRecord(endpoint: string, record: object): Observable<object> {
         const apiUrl = `${this.baseUrl}${endpoint}`;
         console.log(apiUrl)
@@ -83,14 +48,7 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    // addRecord(endpoint: string, record: object): Observable<object> {
-    //     const apiUrl = `${this.baseUrl}${endpoint}`;
-    //     console.log(apiUrl)
-    //     return this.http.post(apiUrl, record)
-    //         .map(this.extractData)
-    //         .catch(this.handleError);
-    // }
-
+    // this method is no longer needed because HttpClient does the extract for us
     // private extractData(res: Response) {
     //     const results = res.json();
     //     return results || [];
@@ -107,7 +65,6 @@ export class DataService {
                     errMsg = 'Error connecting to API'
                 } else {
                     const errorJSON = error.json();
-                    // errMsg = errorJSON.message;
                 }
             }
         }
