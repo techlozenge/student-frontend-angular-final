@@ -32,9 +32,11 @@
     "hammerjs": "^2.0.8",
     "httpclient": "^0.1.0",
     "jquery": "^3.4.1",
+    "mat-table-exporter": "^1.2.5",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.0.0-rc.0",
     "tslib": "^1.10.0",
+    "xlsx": "^0.16.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

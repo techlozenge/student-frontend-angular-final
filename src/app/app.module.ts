@@ -58,10 +58,10 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatStepperModule,
-} from '@angular/material';
+  MatStepperModule} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
 import { TableFilterPipe } from './filter-pipe.pipe';
+// import { MatTableExporterModule } from 'mat-table-exporter';
 
 @NgModule({
   declarations: [
@@ -120,6 +120,7 @@ import { TableFilterPipe } from './filter-pipe.pipe';
       MatSnackBarModule,
       MatSortModule,
       MatTableModule,
+      // MatTableExporterModule,
       MatTabsModule,
       MatToolbarModule,
       MatTooltipModule
@@ -158,6 +159,7 @@ import { TableFilterPipe } from './filter-pipe.pipe';
     MatSnackBarModule,
     MatSortModule,
     MatTableModule,
+    // MatTableExporterModule,
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,

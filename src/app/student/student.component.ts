@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from '../data.service'
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component'
 import { fadeInAnimation } from '../animations/fade-in.animation';
 import { MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-student',
@@ -27,6 +28,7 @@ export class StudentComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator: MatSort;
+  @ViewChild('TABLE', {static: false}) table: ElementRef;
 
   ngOnInit() {
     console.log('in OnInit');
@@ -80,5 +82,14 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
       }
     });
   }
+
+  exportAsExcel() {
+      const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);
+      // converts a DOM TABLE element to a worksheet
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+      /* save to file */
+      XLSX.writeFile(wb, 'SheetJS.xlsx');
+    }
 
 }
