@@ -83,13 +83,12 @@ constructor (private dataService: DataService, public dialog: MatDialog) {
     });
   }
 
-  exportAsExcel() {
-      const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);
-      // converts a DOM TABLE element to a worksheet
+    JSONtoSheet() {
+      const options: XLSX.JSON2SheetOpts  = {header: ['student_id', 'last_name', 'first_name', 'start_date', 'gpa', 'sat']};
+      const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.dataSource.data, options);
       const wb: XLSX.WorkBook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-      /* save to file */
-      XLSX.writeFile(wb, 'SheetJS.xlsx');
+      XLSX.utils.book_append_sheet(wb, ws, 'All Data Export');
+      XLSX.writeFile(wb, 'EXCEL-FILE' + '.xlsx');
     }
 
 }
