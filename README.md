@@ -123,8 +123,6 @@ If you don't use the --open then you can launch your angular landing page by typ
 **Landing Page** 
 
 ![Admin SS](./Student-Admin-SS.png)
-![Admin SS](./Student-Admin-SS2.png)
-![Admin SS](./Student-Admin-SS3.png)
 
 **Student Listing**
 
@@ -189,6 +187,12 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 # ___________________________________________________________
 # Change Log
+
+## Feb-June 2020
+
+* Cleaned up code
+* Misc Changes to UI to adjust & clean up
+* Began working on export to Excel using XLSX starting with Student component
 
 ## January 2020
 
