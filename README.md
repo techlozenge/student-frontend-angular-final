@@ -1,4 +1,4 @@
-# Angular 8.2 Web-based Administration Service
+# Angular 8.2 Demonstration Frontend Web Administration Service
 
 # ___________________________________________________________
 # Description
