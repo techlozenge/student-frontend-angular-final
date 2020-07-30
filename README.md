@@ -3,11 +3,9 @@
 # ___________________________________________________________
 # Description
 
-This Angular project is a fully functional web administration system. 
+This is an Angular demo project that provides a fully functional frontend web administration system and it can be leveraged as a detailed template for other uses.
 
-It can be leveraged as a detailed template for other uses.
-
-The project uses Angular Material Tables that leverages both  MatSort and MatPagination.
+This demo project uses Angular Material Tables that leverages both  MatSort and MatPagination.
 
 * Starting the Application
 
