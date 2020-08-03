@@ -2,6 +2,10 @@
   "name": "student-frontend-angular-v1",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name":"Dan Ford",
+    "email": "techlozenge@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ssl --ssl-key ./certificates/localhost.key  --ssl-cert ./certificates/localhost.crt",
