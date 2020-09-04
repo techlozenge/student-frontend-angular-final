@@ -198,11 +198,11 @@ a:hover {
 /* FOOTER STYLING */
 
 footer {
-    height: 50px;  
+    height: 45px;  
     font-variant: small-caps;
     width: 100%;
     background-color: #eb5757;
-    border-top: 2px solid black;
+    border-top: 2px solid black;   
 }
 
 /* RESPONSE MESSAGE STYLING */
