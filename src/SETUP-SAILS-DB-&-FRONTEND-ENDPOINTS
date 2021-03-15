@@ -1,0 +1,449 @@
+_______________________________________________________________________________
+SAILS PROJECT DATABASE ENDPOINTS
+
+NOTE: There must be a database created with the needed tables & data
+
+/* *****************************************
+ *                 SETUP                   *
+ * *************************************** */
+
+    From the command line:
+
+        $ sails new sails-student-api (this creates a new sails project)
+
+        $ cd sails-student-api
+
+        $ npm install sails-mysql --save (this is the sails mySQL adapter - mysql must be installed)
+
+        $ sails generate controller [NameController] (e.g. ClassController)
+
+        $ sails lift (this starts sails api listening on port 1337)
+
+    NOTE: if something changes in the api directory then sails must be stopped and restarted
+
+    Once listening, you could send a GET request like this:
+
+        localhost:1337/grade
+
+        And the API would respond with a JSON file of all the grades:
+
+            [
+                {
+                    "grade_id": 1,
+                    "grade": "Incomplete"
+                },
+                {
+                    "grade_id": 2,
+                    "grade": "Complete and unsatisfactory"
+                },
+                {
+                    "grade_id": 3,
+                    "grade": "Complete and satisfactory"
+                },
+                {
+                    "grade_id": 4,
+                    "grade": "Exceeds expectations"
+                },
+                {
+                    "grade_id": 5,
+                    "grade": "Not graded"
+                },
+                {
+                    "grade_id": 8,
+                    "grade": "OMG!"
+                }
+            ]
+
+        And GET localhost:1337/grade/2 would respond with:
+
+            {
+                "grade_id": 2,
+                "grade": "Complete and unsatisfactory"
+            }
+
+/* *****************************************
+ *          BACKEND API ENDPOINTS          *
+ * *************************************** */
+
+    _________________________________________
+    FOLDER: CONFIG
+
+        config/blueprints.js
+                These settings are for the global configuration of blueprint routes and request options (which impact the behavior of blueprint actions).
+                Uncomment 
+                    defaultLimit: 1000
+
+        config/connections.js
+            This is for remote databases. The local.js sets up the connections for local databases. The default that sails.js uses is sqlLITE
+
+        config/cors.js
+            CORS is like a more modern version of JSONP-- it allows your server/API to successfully respond to requests from client-side JavaScript code running on some other domain (e.g. google.com). Unlike JSONP, it works with POST, PUT, and DELETE requests
+                Uncomment "allRoutes" and change it from "false" to "true"
+                Uncomment " origin: '*' "
+
+        config/local.js
+            Add the following (at the bottom of the file):
+
+            Ensure this is commented out:
+            
+                // environment: process.env.NODE_ENV || 'development'
+
+                connections: {
+                    someMysqlServer: {
+                    adapter: 'sails-mysql',
+                    host: '127.0.0.1',
+                    user: 'root',        //optional
+                    password: '?????',   //optional
+                    database: '?????'    //optional     e.g. 'student_api'
+                    }
+                }
+
+        config/models.js
+            Uncomment "connection" 
+                
+            // determines what database we connect to
+            connection: 'someMysqlServer',
+
+            Add the following:
+            // default launch to "safe" and not "alter"
+                migrate: 'safe',
+            // this means 'pay attention to my schema' to disallow invalid data
+                schema: true,
+            // prevent creation of these two timestamps
+                autoCreatedAt: false,
+                autoUpdatedAt: false
+
+        config/models.js
+            Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your default view engine) your home page. (Alternatively, remove this and add an `index.html` file in your`assets` directory)
+
+            '/': {
+                view: 'homepage'
+            }
+            
+        config/routes.js
+
+            Routes map URLs to sails-student-api/views/homepage.ejs and sails-student-api/api/controllers.
+
+            '/': {
+                 view: 'homepage'
+            }
+
+        config/views.js
+            configure your templating language/framework of choice and configure Sails' layout support.
+                
+            View engine (aka template language) to use for your app's *server-side views
+            We use extended javascript
+            engine: 'ejs',
+
+            Layouts are simply top-level HTML templates you can use as wrappers for your server-side views
+            layout: 'layout',
+
+            Partials are simply top-level snippets you can leverage to reuse template for your server-side views
+            partials: false
+
+    _________________________________________
+    FOLDER: API/CONTROLLERS
+
+        Controllers are created but remain empty:
+            AssignmentController.js
+            ClassController.js
+            GradeController.js
+            ...
+            StudentController.js
+
+    _________________________________________
+    FOLDER: API/MODELS
+
+        Each table will have its own "model" which contains the data definitions.
+
+        For example, Assignment.js:
+
+        module.exports = {
+            attributes: {
+                assignment_id: {
+                type: 'integer',
+                primaryKey: true,
+                autoIncrement: true
+                },
+                student_id: {
+                type: 'integer',
+                },
+                assignment_nbr: {
+                type: 'integer',
+                },
+                grade: {
+                type: 'integer',
+                model: 'grade',
+                columnName: 'grade_id'
+                },
+                class_id: {
+                type: 'integer',
+                }
+            },
+            // tells sails NOT to create a primary key
+            autoPK: false
+        };
+        
+        The format of this structure is JSON.
+
+
+/* *****************************************
+ *          FRONTEND API ENDPOINTS         *
+ * *************************************** */
+
+
+    https://cdn.datatables.net/
+
+    The DataTables Content Delivery Network (CDN) is a permanent store of the software released as part of the DataTables project for you to use on your site without needing to host it yourself. Furthermore, the CDN can serve the files for the DataTables components and dependencies that you require as a single concatenated and minified file, or as individual files through use of the DataTables download builder.
+
+    Bottom line: Data Tables provide lot of neat styling and functionality for your on-screen data tables UI.
+
+    _________________________________________
+    FOLDER: CONFIG
+
+       config/blueprints.js
+            Set "defaultLimit:" to "-1" to override sails.js sending only 30 records at a time. This will return all available records
+
+        config/connections.js
+            Sets local disk storage (for development only)
+            localDiskDb: {
+                adapter: 'sails-disk'
+            },
+        
+        config/cors.js
+            CORS is like a more modern version of JSONP-- it allows your server/API to successfully respond to requests from client-side JavaScript code running on some other domain (e.g. google.com). Unlike JSONP, it works with POST, PUT, and DELETE requests
+                Uncomment "allRoutes" and change it from "false" to "true"
+                Uncomment " origin: '*' "
+
+        config/local.js
+            This specifies the port the frontend web app will run on:
+
+            module.exports = {
+                port: process.env.PORT || 1338
+            }
+
+        config/models.js
+            migrate: 'safe'
+        
+        config/routes.js
+             Your routes map URLs to views and controllers
+
+             '/': {
+                view: 'homepage'
+            },
+
+            Create custom routes for the different web functions:
+
+                'POST /create_student': 'StudentController.create',
+                'GET /manage_students': 'StudentController.read',
+                'POST /update_student': 'StudentController.update',
+                'POST /delete_student': 'StudentController.delete',
+
+                'POST /create_major': 'MajorController.create',
+                'GET /manage_majors': 'MajorController.read',
+                'POST /update_major': 'MajorController.update',
+                'POST /delete_major': 'MajorController.delete',
+
+                'POST /create_instructor': 'InstructorController.create',
+                'GET /manage_instructors': 'InstructorController.read',
+                'POST /update_instructor': 'InstructorController.update',
+                'POST /delete_instructor': 'InstructorController.delete',
+
+                'POST /create_class': 'ClassController.create',
+                'GET /manage_classes': 'ClassController.read',
+                'POST /update_class': 'ClassController.update',
+                'POST /delete_class': 'ClassController.delete',
+
+                'POST /create_grade': 'GradeController.create',
+                'GET /manage_grades': 'GradeController.read',
+                'POST /update_grade': 'GradeController.update',
+                'POST /delete_grade': 'GradeController.delete',
+
+                'POST /create_assignment': 'AssignmentController.create',
+                'GET /manage_assignments': 'AssignmentController.read',
+                'POST /update_assignment': 'AssignmentController.update',
+                'POST /delete_assignment': 'AssignmentController.delete',
+
+                'POST /create_major_class': 'Major_ClassController.create',
+                'GET /manage_major_class': 'Major_ClassController.read',
+                'POST /update_major_class': 'Major_ClassController.update',
+                'POST /delete_major_class': 'Major_ClassController.delete',
+
+                'POST /create_student_class': 'Student_ClassController.create',
+                'GET /manage_student_class': 'Student_ClassController.read',
+                'POST /update_student_class': 'Student_ClassController.update',
+                'POST /delete_student_class': 'Student_ClassController.delete'
+
+        config/views.js
+            engine: 'ejs',
+            layout: 'layout',
+            partials: false
+
+    _________________________________________
+    FOLDER: VIEWS
+
+        NAVIGATION BAR:
+        views/partials/navigation.ejs
+
+        <nav id="navbar-test" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="#"><img alt="The Iron Yard" src="images/tiy_logo.png"/></a>-->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/manage_students">Students</a></li>
+                        <li><a href="/manage_majors">Majors</a></li>
+                        <li><a href="/manage_instructors">Instructors</a></li>
+                        <li><a href="/manage_classes">Classes</a></li>
+                        <li><a href="/manage_grades">Grades</a></li>
+                        <li><a href="/manage_assignments">Assignments</a></li>
+                        <li><a href="/manage_major_class">Major_Class</a></li>
+                        <li><a href="/manage_student_class">Student_Class</a></li>
+                    </ul>
+
+                    <div class="navbar-form navbar-right">
+                        <div class="input-group">
+                            <input id="srchText" type="text" class="form-control" placeholder="Search the Web">
+                            <span class="input-group-btn">
+                                <button id="srchButton" type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        MESSAGES FOR ERRORS AND SUCCESS:
+        views/partials/statusmessage.ejs
+
+            <% flash.get('error').forEach(function (message) { %>
+
+                <div class="alert alert-danger" role="alert">
+                    <%= message %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% }) %>
+            <% flash.get('success').forEach(function (message) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= message %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% }) %>
+
+        HTML, JS, AND EJS FOR EACH PAGE:
+        views/homepage.ejs
+             /layout.ejs
+             /manage_assignments.ejs
+             /manage_classes.ejs
+             /manage_grades.ejs
+             /manage_instructors.ejs
+             /manage_major_class.ejs
+             /manage_majors.ejs
+             /manage_student_class.ejs
+             /manage_students.ejs
+
+        HOMEPAGE.EJS IS YOUR LANDING PAGE AND THE FIRST THING THE USER SEES
+        WITHIN LAYOUT.EJS YOU INCUDE YOUR CSS AND JS IN THE HEAD AND BODY TAGS
+
+        <HEAD>
+            <!-- datatables -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.css" />
+
+            <!-- bootstrap -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+            <!-- bootstrap -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- jquery-ui -->
+            <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        </HEAD>
+
+        <BODY>
+                <!--jquery js-->
+                <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+                <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+
+                <!--jquery-ui js-->
+                <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+                <!--bootstrap js-->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+                <!-- datatables.min.js -->
+                <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-html5-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.js"></script>
+
+                <!--custom js (your work)-->
+
+                <script src="js/manage_students.js"></script>
+                <script src="js/manage_majors.js"></script>
+                <script src="js/manage_instructors.js"></script>
+                <script src="js/manage_classes.js"></script>
+                <script src="js/manage_grades.js"></script>
+                <script src="js/manage_assignments.js"></script>
+                <script src="js/manage_major_class.js"></script>
+                <script src="js/manage_student_class.js"></script>
+                <script src="js/course_admin_utils.js"></script>
+        </BODY>
+    _________________________________________
+    FOLDER: ASSETS
+
+        PERFORM HIGH-LEVEL CREATE, UPDATE, READ, DELETE FUNCTIONS:
+        assets/js/course_admin_utils.js
+                 /manage_assignments.js
+                 /manage_classes.js
+                 /manage_grades.js
+                 /manage_instructors.js
+                 /manage_major_class.js
+                 /manage_majors.js
+                 /manage_student_class.js
+                 /manage_students.js
+        
+    _________________________________________
+    FOLDER: API
+
+        Controllers (the C in MVC) are the principal objects in your Sails application that are responsible for responding to requests from a web browser, mobile application or any other system capable of communicating with a server. They often act as a middleman between your models and views. For many applications, the controllers will contain the bulk of your project’s business logic.
+
+        These are defined in your custom routes above.
+
+        CONTROLLERS PERFORM THE LOW-LEVEL CRUD CALLS AND RECEIVE THOSE RESPONSES WHICH ARE REDIRECTED BACK TO VIEW E.G. MANAGE_STUDENTS:
+        api/controllers/AssignmentController.js
+                       /ClassController.js
+                       /GradeController.js
+                       /InstructorController.js
+                       /Major_ClassController.js
+                       /MajorController.js
+                       /Student_ClassController.js
+                       /StudentController.js
+        
+        
+             
+
+
+
+
+
+
+DEFINE ENDPOINT MODEL ATTRIBUTES:
+sails generate api [name-of-endpoint]
+cd api/controllers
+edit [name-of-endpoint].js
+cd api/models
+edit [name-of-endpoint].js
