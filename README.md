@@ -1,6 +1,6 @@
 # Angular 8.2 Demonstration Frontend Web Administration Service
 
-# ___________________________________________________________
+# ____________________
 # Description
 
 This is an Angular demo project that provides a fully functional frontend web administration system and it can be leveraged as a detailed template for other uses.
@@ -92,7 +92,7 @@ This demo project uses Angular Material Tables that leverages both  MatSort and 
 * Popup Dialog
     * delete-comfirm.component
 
-# ___________________________________________________________
+# ____________________
 # Launching the Sails Backend & Angular Frontend
 
 ## How to launch the sails backend
@@ -115,7 +115,7 @@ This will compile your project and open a window in your browser on the landing 
 
 If you don't use the --open then you can launch your angular landing page by typing http://localhost:4200 in your address bar. 
 
-# ___________________________________________________________
+# ____________________
 # Screen Shots
 
 **Landing Page** 
@@ -138,7 +138,7 @@ If you don't use the --open then you can launch your angular landing page by typ
 
 ![Student Delete](./student_delete.png)
 
-# ___________________________________________________________
+# ____________________
 # Helpful Links
 
 * Stack
@@ -178,12 +178,12 @@ If you don't use the --open then you can launch your angular landing page by typ
     * [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
     * [CSS3 Button Generator](https://www.designrush.com/resources/css3buttongenerator)
 
-# ___________________________________________________________
+# ____________________
 # TO-DO
     
 * Need to upgrade Sails to v1.0 (lots of breaking changes)
 
-# ___________________________________________________________
+# ____________________
 # Change Log
 
 ## Feb-June 2020
@@ -370,4 +370,3 @@ What is it: vi is a screen-oriented text editor originally created for the Unix 
 Check: N/A
 Install: Comes preinstalled with MacOS
 Note: If you haven’t used vi in the past then I strongly suggest that you find a tutorial on the web before starting.
-
